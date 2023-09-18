@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+
+
+<head>
+    <title>ITOPIA</title>
+    <meta charset="UTF-8">
+    <!-- 반응형 웹을 위한 코드 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap 5.3.1 CSS 추가 -->
+    <link rel="stylesheet" href="/bootstrap-5.3.1-dist/css/bootstrap.css"> 
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <script src="/js/index.js"></script>
+    <!-- 기본폰트 설정 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5.3.1 JS 추가 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <!-- 링크들로 연결될 곳 -->
+        <div class="Links">
+            <a href="#" class="LinkText">회원가입</a>
+            <a href="#" class="LinkText">마이페이지</a>
+            <a href="#" class="LinkText">고객문의</a>
+
+        </div>
+        <!-- 유저 정보 창 -->
+        <div class="UserInfo">
+            <a href="#">
+                <img src="/src/UserIcon.svg" id="UserLogo">
+            </a>
+            <div class="UserName">
+                <a href="#" id="UserName">로그인하세요.</a>
+            </div>
+            
+        </div>
+        <!-- 로고 이미지 -->
+        <a href="#"><img src="/src/idolfan.png" id="MainLogo"></a>
+        <!-- 검색창 -->
+        <form>
+            <fieldset>
+                <div class="SearchMenu">
+                    <input type="text" id="SearchBox" maxlength="225" tabindex="1">
+                    <button type="submit">
+                        <img src="/src/Search.svg" id="SearchBtn" tabindex="2">
+                    </button>
+                </div>
+            </fieldset>
+        </form>
+        <!-- Navbar/메뉴창, Bootstrap 이용 -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">PHOTOCARD</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-item">인기 매물</a></li>
+                            <li><a href="#" class="dropdown-item">남자 아이돌</a></li>
+                            <li><a href="#"class="dropdown-item">여자 아이돌</a></li>
+                            <li><a href="#" class="dropdown-item">자작 포토카드</a></li>
+                            </ul>
+                    </li>
+                    <li class="nav-item dropdown">                        
+                        <a href="#" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">GOODS</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-item">인기 매물</a></li>
+                            <li><a href="#" class="dropdown-item">공식 굿즈</a></li>
+                            <li><a href="#" class="dropdown-item">비공식 굿즈</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">                        
+                        <a href="#" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">I*TALK</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-item">실시간 인기글 게시판</a></li>
+                            <li><a href="/html/talk-boydol.html" class="dropdown-item">남자 아이돌</a></li>
+                            <li><a href="#" class="dropdown-item">여자 아이돌</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown"><a href="#">더보기</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/src/Sample1.jpg" class="d-block w-100" alt="..">
+              </div>.
+              <div class="carousel-item">
+                <img src="/src/Sample2.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/src/Sample3.jpg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+        <div class="container-sm" id="MainContainer">
+            <!-- Card로 Sub Container 빌드 -->
+            <div class="card" id="SubContainer1">
+                <h4>실시간 I*TALK 인기글</h4>
+
+                <div type="button" class="btn btn-outline-secondary write" onclick="location.href='#';">
+                    글쓰기
+                </div>
+
+                <div class="card" id="SubContainer1_Card">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <a href="#"><img class="card-img" src="/src/IdolFan.png" alt="..."></a>
+                         </div>
+                         <div class="col-sm-6">
+                            <div class="card-body">
+                                <a href="#" class="card-title">EXO 포토카드 팝니다.asdfasfasfasfasasfdasfasfsfasfafasdfasafsffafasfsfsf</a>
+                                <a href="#" class="card-text content">상태 좋습니다 어쩌구... 택포 12만원에 팝니다. 네고는 사양입니다.ddddㅇ럼ㄴㅇ;ㅣ라먼ㄹ이;ㅏㅁ널아ㅣ;ㅁ넝리ㅏㅁㄴ러미ㅔ날엄니;ㅏㅇㄻㄴ리;만러;니럼니라ㅓㅁ니ㅏㄹㅇㄴㅇddddddddddddddddddd</a>
+                                <p class="card-text price"><a href="#">#EXO</a><span class="ThumbCount"><img src="/src/Heart.svg">95</span><span class="CommentCount"><img src="/src/Comment.png">50</span></span><span class="date">15:05</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 하단 페이지 이동 -->
+                <nav aria-label="...">
+                    <ul class="pagination">
+                      <li class="page-item disabled">
+                        <a class="page-link">Previous</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">2</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                      </li>
+                    </ul>
+                  </nav>
+            </div>
+
+            <div class="partition">
+            </div>
+
+            <div class="card" id="SubContainer2">
+                <h4>실시간 인기 매물</h4>
+
+                <div type="button" class="btn btn-outline-secondary write" onclick="location.href='#';">
+                    글쓰기
+                </div>
+
+                <div class="card" id="SubContainer2_Card">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img class="card-img" src="/src/IdolFan.png" alt="...">
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card-body">
+                                <a href="#" class="card-title">EXO 포토카드 판</a>
+                                <a href="#" class="card-text content">상태 좋습니다 어쩌구... 택포 12만원에 팝니다. 네고는 사양입니다.ddddㅇ럼ㄴㅇ;ㅣ라먼ㄹ이;ㅏㅁ널아ㅣ;ㅁ넝리ㅏㅁㄴ러미ㅔ날엄니;ㅏㅇㄻㄴ리;만러;니럼니라ㅓㅁ니ㅏㄹㅇㄴㅇddddddddddddddddddd</a>
+                                <p href="#" class="card-text price">가격: 12만원<span class="date">15:05</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <nav aria-label="...">
+                    <ul class="pagination">
+                      <li class="page-item disabled">
+                        <a class="page-link">Previous</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">2</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                      </li>
+                    </ul>
+                  </nav>
+            </div>
+
+
+        </div>
+    
+
+    </main>
+
+    <footer>
+        <div class="FooterMenu">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="#">이메일 문의</a></li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="#">개인정보취급방침</a></li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="#">사업자정보확인</a></li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="#">권리 침해 신고</a></li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="#">모바일</a></li>
+            </ul>
+        </div>
+        <div class="FooterInfo">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">ITOPIA</li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">서울시 강서구 *** </li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">사업자등록번호 : 000-00-00000</li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">통신판매업신고 : 2000-ㅇㅇㅇㅇ-00000</li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">대표 : 이근우</li>
+            </ul> 
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">TEL : 000-0000-0000</li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">E-mail : xe165903@gmail.com</li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+
+
+</html>

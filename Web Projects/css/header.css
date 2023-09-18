@@ -1,0 +1,146 @@
+header {
+    margin: auto; /* Header 양쪽 여백 동일하게 맞춰줌 */
+    /* background-color: lightgray; */
+    width: 1240px;
+    height: 320px;
+    box-shadow: 0px 12px 7px -8px #555555;
+    display: flex;
+    align-items: center; /* 하위 요소들 수직 가운데 정렬 */
+    position: relative;
+}
+/* 의도치 않게 나오는 테두리 없애기 위해서 */
+fieldset {
+    border-style: none;
+}
+body {
+    margin: 0;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+a {
+    /* 링크들 기본 밑줄 삭제 및 링크폰트 색깔 */
+    text-decoration: none;
+    color: #707070;
+}
+a:hover {
+    text-decoration: underline;
+}
+/* 최상단 메뉴 서로 조금씩 띄우기 */
+.LinkText{
+    margin: 5px;
+}
+.Links {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    font-size: 14px;
+    margin-left: 10px;
+}
+/* User 정보 나오는 곳 */
+#UserLogo {
+    width: 24px;
+    height: 30px;
+    position: absolute;
+    top: 196px;
+    left: 1046px;
+}
+#UserName {
+    width: 10vmax;
+    height: 40px;
+    font-size: 19px;
+    position: absolute;
+    top: 200px;
+    left: 1083px;
+    font-weight: bold;
+}
+/* Main Logo */
+#MainLogo {
+    width: 365px;
+    height: 140px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    position: absolute;
+    top: 95px;
+    left: 20px;
+}
+/* 검색창 부분 */
+
+/* 원래 버튼 안보이게 하는 코드 */
+.SearchMenu > Button {
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#SearchBox {
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid #707070;
+    border-radius: 5px;
+    width: 547px;
+    height: 36px;
+    position: absolute;
+    top: 196px;
+    left: 400px;
+    box-shadow: 0px 2px 13px -9px #555555;
+}
+#SearchBtn {
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border-style: none;
+    position: absolute;
+    top: 202px;
+    left: 960px;
+}
+/* 메뉴바 nav, 자식 선택자 ">" 사용*/
+header > nav {
+    width: 100%;
+    height: 45px;
+    position: absolute !important;
+    bottom: 0;
+}
+.navbar-collapse > ul {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;   
+    justify-content: space-around;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+    list-style-type: none;
+}
+/* Navbar에 마우스 가져다대면 열리게 하는 스크립트 */
+@media all {
+    .navbar .nav-item .dropdown-menu { display: none; }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+}
+
+/* 모바일용 반응형 디자인 CSS */
+/* 스마트폰 가로 최대 길이 767px 이하일 경우  */
+/* @media (max-width: 767px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin: auto;
+        width: auto;
+        height: 180px;
+    }
+    .Links {
+        position: absolute;
+        right: 10vmin;
+        font-size: 20%;
+    }
+    #SearchBox {
+        width: 60vmin;
+        height: 6vmin;
+    }
+    #MainLogo {
+        width: 150px;
+        height: auto;
+    }
+} */

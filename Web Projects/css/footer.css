@@ -1,0 +1,28 @@
+footer {
+    margin: auto; /* Header 양쪽 여백 동일하게 맞춰줌 */
+    background-color: lightgray;
+    width: 1240px;
+    height: 320px;
+    box-shadow: 0px 12px 7px -8px #555555;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 하위 요소들 수직 가운데 정렬 */
+    position: relative;
+    padding-top: 150px;
+}
+.FooterMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 13px;
+}
+.list-group-item {
+    background-color: transparent;
+    font-weight: 500;
+}
+.FooterInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 11px;
+}
