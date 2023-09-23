@@ -1,2 +1,0 @@
-# ITOPIA
-Idol community 
