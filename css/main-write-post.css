@@ -1,0 +1,29 @@
+main {
+    margin: auto;
+    /* background-color: gray; */
+    width: 1240px;
+    min-height: 1080px;
+    display: flex;
+    align-items: center; /* 하위 요소들 수직 가운데 정렬 */
+    position: relative;
+    flex-direction: column;
+}
+#editor {
+    margin: auto;
+    width: auto;
+    height: auto;
+}
+
+/* 글쓰기버튼 */
+.write {
+    z-index: 3; /* z-index로 좀 더 앞으로 내보내줌: 링크들 클릭 안되는거 방지*/
+    margin-bottom: 20px;
+}
+
+main nav {
+    z-index: 3;
+}
+/* 반응형 모바일 디자인용 (추후에 수정) */
+@media (max-width: 768px) {
+
+}
