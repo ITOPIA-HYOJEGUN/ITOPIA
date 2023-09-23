@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+
+
+<head>
+    <title>ITOPIA / 게시글 작성</title>
+    <meta charset="UTF-8">
+    <!-- 반응형 웹을 위한 코드 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap 5.3.1 CSS 추가 -->
+    <link rel="stylesheet" href="./../bootstrap-5.3.1-dist/css/bootstrap.css"> 
+    <link rel="stylesheet" href="./../css/header.css">
+    <link rel="stylesheet" href="./../css/main.css">
+    <link rel="stylesheet" href="./../css/footer.css">
+    <link rel="stylesheet" href="./../css/global.css">
+    <script src="./../js/index.js"></script>
+    <!-- 기본폰트 설정 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5.3.1 JS 추가 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <!-- 링크들로 연결될 곳 -->
+        <div class="Links">
+            <a href="#" class="LinkText">회원가입</a>
+            <a href="#" class="LinkText">마이페이지</a>
+            <a href="#" class="LinkText">고객문의</a>
+
+        </div>
+        <!-- 유저 정보 창 -->
+        <div class="UserInfo">
+            <a href="#">
+                <img src="./../src/UserIcon.svg" id="UserLogo">
+            </a>
+            <div class="UserName">
+                <a href="#" id="UserName">로그인하세요.</a>
+            </div>
+            
+        </div>
+        <!-- 로고 이미지 -->
+        <a href="#"><img src="./../src/IdolFan.png" id="MainLogo"></a>
+        <!-- 검색창 -->
+        <form>
+            <fieldset>
+                <div class="SearchMenu">
+                    <input type="text" id="SearchBox" maxlength="225" tabindex="1">
+                    <button type="submit">
+                        <img src="./../src/Search.svg" id="SearchBtn" tabindex="2">
+                    </button>
+                </div>
+            </fieldset>
+        </form>
+        <!-- Navbar/메뉴창, Bootstrap 이용 -->
+        <nav class="navbar navbar-expand">
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">PHOTOCARD</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-item">BOY GROUP</a></li>
+                            <li><a href="#"class="dropdown-item">GIRL GROUP</a></li>
+                            </ul>
+                    </li>
+                    <li class="nav-item dropdown">                        
+                        <a href="#" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">GOODS</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-item">공식 굿즈</a></li>
+                            <li><a href="#" class="dropdown-item">비공식 굿즈</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">                        
+                        <a href="#" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">I*TALK</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./../html/talk-boydol.html" class="dropdown-item">BOY GROUP</a></li>
+                            <li><a href="#" class="dropdown-item">GIRL GROUP</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown"><a href="#">더보기</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+
+    </main>
+
+    <footer>
+        <div class="FooterMenu">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="#">이메일 문의</a></li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="#">개인정보취급방침</a></li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="#">사업자정보확인</a></li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="#">권리 침해 신고</a></li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="#">모바일</a></li>
+            </ul>
+        </div>
+        <div class="FooterInfo">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">ITOPIA</li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">서울시 강서구 *** </li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">사업자등록번호 : 000-00-00000</li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">통신판매업신고 : 2000-ㅇㅇㅇㅇ-00000</li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">대표 : 이근우</li>
+            </ul> 
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">TEL : 000-0000-0000</li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">E-mail : xe165903@gmail.com</li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+
+
+</html>
