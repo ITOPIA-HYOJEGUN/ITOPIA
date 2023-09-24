@@ -8,12 +8,15 @@ main {
     position: relative;
     flex-direction: column;
 }
-#editor {
-    margin: auto;
+.post-area {
+    display: flex;
+    flex-direction: column;
+
+}
+#summernote {
     width: auto;
     height: auto;
 }
-
 /* 글쓰기버튼 */
 .write {
     z-index: 3; /* z-index로 좀 더 앞으로 내보내줌: 링크들 클릭 안되는거 방지*/
