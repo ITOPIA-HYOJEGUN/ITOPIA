@@ -8,24 +8,57 @@ main {
     position: relative;
     flex-direction: column;
 }
+h4 {
+    margin-top: 50px;
+}
 .post-area {
     display: flex;
     flex-direction: column;
-
+    width: 1000px;
 }
-
 .select-title-price {
     margin-top: 50px;
+    display: flex;
+    flex-direction: row;
 }
-.form-control {
-    width: 200px;
-    font-size: 16px;
-    
+#boydol-list {
+    width: 250px;
+    font-size: 14px;
 }
-/* Placeholder 사이즈 강제 조정 */
+#title-input {
+    margin-left: 10px;
+    height: 38px;
+    margin-top: auto;
+}
+/* Bootstrap Placeholder 사이즈 강제 조정 */
 ::-webkit-input-placeholder {
     font-size: 13px!important;
  }
+ .post-category {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 13px;
+ }
+ .post-category > h6 {
+    font-size: 14px;
+ }
+ .list-group-horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+ }
+ .list-group-horizontal > .list-group-item {
+    border-color: #EBFBFF;
+    color: black;
+ }
+ .list-group-horizontal > .active {
+    background-color: #dcdcdc !important;
+ }
+#post-confirm {
+    margin-left: auto;
+}
 #summernote {
     width: auto;
     height: auto;

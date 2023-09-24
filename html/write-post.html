@@ -93,19 +93,49 @@
 
     <main>
         <div class="post-area">
+            <h4><strong>게시글 작성</strong></h4>
+
             <div class="select-title-price">
                 <!-- 나중에 수정 필요. 1. 데이터베이스에서 자동으로 리스트 불러오기 / 2. JS로 어디서 글쓰기 버튼을 눌렀는지에 따라 자동 선택 -->
-                <label for="boydol-list" class="form-label">아이돌 그룹 선택</label>
-                <input class="form-control" list="datalistOptions" id="boydol-list" placeholder="원하는 아이돌을 선택하세요.">  
-                <datalist id="datalistOptions">
-                  <option value="BTS">
-                  <option value="빅뱅">
-                  <option value="Seattle">
-                  <option value="Los Angeles">
-                  <option value="Chicago">
-                </datalist>
+                <div class="select">
+                    <label for="boydol-list" class="form-label">아이돌 그룹 선택</label>
+                    <input class="form-control" list="datalistOptions" id="boydol-list" placeholder="원하는 아이돌을 선택하세요.">  
+                    <datalist id="datalistOptions">
+                        <option value="BTS">
+                        <option value="빅뱅">
+                        <option value="NCT">
+                        <option value="세븐틴">
+                        <option value="EXO">
+                        <option value="몬스타엑스">
+                        <option value="더보이즈">
+                        <option value="하이라이트">
+                        <option value="골든차일드">
+                        <option value="크래비티">
+                        <option value="신화">
+                        <option value="나인아이">
+                        <option value="슈퍼주니어">
+                        <option value="에이티즈">
+                        <option value="스트레이키즈">
+                        <option value="샤이니">
+                        <option value="온앤오프">
+                        <option value="엔하이픈">
+                        <option value="SF9">
+                        <option value="갓세븐">
+                    </datalist>                                                             
+                </div>
+                <input class="form-control" id="title-input" type="text" placeholder="제목을 입력하세요.">
             </div>
-            <div class="post-category">2</div>
+            <div class="post-category">
+                <h6>글 카테고리 선택</h6>
+                <ul class="list-group list-group-horizontal" role="tablist">
+                    <a class="list-group-item active" role="tab" aria-controls="잡담">잡담</a>
+                    <a class="list-group-item" role="tab">사진/영상</a>
+                    <a class="list-group-item" role="tab">정보</a>
+                    <a class="list-group-item" role="tab">질문</a>
+                    <a class="list-group-item" role="tab">후기</a>
+                    <button type="button" class="btn btn-outline-secondary" id="post-confirm" onclick="location.href='#';">글 게시</button>
+                </ul>
+            </div>
             <div id="summernote">
                 <script>
                     $(document).ready(function() {
