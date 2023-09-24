@@ -93,10 +93,19 @@
 
     <main>
         <div class="post-area">
-            <div class="item">1</div>
-            <div class="item">2</div>
-            <div class="item">3</div>            
-            <div class="item">4</div>
+            <div class="select-title-price">
+                <!-- 나중에 수정 필요. 1. 데이터베이스에서 자동으로 리스트 불러오기 / 2. JS로 어디서 글쓰기 버튼을 눌렀는지에 따라 자동 선택 -->
+                <label for="boydol-list" class="form-label">아이돌 그룹 선택</label>
+                <input class="form-control" list="datalistOptions" id="boydol-list" placeholder="원하는 아이돌을 선택하세요.">  
+                <datalist id="datalistOptions">
+                  <option value="BTS">
+                  <option value="빅뱅">
+                  <option value="Seattle">
+                  <option value="Los Angeles">
+                  <option value="Chicago">
+                </datalist>
+            </div>
+            <div class="post-category">2</div>
             <div id="summernote">
                 <script>
                     $(document).ready(function() {
