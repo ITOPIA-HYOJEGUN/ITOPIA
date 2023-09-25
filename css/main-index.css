@@ -1,0 +1,201 @@
+main {
+    margin: auto;
+    /* background-color: gray; */
+    width: 1240px;
+    min-height: 1080px;
+    display: flex;
+    align-items: center; /* 하위 요소들 수직 가운데 정렬 */
+    position: relative;
+    flex-direction: column;
+}
+
+.carousel-item {
+    margin-top: 20px;
+    width: 1170px;
+    height: 220px;
+    border-radius: 5px;
+}
+.carousel-item img {
+    width: 1170px;
+    height: 210px;
+    border-radius: 5px;
+    object-fit: fill;
+}
+#MainContainer {
+    margin: 0;
+    padding: 0px;
+    border: 0px;
+    width: 1240px;
+    display: grid;
+    grid-template-columns: 620px 620px;
+    grid-template-rows: 1980px;
+}
+#SubContainer1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    min-height: 1708px;
+    max-height: 1708px;
+    min-width: 550px;
+    position: absolute;
+    top: 244px;
+    left: 35px;
+}
+/* 메인화면 중간 구분선 */
+.partition {
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    border-right-color:#909090;
+    border-right-width: 2px;
+    border-right-style: dotted;
+    position: absolute;
+    right: 620px;
+    top: 280px;
+    height: 1708px;
+    width: 550px;
+    border-radius: 2px;
+}
+#SubContainer2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    min-height: 1708px;
+    max-height: 1708px;
+    min-width: 550px;
+    position: absolute;
+    top: 244px;
+    right: 35px;
+}
+main h4 {
+    margin-top: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
+
+}
+/* 글쓰기버튼 */
+.write {
+    z-index: 3; /* z-index로 좀 더 앞으로 내보내줌: 링크들 클릭 안되는거 방지*/
+    margin-bottom: 20px;
+}
+
+/* 카드들 세부조정 */
+div.row {
+    /* 전체 카드 위치 조정 */
+    margin: auto;
+    width: 520px;
+    height: 117px;
+}
+div.col-sm-3 {
+    /* 카드 이미지 위치 맞게 조정 */
+    margin: 0;
+    padding: 0;
+    width: 164px;
+    height: 117px;
+    z-index: 2;     /* z-index로 좀 더 앞으로 내보내줌: 링크들 클릭 안되는거 방지*/
+}
+div.col-sm-6 {
+    width: 340px;
+    height: 117px;
+    z-index: 1;
+}
+div.card {
+    /* 카드 크기 조정 */
+    width: 520px;
+    height: 117px;
+    margin-bottom: 22px; 
+    margin-top: 22px;    /* 카드 간 여백 */
+    border-style: none;
+    box-shadow: 0px 2px 13px -5px #555555;
+}
+/* 게시판 카드들 이미지 */
+.card-img {
+    margin: 0px;
+    padding: 3px;
+    width: 164px;
+    height: 117px;
+    border-style: solid;
+    border-color: #707070;
+    border-width: 1px;
+    border-radius: 2;
+}
+.card-body {
+    padding: 0px;
+    margin-top: 5px;
+    padding-left: 0px;
+    width: 320px;
+    height: 110px;
+    position: relative;
+    /* Card 내용글 배치 Flex 종방향 활용 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-title {
+    margin-bottom: 0px;
+    font-size: 17px;    
+    font-weight: bold;
+    display:-webkit-box; /* 줄 길어지면 ... 생기게 하기 위한 코드 */
+    -webkit-line-clamp: 2;     /* 텍스트 줄 수 자르는 단위 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+}
+.card-text {
+    /* 날짜랑 가격 분리하기 위해서 Flex 사용 */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.content {
+    font-size: 12px;
+    white-space: normal;
+    /* 제목 텍스트 길어지면 잘리는거 위한 코드 */
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card-text img {
+    margin-right: 5px;
+    width: 13px;
+    height: 13px;
+    object-fit: fill;
+    object-position: 0px -1.35px;    /* 하트랑 댓글 이미지 위치 조정 */
+}
+.price {
+    color: cornflowerblue;
+    font-weight: 600;
+    font-size: 14px;
+}
+.price a {
+    color: cornflowerblue;
+    font-weight: 600;
+    font-size: 13px;
+}
+.card-text .date {
+    margin-top: 1.2px;
+    margin-left: auto;
+    font-weight: 100;
+    color:#707070;
+    font-size: 12px;
+}
+.card-text .ThumbCount {
+    font-weight: 100;
+    color: #707070;
+    margin-left: 12px;
+}
+.card-text .CommentCount {
+    font-weight: 100;
+    color: #707070;
+    margin-left: 12px;
+}
+main nav {
+    z-index: 3;
+}
+/* 반응형 모바일 디자인용 (추후에 수정) */
+@media (max-width: 768px) {
+
+}
