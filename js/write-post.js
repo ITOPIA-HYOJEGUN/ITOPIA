@@ -8,31 +8,6 @@ document.getElementById("price-input").style.display = 'none';
 
 
 
-function priceFormat() {
-    let check = /[^₩,0-9]/
-    if (check.test(document.getElementById("price-input").value)) {
-        document.getElementById("price-input").value = document.getElementById("price-input").value.slice(0, -1);
-    }
-
-    if (document.getElementById("price-input").value == ''){
-        return
-    }
-    else if (document.getElementById("price-input").value == ',') {
-        document.getElementById("price-input").value = '';
-    }
-    else if (document.getElementById("price-input").value == '₩') {
-        document.getElementById("price-input").value = '';
-    }
-    else {
-        let price = document.getElementById("price-input").value;
-        let res = '';
-        price = price.match(/[0-9]/g);
-        for (let i = 0; i < price.length; i++){
-            res = res + price[i];
-        }
-        document.getElementById("price-input").value = parseInt(res).toLocaleString('ko-KR', { style: 'currency', currency: 'KRW'});
-    }
-}
 
 categorySelect[0].addEventListener("click", (e) => {
     if (categorySelectValue != "잡담"){
@@ -164,5 +139,33 @@ $(document).ready(function() {
     // 기본 로드 폰트: 나눔고딕으로 설정
     $('.note-current-fontname').css('font-family','Nanum Gothic').text('Nanum Gothic');
     $('.note-editable').css('font-family','Nanum Gothic');
+    $('.note-current-fontsize').text('18');
     $('.note-editable').css('font-size','18px');
 });
+
+// 가격 입력 함수
+function priceFormat() {
+    let check = /[^₩,0-9]/
+    if (check.test(document.getElementById("price-input").value)) {
+        document.getElementById("price-input").value = document.getElementById("price-input").value.slice(0, -1);
+    }
+
+    if (document.getElementById("price-input").value == ''){
+        return
+    }
+    else if (document.getElementById("price-input").value == ',') {
+        document.getElementById("price-input").value = '';
+    }
+    else if (document.getElementById("price-input").value == '₩') {
+        document.getElementById("price-input").value = '';
+    }
+    else {
+        let price = document.getElementById("price-input").value;
+        let res = '';
+        price = price.match(/[0-9]/g);
+        for (let i = 0; i < price.length; i++){
+            res = res + price[i];
+        }
+        document.getElementById("price-input").value = parseInt(res).toLocaleString('ko-KR', { style: 'currency', currency: 'KRW'});
+    }
+}
