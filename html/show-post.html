@@ -10,7 +10,7 @@
     <!-- Bootstrap 5.3.2 CSS 추가 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./../css/header.css">
-    <link rel="stylesheet" href="./../css/main-write-post.css">
+    <link rel="stylesheet" href="./../css/main-show-post.css">
     <link rel="stylesheet" href="./../css/footer.css">
 
     <!-- 기본폰트 설정 -->
@@ -25,8 +25,6 @@
     <!-- Bootstrap 5.3.2 JS 추가  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-    <!-- 페이지 작동을 위한 JS 추가 -->
-    <script src="./../js/index.js"></script>
 
 </head>
 
@@ -97,58 +95,96 @@
     <main>
         <div class="post-area">
             <h4><strong>제목</strong></h4>
-            <hr>
-            <div id="post-information">
+            <hr class="title-divider">
+            <div class="post-header">
                 <a href="#">작성자</a>
+                <span class="divider"></span>
                 <span>날짜</span>
-                <span>아이돌</span>
+                <span class="divider"></span>
+                <span>조회수</span>
+                <span id="idolname">아이돌</span>
+                <span class="divider"></span>
                 <span>카테고리</span>
+                <span class="divider-end"></span>
+                <span id="price">가격</span>
             </div>
+            <hr>
+        <div id="contents">
+            내용
+        </div>
+        <div class="heart-unheart">
+            <span id="heart-cnt">추천수</span>
+            <span id="heart-button">
+                <img src="./../src/like.png" id="heart">
+            </span>
+            <span class="divider-long"></span>
+            <span id="unheart-button">
+                <img src="../src/broken-heart.png" id="unheart">
+            </span>
+            <span id="unheart-cnt">비추수</span>
+        </div>
+        <div class="misc-function">
+            <span id="share">공유</span>
+            <span class="divider"></span>
+            <span id="report">신고</span>
+        </div>
 
-            <div class="select-title-price">
-                <!-- 나중에 수정 필요. 1. 데이터베이스에서 자동으로 리스트 불러오기 / 2. JS로 어디서 글쓰기 버튼을 눌렀는지에 따라 자동 선택 -->
-                <div class="select">
-                    <label for="boydol-list" class="form-label">아이돌 그룹 선택</label>
-                    <input class="form-control" list="datalistOptions" id="boydol-list" placeholder="원하는 아이돌을 선택하세요.">  
-                    <datalist id="datalistOptions">
-                        <option value="BTS">
-                        <option value="빅뱅">
-                        <option value="NCT">
-                        <option value="세븐틴">
-                        <option value="EXO">
-                        <option value="몬스타엑스">
-                        <option value="더보이즈">
-                        <option value="하이라이트">
-                        <option value="골든차일드">
-                        <option value="크래비티">
-                        <option value="신화">
-                        <option value="나인아이">
-                        <option value="슈퍼주니어">
-                        <option value="에이티즈">
-                        <option value="스트레이키즈">
-                        <option value="샤이니">
-                        <option value="온앤오프">
-                        <option value="엔하이픈">
-                        <option value="SF9">
-                        <option value="갓세븐">
-                    </datalist>                                                             
-                </div>
-                <input class="form-control" id="title-input" type="text" placeholder="제목을 입력하세요.">
+        <hr class="title-divider">
+            
+        <div class="reply-area">
+            <div class="filtering">
+                <span id="comment-cnt">총 댓글수: 999</span>                    
+                <span class="dropdown">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        추천비율순  
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <li class="dropdown-item" href="#">추천비율순</li>
+                      <li class="dropdown-item" href="#">최신순</li>
+                    </ul>
+                </span> 
             </div>
-            <div class="post-category">
-                <h6>글 카테고리 선택</h6>
-                <ul class="list-group list-group-horizontal">
-                    <a class="list-group-item post-category-item">잡담</a>
-                    <a class="list-group-item post-category-item">사진/영상</a>
-                    <a class="list-group-item post-category-item">정보</a>
-                    <a class="list-group-item post-category-item">질문</a>
-                    <a class="list-group-item post-category-item">후기</a>
-                    <a class="list-group-item post-category-item">판매</a>
-                    <a class="list-group-item post-category-item end-item">구매</a>
-                    <button type="button" class="btn btn-outline-secondary" id="post-confirm" onclick="location.href='#';">글 게시</button>
-                </ul>
+            <!-- 이 부분 반복문 -->
+            <hr class="comment-divider">
+            <div class="show-comment">
+                <span class="user-nickname">닉네임</span>
+                <span class="comment-contents">테스트용 댓글입니다</span>
+                <span class="regdate">2023.03.12</span>
+                <span class="comment-heart-button">
+                    <img src="./../src/like.png" id="comment-heart">
+                </span> 
+                <span class="comment-heart-cnt">99</span>
+                <span class="comment-unheart-button">
+                    <img src="../src/broken-heart.png" id="comment-unheart">
+                </span>
+                <span class="comment-unheart-cnt">99</span>
             </div>
-            <div id="summernote"></div>
+            <!-- 이 부분 반복문 -->
+            <!-- 이 부분 반복문 -->
+            <hr class="comment-divider">
+            <div class="show-comment">
+                <span class="user-nickname">닉네임</span>
+                <span class="comment-contents">테스트용 댓글입니다asdfasdfasdfasdfasdfasfasfasfasdfasfafasfasfasdffffffffffffffffffffffffffㅁㄴㅇㄹ모ㅓㄴ라ㅣ먼라ㅣ;ㅁㄴ러;민ㄹ먼;ㅣㄻㄴ라ㅓㅣㅏㅓㅁㄴ러마ㅣㄴㅇ러fff</span>
+                <span class="regdate">2023.03.12</span>
+                <span class="comment-heart-button">
+                    <img src="./../src/like.png" id="comment-heart">
+                </span> 
+                <span class="comment-heart-cnt">99</span>
+                <span class="comment-unheart-button">
+                    <img src="../src/broken-heart.png" id="comment-unheart">
+                </span>
+                <span class="comment-unheart-cnt">99</span>
+                
+            </div>
+            <!-- 이 부분 반복문 -->
+            <hr class="comment-divider end-divider">
+            <div class="write-comment">
+                <textarea class="form-control" id="comment-input" type="text" placeholder="서로를 존중하며 댓글을 작성해주세요. 타인의 권리 침해/명예 훼손 시, 운영정책 및 관련 법률에 따라 제재될 수 있습니다." maxlength="3000"></textarea>
+                <span type="button" class="btn btn-secondary write-button">
+                    등록
+                </span>
+            </div>
+            
         </div>
 
     </main>
@@ -200,6 +236,5 @@
 
 </body>
 <!-- HTML 로드 완료 후 삽일될 JS -->
-<script src="./../js/write-post.js"></script>
 
 </html>

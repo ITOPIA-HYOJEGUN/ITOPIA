@@ -8,69 +8,193 @@ main {
     position: relative;
     flex-direction: column;
 }
+main nav {
+    z-index: 3;
+}
 h4 {
     margin-top: 50px;
+}
+/* 굵은 가로줄 설정 */
+.title-divider {
+    border: 0px;
+    height: 3px;
+    background: #0e3296;
 }
 .post-area {
     display: flex;
     flex-direction: column;
     width: 1000px;
 }
-.select-title-price {
-    margin-top: 50px;
+/* 작성자/날짜 정보들 나오는 곳 */
+.post-header {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
 }
-#boydol-list {
-    width: 250px;
-    font-size: 14px;
+.post-header span {
+    margin-left: 12px;
 }
-#title-input {
-    margin-left: 10px;
-    height: 38px;
-    margin-top: auto;
+.post-header a {
+    color: black;
 }
-/* Bootstrap Placeholder 사이즈 강제 조정 */
-::-webkit-input-placeholder {
-    font-size: 13px!important;
- }
- .post-category {
+/* 세로줄 설정 */
+.divider {
+    height: 24px;
+    border-left: solid #7a7a7a;
+    border-left-width: 1px !important;
+    margin: 0px;
+}
+.divider-end {
+    height: 24px;
+    border-left: solid #7a7a7a;
+    border-left-width: 1px !important;
+    margin: 0px;
+}
+#idolname {
+    margin-left: auto;
+    color: black;
+}
+#price {
+    color: cornflowerblue;
+    font-weight: 600;
+}
+/* 추천/비추천 영역 */
+.heart-unheart {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.heart-unheart span {
+    margin-left: 12px;
+}
+#heart-cnt {
+    margin-top: 3px;
+    font-weight: 600;
+}
+#unheart-cnt {
+    margin-top: 3px;
+    font-weight: 600;
+}
+#heart {
+    width: 30px;
+    cursor: pointer;
+}
+#unheart {
+    width: 30px;
+    cursor: pointer;
+}
+/* 긴 세로줄 설정 */
+.divider-long {
+    height: 30px;
+    border-left: solid #7a7a7a;
+    border-left-width: 1px !important;
+    margin: 0px;
+}
+/* 공유/신고 기능 */
+.misc-function {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+.misc-function span {
+    margin-left: 12px;
+}
+#share {
+    cursor: pointer;
+}
+#report {
+    cursor: pointer;
+}
+/* 댓글 영역 */
+.reply-area {
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 13px;
- }
- .post-category > h6 {
+    width: 1000px;
     font-size: 14px;
- }
- .list-group-horizontal {
+}
+/* 총 댓글수 및 댓글 표시 방법 */
+.filtering{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    border-radius: 4px;
- }
- .list-group-horizontal > .list-group-item {
-    border-color: #d1d1d1;
+}
+#comment-cnt {
+    font-weight: 600;
+    color: #1e53c5;
+    margin-right: 10px;
+    padding-top: 4px;
+}
+.btn-secondary {
+    background-color: transparent;
     color: black;
- }
- .list-group-horizontal > .end-item {
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
- }
-
-#post-confirm {
-    margin-left: auto;
 }
-
-/* 글쓰기버튼 */
-.write {
-    z-index: 3; /* z-index로 좀 더 앞으로 내보내줌: 링크들 클릭 안되는거 방지*/
-    margin-bottom: 20px;
+.dropdown-menu > .dropdown-item {
+    font-size: 13px;
 }
-
-main nav {
-    z-index: 3;
+.comment-divider {
+    margin: 7px;
+}
+.show-comment {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+.show-comment span {
+    margin-left: 5px;
+}
+.user-nickname {
+    cursor: pointer;
+}
+.comment-contents {
+    /* 댓글 표시 영역 크기 조정 */
+    width: 700px;
+    padding-left: 70px;
+    padding-top: 1px;
+}
+.regdate {
+    margin-left: auto !important;
+    font-size: 12px;
+    color: #7a7a7a;
+}
+.comment-heart-button {
+    margin-left: 16px !important;
+}
+#comment-heart {
+    width: 14px;
+    cursor: pointer;
+}
+#comment-unheart {
+    width: 14px;
+    cursor: pointer;
+}
+/* 댓글 오른족 여백 안 맞는거 살짝 조정 */
+.comment-unheart-cnt {
+    margin-right: 5px;
+}
+.write-comment {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+#comment-input {
+    min-height: 100px;
+    max-height: 100px;
+    border-color: #747474;
+}
+.write-button {
+    height: 100px;
+    width: 100px;
+    font-size: 16px;
+    background-color:#9c9c9c;
+    color: white;
+    display: inline-flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
 }
 /* 반응형 모바일 디자인용 (추후에 수정) */
 @media (max-width: 768px) {
