@@ -66,7 +66,7 @@ main h5 {
 /* 글쓰기버튼 */
 .write {
     z-index: 3; /* z-index로 좀 더 앞으로 내보내줌: 링크들 클릭 안되는거 방지*/
-    margin-right: 20px;
+    margin-right: 90px;
     margin-bottom: 20px;
     margin-left: auto;
 }
@@ -74,7 +74,7 @@ main h5 {
 div.row {
     /* 전체 카드 위치 조정 */
     margin: auto;
-    width: 1180px;
+    width: 1000px;
     height: 117px;
 }
 div.col-sm-3 {
@@ -92,9 +92,9 @@ div.col-sm-6 {
 }
 div.card {
     /* 카드 크기 조정 */
-    width: 1180px;
+    width: 1000px;
     height: 117px;
-    margin: 22px;     /* 카드 간 여백 */
+    margin: 10px;     /* 카드 간 여백 */
     border-style: none;
     box-shadow: 0px 2px 13px -5px #555555;
 }
@@ -130,6 +130,7 @@ div.card {
 }
 .card-text {
     /* 날짜랑 가격 분리하기 위해서 Flex 사용 */
+    width: 800px; /* 위치 조정 */
     display: flex;
     flex-direction: row;
     justify-content: flex-start;

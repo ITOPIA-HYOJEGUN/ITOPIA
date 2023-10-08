@@ -96,8 +96,14 @@
 
     <main>
         <div class="post-area">
-            <h4><strong>게시글 작성</strong></h4>
+            <h4><strong>제목</strong></h4>
             <hr>
+            <div id="post-information">
+                <a href="#">작성자</a>
+                <span>날짜</span>
+                <span>아이돌</span>
+                <span>카테고리</span>
+            </div>
 
             <div class="select-title-price">
                 <!-- 나중에 수정 필요. 1. 데이터베이스에서 자동으로 리스트 불러오기 / 2. JS로 어디서 글쓰기 버튼을 눌렀는지에 따라 자동 선택 -->
@@ -141,12 +147,7 @@
                     <a class="list-group-item post-category-item end-item">구매</a>
                     <button type="button" class="btn btn-outline-secondary" id="post-confirm" onclick="location.href='#';">글 게시</button>
                 </ul>
-                <div class="priceset-area">
-                    <h6 id="priceset-title">가격</h6>
-                    <input class="form-control" id="price-input" type="text" placeholder="가격을 입력하세요." onkeyup="priceFormat()" maxlength="17">
-                </div>
             </div>
-            
             <div id="summernote"></div>
         </div>
 

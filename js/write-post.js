@@ -3,25 +3,61 @@
 let categorySelect = document.getElementsByClassName("post-category-item");
 let categorySelectValue = "None";
 
-console.log(categorySelect)
+document.getElementById("priceset-title").style.display = 'none';
+document.getElementById("price-input").style.display = 'none';
+
+
+
+function priceFormat() {
+    let check = /[^₩,0-9]/
+    if (check.test(document.getElementById("price-input").value)) {
+        document.getElementById("price-input").value = document.getElementById("price-input").value.slice(0, -1);
+    }
+
+    if (document.getElementById("price-input").value == ''){
+        return
+    }
+    else if (document.getElementById("price-input").value == ',') {
+        document.getElementById("price-input").value = '';
+    }
+    else if (document.getElementById("price-input").value == '₩') {
+        document.getElementById("price-input").value = '';
+    }
+    else {
+        let price = document.getElementById("price-input").value;
+        let res = '';
+        price = price.match(/[0-9]/g);
+        for (let i = 0; i < price.length; i++){
+            res = res + price[i];
+        }
+        document.getElementById("price-input").value = parseInt(res).toLocaleString('ko-KR', { style: 'currency', currency: 'KRW'});
+    }
+}
+
 categorySelect[0].addEventListener("click", (e) => {
     if (categorySelectValue != "잡담"){
         e.target.style.backgroundColor = "#FFEFD5";
         categorySelectValue = "잡담";
-        for (var i = 1; i <= 4; i++) {
+        for (var i = 1; i <= 6; i++) {
             categorySelect[i].style.backgroundColor = "transparent";
         }
+        document.getElementById("priceset-title").style.display = 'none';
+        document.getElementById("price-input").style.display = 'none';
+        document.getElementById("price-input").value = '';
     }
-    console.log(categorySelectValue)
+
 });
 categorySelect[1].addEventListener("click", (e) => {
     if (categorySelectValue != "사진/영상"){
         e.target.style.backgroundColor = "#FFEFD5";
         categorySelectValue = "사진/영상";
-        for (var i = 2; i <= 4; i++) {
+        for (var i = 2; i <= 6; i++) {
             categorySelect[i].style.backgroundColor = "transparent";
         }
         categorySelect[0].style.backgroundColor = "transparent";
+        document.getElementById("priceset-title").style.display = 'none';
+        document.getElementById("price-input").style.display = 'none';
+        document.getElementById("price-input").value = '';
     }
 }); 
 categorySelect[2].addEventListener("click", (e) => {
@@ -31,9 +67,12 @@ categorySelect[2].addEventListener("click", (e) => {
         for (var i = 0; i <= 1; i++) {
             categorySelect[i].style.backgroundColor = "transparent";
         }
-        for (var i = 3; i <= 4; i++) {
+        for (var i = 3; i <= 6; i++) {
             categorySelect[i].style.backgroundColor = "transparent";
         }
+        document.getElementById("priceset-title").style.display = 'none';
+        document.getElementById("price-input").style.display = 'none';
+        document.getElementById("price-input").value = '';
     }
 }); 
 categorySelect[3].addEventListener("click", (e) => {
@@ -43,7 +82,12 @@ categorySelect[3].addEventListener("click", (e) => {
         for (var i = 0; i <= 2; i++) {
             categorySelect[i].style.backgroundColor = "transparent";
         }
-        categorySelect[4].style.backgroundColor = "transparent";
+        for (var i = 4; i <= 6; i++) {
+            categorySelect[i].style.backgroundColor = "transparent";
+        }
+        document.getElementById("priceset-title").style.display = 'none';
+        document.getElementById("price-input").style.display = 'none';
+        document.getElementById("price-input").value = '';
     }
 }); 
 categorySelect[4].addEventListener("click", (e) => {
@@ -53,6 +97,37 @@ categorySelect[4].addEventListener("click", (e) => {
         for (var i = 0; i <= 3; i++) {
             categorySelect[i].style.backgroundColor = "transparent";
         }
+        for (var i = 5; i <= 6; i++) {
+            categorySelect[i].style.backgroundColor = "transparent";
+        }
+        document.getElementById("priceset-title").style.display = 'none';
+        document.getElementById("price-input").style.display = 'none';
+        document.getElementById("price-input").value = '';
+    }
+});
+categorySelect[5].addEventListener("click", (e) => {
+    if (categorySelectValue != "판매"){
+        e.target.style.backgroundColor = "#FFEFD5";
+        categorySelectValue = "판매";
+        for (var i = 0; i <= 4; i++) {
+            categorySelect[i].style.backgroundColor = "transparent";
+        }
+        categorySelect[6].style.backgroundColor = "transparent";
+        document.getElementById("priceset-title").style.display = '';
+        document.getElementById("price-input").style.display = '';
+
+    }
+});
+categorySelect[6].addEventListener("click", (e) => {
+    if (categorySelectValue != "구매"){
+        e.target.style.backgroundColor = "#FFEFD5";
+        categorySelectValue = "구매";
+        for (var i = 0; i <= 5; i++) {
+            categorySelect[i].style.backgroundColor = "transparent";
+        }
+        document.getElementById("priceset-title").style.display = '';
+        document.getElementById("price-input").style.display = '';
+
     }
 });
 document.getElementById("post-confirm").onclick = function writeButtonAction() {
@@ -89,4 +164,5 @@ $(document).ready(function() {
     // 기본 로드 폰트: 나눔고딕으로 설정
     $('.note-current-fontname').css('font-family','Nanum Gothic').text('Nanum Gothic');
     $('.note-editable').css('font-family','Nanum Gothic');
+    $('.note-editable').css('font-size','18px');
 });

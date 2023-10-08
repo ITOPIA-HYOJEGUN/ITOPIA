@@ -44,8 +44,6 @@ h4 {
  .post-category > h6 {
     font-size: 14px;
  }
-
-
  .list-group-horizontal {
     display: flex;
     flex-direction: row;
@@ -55,7 +53,6 @@ h4 {
  .list-group-horizontal > .list-group-item {
     border-color: #d1d1d1;
     color: black;
-    cursor: pointer;
  }
  .list-group-horizontal > .end-item {
     border-top-right-radius: 4px;
@@ -65,10 +62,7 @@ h4 {
 #post-confirm {
     margin-left: auto;
 }
-#summernote {
-    margin-bottom: 10px;
 
-}
 /* 글쓰기버튼 */
 .write {
     z-index: 3; /* z-index로 좀 더 앞으로 내보내줌: 링크들 클릭 안되는거 방지*/
@@ -78,15 +72,6 @@ h4 {
 main nav {
     z-index: 3;
 }
-.priceset-area > h6 {
-    font-size: 14px;
-    margin-top: 8px;
- }
- #price-input {
-    width: 200px;
-
- }
-
 /* 반응형 모바일 디자인용 (추후에 수정) */
 @media (max-width: 768px) {
 
