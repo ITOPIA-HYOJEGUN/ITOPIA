@@ -26,7 +26,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
     <!-- 페이지 작동을 위한 JS 추가 -->
-    <script src="./../js/index.js"></script>
 
 </head>
 
@@ -40,28 +39,26 @@
 
         </div>
         <!-- 유저 정보 창 -->
+        <div class="main-flex">
+
+        <!-- 로고 이미지 -->
+        <a href="#"><img src="./../src/IdolFan.png" id="MainLogo"></a>
+        <!-- 검색창 -->
+        <div class='search-menu'>
+            <input class="form-control searchbox" type="text" placeholder="게시글 검색" maxlength="300">
+            <button type="submit">
+                <img src="./../src/Search.svg" id="SearchBtn" tabindex="2">
+            </button>
+        </div>
+
         <div class="UserInfo">
             <a href="#">
                 <img src="./../src/UserIcon.svg" id="UserLogo">
             </a>
-            <div class="UserName">
+            <span class="UserName">
                 <a href="./login.html" id="UserName">로그인하세요.</a>
-            </div>
-            
+            </span>
         </div>
-        <!-- 로고 이미지 -->
-        <a href="./index.html"><img src="./../src/IdolFan.png" id="MainLogo"></a>
-        <!-- 검색창 -->
-        <form>
-            <fieldset>
-                <div class="SearchMenu">
-                    <input type="text" id="SearchBox" maxlength="225" tabindex="1">
-                    <button type="submit">
-                        <img src="./../src/Search.svg" id="SearchBtn" tabindex="2">
-                    </button>
-                </div>
-            </fieldset>
-        </form>
         <!-- Navbar/메뉴창, Bootstrap 이용 -->
         <nav class="navbar navbar-expand">
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -91,6 +88,7 @@
                 </ul>
             </div>
         </nav>
+        </div>
     </header>
 
 
@@ -103,7 +101,7 @@
                 <!-- 나중에 수정 필요. 1. 데이터베이스에서 자동으로 리스트 불러오기 / 2. JS로 어디서 글쓰기 버튼을 눌렀는지에 따라 자동 선택 -->
                 <div class="select">
                     <label for="boydol-list" class="form-label">아이돌 그룹 선택</label>
-                    <input class="form-control" list="datalistOptions" id="boydol-list" placeholder="원하는 아이돌을 선택하세요.">  
+                    <input class="form-control" list="datalistOptions" id="boydol-list" placeholder="원하는 아이돌을 검색/선택하세요.">  
                     <datalist id="datalistOptions">
                         <option value="BTS">
                         <option value="빅뱅">
@@ -139,20 +137,29 @@
                     <a class="list-group-item post-category-item">후기</a>
                     <a class="list-group-item post-category-item">판매</a>
                     <a class="list-group-item post-category-item end-item">구매</a>
-                    <button type="button" class="btn btn-outline-secondary" id="post-confirm" onclick="location.href='#';">글 게시</button>
+                    <button type="button" class="btn btn-secondary" id="post-confirm" onclick="location.href='#';">글 게시</button>
                 </ul>
                 <div class="priceset-area">
                     <h6 id="priceset-title">가격</h6>
-                    <input class="form-control" id="price-input" type="text" placeholder="가격을 입력하세요." onkeyup="priceFormat()" maxlength="17">
+                    <h6 id="sub-category-title">물품 카테고리</h6>
+                    <input class="form-control" id="price-input" type="text" placeholder="가격을 입력하세요." onkeyup="priceFormat()" onkeydown="priceFormat()" maxlength="17">
+                    <ul class="list-group list-group-horizontal" id="sub-category">
+                        <a class="list-group-item sub-category-item">포토카드</a>
+                        <a class="list-group-item sub-category-item">공식 굿즈</a>
+                        <a class="list-group-item sub-category-item end-item">비공식 굿즈</a>
+                    </ul>
                 </div>
+
             </div>
             
             <div id="summernote"></div>
+
         </div>
 
     </main>
 
     <footer>
+
         <div class="FooterMenu">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><a href="#">이메일 문의</a></li>

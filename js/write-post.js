@@ -3,11 +3,6 @@
 let categorySelect = document.getElementsByClassName("post-category-item");
 let categorySelectValue = "None";
 
-document.getElementById("priceset-title").style.display = 'none';
-document.getElementById("price-input").style.display = 'none';
-
-
-
 
 categorySelect[0].addEventListener("click", (e) => {
     if (categorySelectValue != "잡담"){
@@ -16,9 +11,12 @@ categorySelect[0].addEventListener("click", (e) => {
         for (var i = 1; i <= 6; i++) {
             categorySelect[i].style.backgroundColor = "transparent";
         }
-        document.getElementById("priceset-title").style.display = 'none';
-        document.getElementById("price-input").style.display = 'none';
         document.getElementById("price-input").value = '';
+        document.getElementsByClassName("priceset-area")[0].style.display = 'none';
+        subCategorySelectValue = "None";
+        for (var j = 0; j <= 2; j++) {
+            subCategorySelect[j].style.backgroundColor = "transparent";
+        }
     }
 
 });
@@ -30,9 +28,12 @@ categorySelect[1].addEventListener("click", (e) => {
             categorySelect[i].style.backgroundColor = "transparent";
         }
         categorySelect[0].style.backgroundColor = "transparent";
-        document.getElementById("priceset-title").style.display = 'none';
-        document.getElementById("price-input").style.display = 'none';
         document.getElementById("price-input").value = '';
+        document.getElementsByClassName("priceset-area")[0].style.display = 'none';
+        subCategorySelectValue = "None";
+        for (var j = 0; j <= 2; j++) {
+            subCategorySelect[j].style.backgroundColor = "transparent";
+        }
     }
 }); 
 categorySelect[2].addEventListener("click", (e) => {
@@ -45,9 +46,12 @@ categorySelect[2].addEventListener("click", (e) => {
         for (var i = 3; i <= 6; i++) {
             categorySelect[i].style.backgroundColor = "transparent";
         }
-        document.getElementById("priceset-title").style.display = 'none';
-        document.getElementById("price-input").style.display = 'none';
         document.getElementById("price-input").value = '';
+        document.getElementsByClassName("priceset-area")[0].style.display = 'none';
+        subCategorySelectValue = "None";
+        for (var j = 0; j <= 2; j++) {
+            subCategorySelect[j].style.backgroundColor = "transparent";
+        }
     }
 }); 
 categorySelect[3].addEventListener("click", (e) => {
@@ -60,9 +64,12 @@ categorySelect[3].addEventListener("click", (e) => {
         for (var i = 4; i <= 6; i++) {
             categorySelect[i].style.backgroundColor = "transparent";
         }
-        document.getElementById("priceset-title").style.display = 'none';
-        document.getElementById("price-input").style.display = 'none';
         document.getElementById("price-input").value = '';
+        document.getElementsByClassName("priceset-area")[0].style.display = 'none';
+        subCategorySelectValue = "None";
+        for (var j = 0; j <= 2; j++) {
+            subCategorySelect[j].style.backgroundColor = "transparent";
+        }
     }
 }); 
 categorySelect[4].addEventListener("click", (e) => {
@@ -75,9 +82,13 @@ categorySelect[4].addEventListener("click", (e) => {
         for (var i = 5; i <= 6; i++) {
             categorySelect[i].style.backgroundColor = "transparent";
         }
-        document.getElementById("priceset-title").style.display = 'none';
-        document.getElementById("price-input").style.display = 'none';
+
         document.getElementById("price-input").value = '';
+        document.getElementsByClassName("priceset-area")[0].style.display = 'none';
+        subCategorySelectValue = "None";
+        for (var j = 0; j <= 2; j++) {
+            subCategorySelect[j].style.backgroundColor = "transparent";
+        }
     }
 });
 categorySelect[5].addEventListener("click", (e) => {
@@ -88,8 +99,7 @@ categorySelect[5].addEventListener("click", (e) => {
             categorySelect[i].style.backgroundColor = "transparent";
         }
         categorySelect[6].style.backgroundColor = "transparent";
-        document.getElementById("priceset-title").style.display = '';
-        document.getElementById("price-input").style.display = '';
+        document.getElementsByClassName("priceset-area")[0].style.display = '';
 
     }
 });
@@ -100,18 +110,62 @@ categorySelect[6].addEventListener("click", (e) => {
         for (var i = 0; i <= 5; i++) {
             categorySelect[i].style.backgroundColor = "transparent";
         }
-        document.getElementById("priceset-title").style.display = '';
-        document.getElementById("price-input").style.display = '';
+        document.getElementsByClassName("priceset-area")[0].style.display = '';
 
     }
 });
+// 글쓰기 버튼 액션
 document.getElementById("post-confirm").onclick = function writeButtonAction() {
     if (categorySelectValue == "None"){
-        alert("게시글 카테고리를 선택해주세요.")
-        console.log(categorySelectValue)
+        alert("게시글 카테고리를 선택해주세요.");
+    }
+    else if (categorySelectValue == "판매" || categorySelectValue == "구매") {
+        if (subCategorySelectValue == "None") {
+            alert("물품 카테고리를 선택해주세요.");
+        }
+        else {
+            console.log(subCategorySelectValue);
+        }
+
+        
     }
     
 }
+
+// 카테고리 선택할 시, 강조해주는 코드
+
+let subCategorySelect = document.getElementsByClassName("sub-category-item");
+let subCategorySelectValue = "None";
+
+subCategorySelect[0].addEventListener("click", (e) => {
+    if (subCategorySelectValue != "포토카드"){
+        e.target.style.backgroundColor = "#FFEFD5";
+        subCategorySelectValue = "포토카드";
+        for (var i = 1; i <= 2; i++) {
+            subCategorySelect[i].style.backgroundColor = "transparent";
+        }
+    }
+
+});
+subCategorySelect[1].addEventListener("click", (e) => {
+    if (subCategorySelectValue != "공식 굿즈"){
+        e.target.style.backgroundColor = "#FFEFD5";
+        subCategorySelectValue = "공식 굿즈";
+        subCategorySelect[0].style.backgroundColor = "transparent";
+        subCategorySelect[2].style.backgroundColor = "transparent";
+    }
+}); 
+subCategorySelect[2].addEventListener("click", (e) => {
+    if (subCategorySelectValue != "비공식 굿즈"){
+        e.target.style.backgroundColor = "#FFEFD5";
+        subCategorySelectValue = "비공식 굿즈";
+        for (var i = 0; i <= 1; i++) {
+            subCategorySelect[i].style.backgroundColor = "transparent";
+        }
+    }
+}); 
+
+
 // Summernote Script
 $(document).ready(function() {
     $('#summernote').summernote({
@@ -144,6 +198,8 @@ $(document).ready(function() {
 });
 
 // 가격 입력 함수
+document.getElementsByClassName("priceset-area")[0].style.display = 'none';
+
 function priceFormat() {
     let check = /[^₩,0-9]/
     if (check.test(document.getElementById("price-input").value)) {

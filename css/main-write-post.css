@@ -11,6 +11,13 @@ main {
 h4 {
     margin-top: 50px;
 }
+/* Placeholder 크기 강제조정 */
+.searchbox::-webkit-input-placeholder {
+    font-size: 16px !important;
+ }
+ ::-webkit-input-placeholder {
+    font-size: 13px !important;
+ }
 .post-area {
     display: flex;
     flex-direction: column;
@@ -27,14 +34,10 @@ h4 {
 }
 #title-input {
     margin-left: 10px;
-    height: 38px;
+    height: 36px;
     margin-top: auto;
 }
-/* Bootstrap Placeholder 사이즈 강제 조정 */
-::-webkit-input-placeholder {
-    font-size: 13px!important;
- }
- .post-category {
+.post-category {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
@@ -44,8 +47,6 @@ h4 {
  .post-category > h6 {
     font-size: 14px;
  }
-
-
  .list-group-horizontal {
     display: flex;
     flex-direction: row;
@@ -78,15 +79,29 @@ h4 {
 main nav {
     z-index: 3;
 }
+.priceset-area {
+    display: grid;
+    grid-template-rows: repeat(2, 35px);
+    grid-template-columns: 200px auto;
+
+}
 .priceset-area > h6 {
     font-size: 14px;
     margin-top: 8px;
  }
  #price-input {
     width: 200px;
-
  }
+#sub-category-title {
+    margin-left: 10px;
+}
 
+#sub-category {
+    margin-left: 10px;
+}
+.sub-category-item {
+    height: 35px;
+}
 /* 반응형 모바일 디자인용 (추후에 수정) */
 @media (max-width: 768px) {
 

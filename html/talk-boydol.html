@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="./../css/header.css">
     <link rel="stylesheet" href="./../css/main-talk-boydol.css">
     <link rel="stylesheet" href="./../css/footer.css">
-    <script src="./../js/index.js"></script>
 
     <!-- 기본폰트 설정 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +22,6 @@
 </head>
 
 <body>
-
     <header>
         <!-- 링크들로 연결될 곳 -->
         <div class="Links">
@@ -33,28 +31,26 @@
 
         </div>
         <!-- 유저 정보 창 -->
+        <div class="main-flex">
+
+        <!-- 로고 이미지 -->
+        <a href="#"><img src="./../src/IdolFan.png" id="MainLogo"></a>
+        <!-- 검색창 -->
+        <div class='search-menu'>
+            <input class="form-control" type="text" placeholder="게시글 검색" maxlength="300">
+            <button type="submit">
+                <img src="./../src/Search.svg" id="SearchBtn" tabindex="2">
+            </button>
+        </div>
+
         <div class="UserInfo">
             <a href="#">
                 <img src="./../src/UserIcon.svg" id="UserLogo">
             </a>
-            <div class="UserName">
+            <span class="UserName">
                 <a href="./login.html" id="UserName">로그인하세요.</a>
-            </div>
-            
+            </span>
         </div>
-        <!-- 로고 이미지 -->
-        <a href="./index.html"><img src="./../src/IdolFan.png" id="MainLogo"></a>
-        <!-- 검색창 -->
-        <form>
-            <fieldset>
-                <div class="SearchMenu">
-                    <input type="text" id="SearchBox" maxlength="225" tabindex="1">
-                    <button type="submit">
-                        <img src="./../src/Search.svg" id="SearchBtn" tabindex="2">
-                    </button>
-                </div>
-            </fieldset>
-        </form>
         <!-- Navbar/메뉴창, Bootstrap 이용 -->
         <nav class="navbar navbar-expand">
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -77,13 +73,14 @@
                         <a href="#" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">I*TALK</a>
                         <ul class="dropdown-menu">
                             <li><a href="./talk-boydol.html" class="dropdown-item">BOY GROUP</a></li>
-                            <li><a href="#"class="dropdown-item">GIRL GROUP</a></li>
+                            <li><a href="#" class="dropdown-item">GIRL GROUP</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown"><a href="#">더보기</a></li>
                 </ul>
             </div>
         </nav>
+        </div>
     </header>
 
 
@@ -179,7 +176,7 @@
                          </div>
                          <div class="col-sm-6">
                             <div class="card-body">
-                                <a href="#" class="card-title">EXO 포토카드 판매합니다.ㅇasddfdf</a>
+                                <a href="./show-post.html" class="card-title">EXO 포토카드 판매합니다.ㅇasddfdf</a>
                                 <a href="#" class="card-text content">상태 좋습니다 어쩌구... 택포 12만원에 팝니다. 네고는 사양입니다.ddddㅇ럼ㄴㅇ;ㅣ라먼ㄹ이;ㅏㅁ널아ㅣ;ㅁ넝리ㅏㅁㄴ러미ㅔ날엄니;ㅏㅇㄻㄴ리;만러;니럼니라ㅓㅁ니ㅏㄹㅇㄴㅇddddddddddddddddddd</a>
                                 <p href="#" class="card-text price"><a href="#">#EXO</a><span class="ThumbCount"><img src="./../src/Heart.svg">70</span><span class="CommentCount"><img src="./../src/Comment.png">6</span></span><span class="date">15:05</span></p>
                             </div>

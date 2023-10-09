@@ -38,28 +38,26 @@
 
         </div>
         <!-- 유저 정보 창 -->
+        <div class="main-flex">
+
+        <!-- 로고 이미지 -->
+        <a href="#"><img src="./../src/IdolFan.png" id="MainLogo"></a>
+        <!-- 검색창 -->
+        <div class='search-menu'>
+            <input class="form-control searchbox" type="text" placeholder="게시글 검색" maxlength="300">
+            <button type="submit">
+                <img src="./../src/Search.svg" id="SearchBtn" tabindex="2">
+            </button>
+        </div>
+
         <div class="UserInfo">
             <a href="#">
                 <img src="./../src/UserIcon.svg" id="UserLogo">
             </a>
-            <div class="UserName">
+            <span class="UserName">
                 <a href="./login.html" id="UserName">로그인하세요.</a>
-            </div>
-            
+            </span>
         </div>
-        <!-- 로고 이미지 -->
-        <a href="./index.html"><img src="./../src/IdolFan.png" id="MainLogo"></a>
-        <!-- 검색창 -->
-        <form>
-            <fieldset>
-                <div class="SearchMenu">
-                    <input type="text" id="SearchBox" maxlength="225" tabindex="1">
-                    <button type="submit">
-                        <img src="./../src/Search.svg" id="SearchBtn" tabindex="2">
-                    </button>
-                </div>
-            </fieldset>
-        </form>
         <!-- Navbar/메뉴창, Bootstrap 이용 -->
         <nav class="navbar navbar-expand">
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -89,6 +87,7 @@
                 </ul>
             </div>
         </nav>
+        </div>
     </header>
 
 
@@ -130,17 +129,21 @@
         </div>
 
         <hr class="title-divider">
+
+        <span type="button" class="btn btn-secondary" id="backtolist-button" onclick="location.href='./talk-boydol.html';">
+            목록으로
+        </span>
             
         <div class="reply-area">
             <div class="filtering">
                 <span id="comment-cnt">총 댓글수: 999</span>                    
                 <span class="dropdown">
-                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        추천비율순  
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="sortByMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        추천비율순
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <li class="dropdown-item" href="#">추천비율순</li>
-                      <li class="dropdown-item" href="#">최신순</li>
+                    <ul class="dropdown-menu sortby-menu" aria-labelledby="sortByMenuButton">
+                      <li class="dropdown-item sortby-item" href="#">추천비율순</li>
+                      <li class="dropdown-item sortby-item" href="#">최신순</li>
                     </ul>
                 </span> 
             </div>
@@ -236,5 +239,5 @@
 
 </body>
 <!-- HTML 로드 완료 후 삽일될 JS -->
-
+<script src="./../js/show-post.js"></script>
 </html>
