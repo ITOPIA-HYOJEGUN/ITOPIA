@@ -107,8 +107,20 @@ div.card {
     height: 117px;
     margin-bottom: 22px; 
     margin-top: 22px;    /* 카드 간 여백 */
-    border-style: none;
+}
+#SubContainer1 {
     box-shadow: 0px 2px 13px -5px #555555;
+    border-style: none;
+}
+#SubContainer1_Card {
+    border-style: solid #555555;
+}
+#SubContainer2 {
+    box-shadow: 0px 2px 13px -5px #555555;
+    border-style: none;
+}
+#SubContainer2_Card {
+    border-style: solid #555555;
 }
 /* 게시판 카드들 이미지 */
 .card-img {

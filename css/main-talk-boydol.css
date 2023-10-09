@@ -94,9 +94,15 @@ div.card {
     /* 카드 크기 조정 */
     width: 1000px;
     height: 117px;
-    margin: 10px;     /* 카드 간 여백 */
-    border-style: none;
+    margin-bottom: 10px; 
+    margin-top: 22px;    /* 카드 간 여백 */
+}
+#SubContainer1 {
     box-shadow: 0px 2px 13px -5px #555555;
+    border-style: none;
+}
+#SubContainer1_Card {
+    border-style: solid #555555;
 }
 .card-img {
     margin: 0px;
