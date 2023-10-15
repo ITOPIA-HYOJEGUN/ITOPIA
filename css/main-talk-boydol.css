@@ -19,6 +19,7 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    
     /* 메뉴 뒤에 배경화면 넣는 코드: 일단 주석화 */
     /* background-image: url('/src/BoyTalkBG.png');
     background-repeat: no-repeat;
@@ -27,10 +28,11 @@ main {
 }
 .list-group-flush {
     text-align: center;
+    
 }
 main .list-group-item {
     background-color: transparent;
-    font-size: 14px;
+    font-size: 0.9em;
     font-weight: 600;
     color :#707070;
 }
