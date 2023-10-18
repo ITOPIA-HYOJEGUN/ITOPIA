@@ -203,7 +203,7 @@ document.getElementsByClassName("priceset-area")[0].style.display = 'none';
 function priceFormat() {
     let check = /[^₩,0-9]/
     if (check.test(document.getElementById("price-input").value)) {
-        document.getElementById("price-input").value = document.getElementById("price-input").value.slice(0, -1);
+        document.getElementById("price-input").value = '';
     }
 
     if (document.getElementById("price-input").value == ''){
