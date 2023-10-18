@@ -1,21 +1,16 @@
-// 가격 입력 함수
-document.getElementById("form-area").style.display = 'none';
-
-
 function termsAgreedCheck() {
-    if (document.getElementById("agree1").checked == true && document.getElementById("agree2").checked == true) {
-        document.getElementById("form-area").style.display = '';
+    if (document.getElementById("agree1").checked != true || document.getElementById("agree2").checked != true) {
+
+        alert("약관에 모두 동의하셔야 회원가입이 가능합니다.");
+        return false;
+        
     }
     else {
-        document.getElementById("form-area").style.display = 'none';
-        document.getElementById('input-ID').value = ''
-        document.getElementById('input-nickname').value = ''
-        document.getElementById('input-email').value = ''
-        document.getElementById('input-PW').value = ''
-        document.getElementById('input-PW2').value = ''
+        return true;
     }
     
 }
+
 
 
 
