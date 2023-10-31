@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+
+
+<head>
+    <title>I*TALK 걸그룹 게시판</title>
+    <meta charset="UTF-8">
+    <!-- 반응형 웹을 위한 코드 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap 5.3.2 CSS 추가 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./../css/header.css">
+    <link rel="stylesheet" href="./../css/main-talk-boydol.css">
+    <link rel="stylesheet" href="./../css/footer.css">
+
+    <!-- 기본폰트 설정 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5.3.2 JS 추가 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <!-- 링크들로 연결될 곳 -->
+        <div class="Links">
+            <a href="#" class="LinkText">회원가입</a>
+            <a href="#" class="LinkText">마이페이지</a>
+            <a href="#" class="LinkText">고객문의</a>
+
+        </div>
+        <!-- 유저 정보 창 -->
+        <div class="main-flex">
+
+        <!-- 로고 이미지 -->
+        <a href="#"><img src="./../src/IdolFan.png" id="MainLogo"></a>
+        <!-- 검색창 -->
+        <div class='search-menu'>
+            <input class="form-control" type="text" placeholder="게시글 검색" maxlength="300">
+            <button type="submit">
+                <img src="./../src/Search.svg" id="SearchBtn" tabindex="2">
+            </button>
+        </div>
+
+        <div class="UserInfo">
+            <a href="#">
+                <img src="./../src/UserIcon.svg" id="UserLogo">
+            </a>
+            <span class="UserName">
+                <a href="./login.html" id="UserName">로그인하세요.</a>
+            </span>
+        </div>
+        <!-- Navbar/메뉴창, Bootstrap 이용 -->
+        <nav class="navbar navbar-expand">
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">PHOTOCARD</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-item">BOY GROUP</a></li>
+                            <li><a href="#"class="dropdown-item">GIRL GROUP</a></li>
+                            </ul>
+                    </li>
+                    <li class="nav-item dropdown">                        
+                        <a href="#" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">GOODS</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-item">공식 굿즈</a></li>
+                            <li><a href="#" class="dropdown-item">비공식 굿즈</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">                        
+                        <a href="#" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">I*TALK</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./talk-boydol.html" class="dropdown-item">BOY GROUP</a></li>
+                            <li><a href="#" class="dropdown-item">GIRL GROUP</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown"><a href="#">더보기</a></li>
+                </ul>
+            </div>
+        </nav>
+        </div>
+    </header>
+
+
+    <main>
+        
+        <p class="MainTitle">남자 아이돌 게시판</p>
+        <form action = "" accept-charset="utf-8" name='idol-name-select' method="GET">
+            <div class="BoyDolMenu">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">블랙핑크</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">에스파</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">2PM</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">투모로우 바이투게더</a></li>
+                </ul>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">빅뱅</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">에이티즈</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">DKZ</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">동방신기</a></li>
+                </ul>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">NCT</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">스트레이키즈</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">비투비</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">WINNER</a></li>
+                </ul>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">세븐틴</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">샤이니</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">트레저</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">인피니트</a></li>
+                </ul>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">EXO</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">온앤오프</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">아스트로</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">워너원</a></li>
+                </ul>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">몬스타엑스</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">엔하이픈</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">빅스</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">피네이션</a></li>
+                </ul>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">더보이즈</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">SF9</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">미래소년</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">펜타곤</a></li>
+                </ul>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">하이라이트</li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">갓세븐</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">베리베리</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">크나큰</a></li>
+                </ul>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">골든차일드</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">블락비</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">FT아일랜드</a></li>
+                    <li class="list-group-item idol-name"><a href="#" class="idol-name">B1A4</a></li>
+                </ul>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="#" class="idol-name">크래비티</a></li>
+                    <li class="list-group-item"><a href="#" class="idol-name">탄</a></li>
+                    <li class="list-group-item"><a href="#" class="idol-name">iKON</a></li>
+                    <li class="list-group-item"><a href="#" class="idol-name">빅톤</a></li>
+                </ul>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="#" class="idol-name">신화</a></li>
+                    <li class="list-group-item"><a href="#" class="idol-name">위아이</a></li>
+                    <li class="list-group-item"><a href="#" class="idol-name">원어스</a></li>
+                    <li class="list-group-item"><a href="#" class="idol-name">틴탑</a></li>
+                </ul>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="#" class="idol-name">나인아이</a></li>
+                    <li class="list-group-item"><a href="#" class="idol-name">이펙스</a></li>
+                    <li class="list-group-item"><a href="#" class="idol-name">위더스</a></li>
+                    <li class="list-group-item"><a href="#" class="idol-name">BAE173</a></li>
+                </ul>
+            </div>
+        </form>
+        
+        <div class="container-sm" id="MainContainer">
+            <!-- Card로 Sub Container 빌드 -->
+            <div class="card" id="SubContainer1">
+                <h5 class="SubTitle">걸그룹 게시판 인기글</h5>
+                <div type="button" class="btn btn-outline-secondary write" onclick="location.href='./write-post.html';">
+                    글쓰기
+                </div>
+                <div class="card" id="SubContainer1_Card">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <a href="#"><img class="card-img" src="./../src/IdolFan.png" alt="..."></a>
+                         </div>
+                         <div class="col-sm-6">
+                            <div class="card-body">
+                                <a href="./show-post.html" class="card-title">EXO 포토카드 판매합니다.ㅇasddfdf</a>
+                                <a href="#" class="card-text content">상태 좋습니다 어쩌구... 택포 12만원에 팝니다. 네고는 사양입니다.ddddㅇ럼ㄴㅇ;ㅣ라먼ㄹ이;ㅏㅁ널아ㅣ;ㅁ넝리ㅏㅁㄴ러미ㅔ날엄니;ㅏㅇㄻㄴ리;만러;니럼니라ㅓㅁ니ㅏㄹㅇㄴㅇddddddddddddddddddd</a>
+                                <p href="#" class="card-text price"><a href="#">#EXO</a><span class="ThumbCount"><img src="./../src/Heart.svg">70</span><span class="CommentCount"><img src="./../src/Comment.png">6</span></span><span class="date">15:05</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav aria-label="...">
+                    <ul class="pagination">
+                      <li class="page-item disabled">
+                        <a class="page-link">Previous</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">2</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                      </li>
+                    </ul>
+                  </nav>
+            </div>
+        </div>
+    
+
+    </main>
+
+    <footer>
+        <div class="FooterMenu">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="#">이메일 문의</a></li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="#">개인정보취급방침</a></li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="#">사업자정보확인</a></li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="#">권리 침해 신고</a></li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="#">모바일</a></li>
+            </ul>
+        </div>
+        <div class="FooterInfo">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">ITOPIA</li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">서울시 강서구 *** </li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">사업자등록번호 : 000-00-00000</li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">통신판매업신고 : 2000-ㅇㅇㅇㅇ-00000</li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">대표 : 이근우</li>
+            </ul> 
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">TEL : 000-0000-0000</li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">E-mail : xe165903@gmail.com</li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+<!-- HTML 로드 후 실행될 JS -->
+<script src="./../js/I-talk.js"></script>
+
+</html>
