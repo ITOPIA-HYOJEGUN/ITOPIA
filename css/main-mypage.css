@@ -23,7 +23,7 @@ main {
     align-items: center;
     min-height: 1000px;
     max-height: 1000px;
-    min-width: 550px;
+    width: 1140px;
     box-shadow: 0px 2px 13px -5px #555555;
     border-style: none;
     position: relative;
@@ -36,7 +36,9 @@ main h5 {
 }
 /* 마이페이지 매뉴*/
 .menu {
-    width: 1200px;
+    width: 1140px;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
 }
 .nav-link {
@@ -188,6 +190,54 @@ main h5 {
     margin-right: 10px;
     margin-left: 10px;
 }
+.post-header {
+    display: flex;
+    flex-direction: row;
+    width: 640px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.post-header-icon {
+    width: 20px;
+    height: 20px;
+}
+.divider-xsmall {
+    border-width: 0px;
+    border-left-width: 1px;
+    border-color:#707070;
+    border-style: solid;
+    height: 25px;
+    position: relative;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.select-option-btn {
+    font-size: 13px;
+    margin-right: 10px;
+}
+#post-delete-btn {
+    margin-left: auto;
+}
+.post-sort-dropdown {
+    margin-left: auto;
+}
+#post-sort-dropdown-btn {
+    margin-right: 15px;
+}
+.select-btn {
+    padding: 5px;
+    cursor: pointer;
+}
+.pushed {
+    background: linear-gradient(71deg, rgba(229,240,255,1) 0%, rgba(245,235,255,1) 84%, rgba(255,233,233,1) 100%);
+    border-radius: 10px;
+    font-weight: 600;
+}
+.select-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
+}
 #talk-post-info {
     display: flex;
     flex-direction: column;
@@ -204,9 +254,8 @@ main h5 {
     align-items: flex-start;
 }
 .talk-table-title {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
-    margin-bottom: 10px;
 }
 .post-card {
     display: flex;
@@ -231,19 +280,51 @@ main h5 {
     border-top-color: #dfdfdf;
 }
 .post-title {
-    display: flex;
-    flex-direction: row;
+    /* 제목 텍스트 길어지면 잘리는거 위한 코드 */
+    width: 500px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-weight: 600;
+}
+.post-checkbox {
+    position: relative;
+    bottom: 20px;
+    margin-left: auto;
+    padding: 0px;
+}
+.form-check-input {
+    border-color: #4291db;
+    border-width: 1px;
+}
+.more-menu-btn {
+    position: relative;
+    bottom: 20px;
+    padding: 0px;
+    background-color: transparent;
+    width: 18px;
+    height: 18px;
+    margin-left: auto;
+    border-style: none;
+}
+.more-menu-icon {
+    width: 18px;
+    height: 18px;
 }
 .post-detail {
     display: flex;
     flex-direction: row;
-    width: 620px;
+    width: 630px;
     font-size: 13px;
+    margin-top: 2px;
 }
 .post-detail-icon {
     width: 10px;
     height: 10px;
+    margin-right: 2px;
+    position: relative;
+    bottom: 1px;
 }
 .post-heart-count {
     margin-left: 7px;
@@ -255,6 +336,28 @@ main h5 {
 .post-reply-count {
     margin-left: 7px;
 }
+.post-view-count {
+    margin-left: 7px;
+}
 .post-regdate {
     margin-left: auto;
+}
+.sales-status-badge {
+    margin-right: 5px;
+    border-radius: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 6px;
+    padding-right: 6px;
+    position: relative;
+    bottom: 2px;
+    font-weight: 600;
+}
+.reserved {
+    background-color: #77c4bd;
+    color: black;
+}
+.sold-out {
+    background-color: #dfdfdf;
+    color: #727272;
 }

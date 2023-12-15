@@ -1,0 +1,191 @@
+/* DM 기능 관련 CSS */
+
+#DM-window {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed;
+    margin-bottom: 22px;
+    padding: 0px;
+    bottom: 90px;
+    right: 50px;
+    width: 400px;
+    height: 550px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 9;
+}
+#header {
+    display: flex;
+    justify-content: flex-start;
+    background-color: white;
+    border-color: #c9c9c9;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 645px;
+    width: 400px;
+    height: 70px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 3px 7px -4px #555555;
+    z-index: 10;
+}
+#DM-personal-icon {
+    margin-left: 20px;
+    width: 55px;
+    height: 55px;
+}
+#DM-personal-icon img {
+    margin-top: 5px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: #909090;
+    position: relative;
+}
+#DM-nickname {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 17px;
+    font-weight: 600;
+}
+.menu-btn {
+    border-style: none;
+    background-color: transparent;
+    margin-left: auto;
+    margin-bottom: 10px;
+}
+#close {
+    margin-left: 10px;
+    margin-right: 20px;
+}
+.menu-btn img {
+    width: 25px;
+    height: 25px;
+}
+#close img {
+    width: 22px;
+    height: 22px;
+}
+/* 채팅방 날짜 */
+.DM-date {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color:rgb(48, 95, 165);
+    margin-bottom: 30px;
+    
+}
+/* 말풍선 프레임 설정 */
+.DM-from {
+    display: flex;
+    flex-direction: row;
+}
+.DM-to {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.sentdate {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 5px;
+    font-size: 11px;
+    color:#909090;
+}
+/* 말풍선 설정 */
+.balloon-from {
+    display: block;
+    position:relative;
+    margin-left: 20px;
+    max-width: 230px;
+    height: auto;
+    background:#eeeeee;
+    color: #353535;
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+.balloon-from:after {
+    border-top: 10px solid #eeeeee;
+    border-left: 10px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 0px solid transparent;
+    content:"";
+    position:absolute;
+    top:10px;
+    left:-8px;
+}
+.balloon-to {
+    display: block;
+    position:relative;
+    margin-right: 20px;
+    max-width: 230px;
+    height: auto;
+    background:#e0e0e0;
+    color: #353535;
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+.balloon-to:after {
+    border-top: 10px solid #e0e0e0;
+    border-left: 0px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 0px solid transparent;
+    content:"";
+    position:absolute;
+    top:10px;
+    right:-8px;
+}
+.special-from {
+    background: rgba(200,222,255,1);
+    font-weight: 600;
+}
+.special-from:after {
+    border-top: 10px solid  rgba(200,222,255,1);
+    border-left: 10px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 0px solid transparent;
+}
+.special-to {
+    display: block;
+    background: rgba(200,222,255,1);
+    font-weight: 600;
+}
+.special-to:after {
+    border-top: 10px solid  rgba(200,222,255,1);
+    border-left: 0px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 0px solid transparent;
+}
+#sending-window {
+    position: fixed;
+    bottom: 33px;
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+}
+#sending-textarea {
+    padding: 10px;
+    border-color: #c7c7c7;
+    width: 344px;
+    height: 80px;
+    resize: none;
+}
+#submit-message {
+    background-color: #6c757d;
+    font-size: 15px;
+    width: 56px;
+}
+.dropdown-menu {
+    z-index: 9;
+}

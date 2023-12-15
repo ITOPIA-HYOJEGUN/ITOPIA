@@ -97,7 +97,7 @@ a:hover {
 }
 .navbar-collapse > ul {
     display: flex;
-    flex-grow: 1;
+    width: 1240px;
     flex-direction: row;   
     justify-content: space-around;
     align-items: center;
@@ -105,6 +105,8 @@ a:hover {
     font-weight: bold;
     list-style-type: none;
 }
+
+
 /* Navbar에 마우스 가져다대면 열리게 하는 스크립트 */
 @media all {
     .navbar .nav-item .dropdown-menu { display: none; }

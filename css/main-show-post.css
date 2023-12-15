@@ -24,12 +24,35 @@ h4 {
     display: flex;
     flex-direction: column;
     width: 1000px;
+
 }
 /* 작성자/날짜 정보들 나오는 곳 */
 .post-header {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+}
+.nickname-header {
+    font-size: 16px;
+    margin-bottom: 1.2px;
+    cursor: pointer;
+    background-color: transparent;
+    border-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.nickname {
+    font-size: 14px;
+    cursor: pointer;
+    background-color: transparent;
+    border-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.nickname-menu {
+    z-index: 9;
+    font-size: 13px;
+    --bs-dropdown-min-width: 7.5rem;
 }
 .post-header span {
     margin-left: 12px;
@@ -64,32 +87,57 @@ h4 {
     display: flex;
     flex-direction: row;
     justify-content: center;
+
 }
 .heart-unheart span {
     margin-left: 12px;
 }
 #heart-cnt {
-    margin-top: 3px;
     font-weight: 600;
+    margin-top: 3px;
+    margin-bottom: 0px;
+    margin-right: 8px;
+    margin-left: 0px;
 }
 #unheart-cnt {
-    margin-top: 3px;
     font-weight: 600;
+    margin-top: 3px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 8px;
+}
+#heart-button {
+    background-color: transparent;
+    border-style: none;
+    padding: 0;
+    margin-left: 8px;
+    margin-right: 8px;
+
+}
+#unheart-button {
+    background-color: transparent;
+    border-style: none;
+    padding: 0;
+    margin-left: 8px;
+    margin-right: 8px;
+
 }
 #heart {
     width: 30px;
     cursor: pointer;
+
 }
 #unheart {
     width: 30px;
     cursor: pointer;
+
 }
 /* 긴 세로줄 설정 */
 .divider-long {
     height: 30px;
     border-left: solid #7a7a7a;
     border-left-width: 1px !important;
-    margin: 0px;
+    margin: 0px !important;
 }
 /* 공유/신고 기능 */
 .misc-function {
@@ -101,11 +149,21 @@ h4 {
 .misc-function span {
     margin-left: 12px;
 }
+#modify {
+    cursor: pointer;
+}
+#delete {
+    cursor: pointer;
+}
 #share {
     cursor: pointer;
 }
 #report {
     cursor: pointer;
+}
+#trade-request {
+    position: relative;
+    bottom: 6px;
 }
 #backtolist-button {
     display: inline-flex;
@@ -113,7 +171,14 @@ h4 {
     justify-content: center;
     border-color: #d1d1d1;
     height: 30px;
+    background-color: transparent;
+    color: black;
 }
+#backtolist-button:hover {
+    background-color: var(--bs-btn-hover-bg);
+    color: white;
+}
+
 /* 댓글 영역 */
 .reply-area {
     margin-top: 10px;
@@ -121,6 +186,7 @@ h4 {
     flex-direction: column;
     width: 1000px;
     font-size: 14px;
+
 }
 /* 총 댓글수 및 댓글 표시 방법 */
 .filtering {
@@ -128,6 +194,7 @@ h4 {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    z-index: 2;
 }
 #comment-cnt {
     font-weight: 600;
@@ -135,10 +202,7 @@ h4 {
     margin-right: 10px;
     padding-top: 4px;
 }
-.btn-secondary {
-    background-color: transparent;
-    color: black;
-}
+
 .dropdown-menu > .dropdown-item {
     font-size: 13px;
 }
@@ -149,49 +213,160 @@ h4 {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+
+}
+.show-recomment {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-left: 20px;
+
+}
+.modify-comment {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-left: 20px;
+    margin-top: 20px;
+
 }
 .show-comment span {
     margin-left: 5px;
 }
+.show-recomment span {
+    margin-left: 5px;
+}
 .user-nickname {
     cursor: pointer;
+    width: 110px;
+}
+#recomment-icon {
+    width: 14px;
+    height: 14px;
+    margin-left: 65px;
 }
 .comment-contents {
     /* 댓글 표시 영역 크기 조정 */
-    width: 700px;
-    padding-left: 70px;
+    width: 560px;
+    margin-left: 70px !important;
     padding-top: 1px;
+    cursor: pointer;
+}
+.recomment-contents {
+    /* 댓글 표시 영역 크기 조정 */
+    width: 520px;
+    margin-left: 10px;
+    padding-top: 1px;
+    cursor: pointer;
 }
 .regdate {
     margin-left: auto !important;
     font-size: 12px;
     color: #7a7a7a;
+
 }
 .comment-heart-button {
     margin-left: 16px !important;
+    background-color: transparent;
+    padding: 0px;
+    border-style: none;
+
+}
+.comment-unheart-button {
+    background-color: transparent;
+    margin-left: 8px !important;
+    padding: 0px;
+    border-style: none;
+
 }
 #comment-heart {
     width: 14px;
     cursor: pointer;
+    background-color: transparent;
+    border-style: none;
+
 }
 #comment-unheart {
     width: 14px;
     cursor: pointer;
+    background-color: transparent;
+    border-style: none;
+
 }
 /* 댓글 오른족 여백 안 맞는거 살짝 조정 */
 .comment-unheart-cnt {
     margin-right: 5px;
 }
+.modify-delete-btn {
+    padding: 0px;
+    background-color: transparent;
+    width: 18px;
+    height: 18px;
+    margin-left: 15px;
+    border-style: none;
+}
+.more-menu {
+    width: 18px;
+    height: 18px;
+}
+.modify {
+    font-size: 13px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.delete {
+    font-size: 13px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.report {
+    font-size: 13px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.show {
+    --bs-dropdown-min-width: 8rem;
+}
 .write-comment {
     display: flex;
     flex-direction: row;
     margin-top: 30px;
+    margin-bottom: 50px;
+
 }
+.write-recomment {
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+
+}
+.pagination {
+    align-items: center;
+    justify-content: center;
+
+}
+
 #comment-input {
     min-height: 100px;
     max-height: 100px;
     border-color: #b4b4b4;
     width: 870px;
+
+}
+#recomment-input {
+    min-height: 100px;
+    max-height: 100px;
+    border-color: #b4b4b4;
+    width: 810px;
+
+}
+/* 대댓글 작성 창 활성화시 나오는 아이콘 */
+#recomment-icon2 {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
 
 }
 .write-button {
@@ -206,7 +381,9 @@ h4 {
     margin-left: auto;
     border-style: none;
     margin-right: 4px;
+
 }
+
 /* 반응형 모바일 디자인용 (추후에 수정) */
 @media (max-width: 768px) {
 

@@ -102,6 +102,7 @@ main nav {
 .sub-category-item {
     height: 35px;
 }
+
 /* 반응형 모바일 디자인용 (추후에 수정) */
 @media (max-width: 768px) {
 

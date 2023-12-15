@@ -5,6 +5,7 @@ main {
     min-height: 700px;
     display: flex;
     align-items: center; /* 하위 요소들 수직 가운데 정렬 */
+    
     position: relative;
     flex-direction: column;
 }
@@ -17,51 +18,41 @@ a {
     margin-top: 60px;
     font-size: 30px;
 }
-#login-area {
+#sign-up-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-top: 30px;
-    padding: 50px;
-    width: 450px;
+    margin-bottom: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    width: 700px;
     border-style: solid;
     border-width: 1px;
     border-color:#b3b3b3;
     border-radius: 8px;
-    box-shadow: 0px 2px 8px -2px #555555;
+    box-shadow: 0px 2px 6px -2px #555555;
+}
+#subtitle {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+}
+.contents {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#already-verified {
+    color: #5487c2;
+    font-size: 18px;
+    font-weight: 600;
+}
+#send-button {
+    margin-top: 20px;
+}
 
-}
-#inputID {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-#inputPW {
-    margin-top: 10px;
-}
-#keepMeLogedIn {
-    margin-top: 16px;
-}
-#keepMeLogedInLabel {
-    margin-top: 11px;
-}
-#loginButton {
-    margin-top: 20px;
-}
-.subMenu {
-    margin-top: 20px;
-}
-.items {
-    padding: 20;
-    margin: 0;
-    border-style: none;
-    border-width: 1px;
-}
-.middle {
-    border-left: solid #b3b3b3;
-    border-right: solid #b3b3b3;
-    border-left-width: 1px !important;
-    border-right-width: 1px !important;
-}
-#subText {
-    margin-top: 50px;
-}
-.alert-auto-dismissible {
-    margin-top: 20px;
-}

@@ -55,11 +55,10 @@
         
     </header>
 
-
     <main>
         <div class="container-sm" id="MainContainer">
             <!-- Card로 Sub Container 빌드 -->
-            <div class="card" id="SubContainer1">
+            <div id="SubContainer1">
                 <h5 class="SubTitle">마이페이지</h5>
                 <!-- 마이페이지 매뉴 -->
                 <ul class="nav menu">
@@ -98,7 +97,7 @@
                         <a class="nav-link" href="#">개인 설정</a>
                     </li>
                 </ul>
-
+                <!-- 회원정보 부분 -->
                 <form method="POST" id="user-info">
                     <div class="profile-icon">
                         <img src="./../src/like.png">
@@ -142,8 +141,8 @@
                         저장
                     </div>
                 </form>
-
-                <form method="POST" id="post-info">
+                <!-- 게시글 관리 부분 -->
+                <div id="post-info">
                     <small>내가 저장하거나 작성한 글들을 확인할 수 있어요.</small>
                     <div id="category-select">
                         <span class='btn btn-outline-secondary category-item active'>저장한 게시글</span>
@@ -152,18 +151,47 @@
                         <span class='divider-small'></span>
                         <span class='btn btn-outline-secondary category-item'>거래게시글</span>
                     </div>
-                    <div id="saved-post-info">
-                        <div class="talk-table-title">저장한 게시글</div>
+                    <form method="POST" id="saved-post-info">
+                        <div class="post-header">
+                            <span class="talk-table-title">
+                                <img class='post-header-icon' src="./../src/bookmark-mypage.png">
+                                저장한 게시글
+                            </span>
+                            <span class='divider-xsmall'></span>
+                            <span id="saved-post-count">3개</span>
+                            <span class="dropdown post-sort-dropdown">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="post-sort-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    최신추가순
+                                </button>
+                                <ul class="dropdown-menu sortby-menu" aria-labelledby="sortByMenuButton">
+                                  <li class="dropdown-item sortby-item" href="#">추천순</li>
+                                  <li class="dropdown-item sortby-item" href="#">최신추가순</li>
+                                </ul>
+                            </span>
+                            <span class="btn btn-primary select-option-btn" id="post-delete-btn" style="display: none;">
+                                목록에서 삭제
+                            </span>
+                            <span class="btn btn-secondary select-option-btn" id="select-all-btn" style="display: none;">
+                                전체선택
+                            </span>
+                            <span class="select-btn" id="saved-post-select-btn"><img class='select-icon' src="./../src/check-mypage.png">선택</span>
+                        </div>
+                        <!-- 게시글 시작 -->
                         <div class="divider-horizontal"></div>
                         <div class="post-card">
                             <span class="post-title">
-                                [BTS]방탄은 모조리 군대를 갔다.
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                    </label>
-                                </div>
+                                [BTS]방탄은 모조리 군대를 갔다.ㅁㄴㅇㄹㄴㅁㅇ러ㅣ;ㅏㅁㄴ어리;ㅏㄴㅁㅇ러미낭ㄹ머ㅣㅇㄹ멀;ㅣㅏ러ㅣ만ㅇ러ㅏ
                             </span>
+                            <div class="form-check post-checkbox" style="display: none;">
+                                <input class="form-check-input" type="checkbox" value="">
+                            </div>
+                            <button type="button" class="more-menu-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img class='more-menu-icon' src="./../src/more_menu.png">
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item">게시글 보기</a></li>
+                                <li><a class="dropdown-item">목록에서 삭제</a></li>
+                            </ul>
                             <div class="post-detail">
                                 <span class="post-writer">BTS빠순이</span>
                                 <span class="post-heart-count"><img class="post-detail-icon" src="./../src/Heart.svg">50</span>
@@ -172,13 +200,74 @@
                                 <span class="post-regdate">10분 전</span>
                             </div>
                         </div>
-                        <div class="divider-horizontal-end"></div>
-                    </div>
-                    <div id="talk-post-info">
-                        <div class="talk-table-title">내가 작성한 I*TALK 게시글</div>
+                        <!-- 게시글 끝 -->
+                        <!-- 게시글 시작 -->
                         <div class="divider-horizontal"></div>
                         <div class="post-card">
-                            <span class="post-title">[BTS]방탄은 모조리 군대를 갔다.</span>
+                            <span class="post-title">
+                                [BTS]조의를 액션비빔밥
+                            </span>
+                            <div class="form-check post-checkbox" style="display: none;">
+                                <input class="form-check-input" type="checkbox" value="">
+                            </div>
+                            <button type="button" class="more-menu-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img class='more-menu-icon' src="./../src/more_menu.png">
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item">게시글 보기</a></li>
+                                <li><a class="dropdown-item">목록에서 삭제</a></li>
+                            </ul>
+                            <div class="post-detail">
+                                <span class="post-writer">BTS빠순이</span>
+                                <span class="post-heart-count"><img class="post-detail-icon" src="./../src/Heart.svg">50</span>
+                                <span class="post-reply-count"><img class="post-detail-icon" src="./../src/Comment.png">23</span>
+                                <span class="post-view-count"><img class="post-detail-icon" src="./../src/view.png">30.2만</span>
+                                <span class="post-regdate">10분 전</span>
+                            </div>
+                        </div>
+                        <!-- 게시글 끝 -->
+                        <div class="divider-horizontal-end"></div>
+                    </form>
+                    <form method="POST" id="talk-post-info">
+                        <div class="post-header">
+                            <span class="talk-table-title">
+                                <img class='post-header-icon' src="./../src/post-mypage.png">
+                                내가 작성한 I*TALK 게시글
+                            </span>
+                            <span class='divider-xsmall'></span>
+                            <span id="saved-post-count">3개</span>
+                            <span class="dropdown post-sort-dropdown">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="post-sort-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    최신순
+                                </button>
+                                <ul class="dropdown-menu sortby-menu" aria-labelledby="sortByMenuButton">
+                                  <li class="dropdown-item sortby-item" href="#">추천순</li>
+                                  <li class="dropdown-item sortby-item" href="#">최신순</li>
+                                </ul>
+                            </span>
+                            <span class="btn btn-primary select-option-btn" id="post-delete-btn" style="display: none;">
+                                목록에서 삭제
+                            </span>
+                            <span class="btn btn-secondary select-option-btn" id="select-all-btn" style="display: none;">
+                                전체선택
+                            </span>
+                            <span class="select-btn" id="talk-post-select-btn"><img class='select-icon' src="./../src/check-mypage.png">선택</span>
+                        </div>
+                        <div class="divider-horizontal"></div>
+                        <div class="post-card">
+                            <span class="post-title">
+                                [BTS]방탄은 모조리 군대를 갔다.
+                            </span>
+                            <div class="form-check post-checkbox" style="display: none;">
+                                <input class="form-check-input" type="checkbox" value="">
+                            </div>
+                            <button type="button" class="more-menu-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img class='more-menu-icon' src="./../src/more_menu.png">
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item">수정</a></li>
+                                <li><a class="dropdown-item">삭제</a></li>
+                            </ul>
                             <div class="post-detail">
                                 <span class="post-heart-count start"><img class="post-detail-icon" src="./../src/Heart.svg">50</span>
                                 <span class="post-reply-count">23</span>
@@ -187,28 +276,62 @@
                             </div>
                         </div>
                         <div class="divider-horizontal-end"></div>
-                    </div>
-                    <div id="sales-post-info">
-                        <div class="talk-table-title">내가 작성한 거래게시글</div>
+                    </form>
+                    <form method="POST" id="sales-post-info">
+                        <div class="post-header">
+                            <span class="talk-table-title">
+                                <img class='post-header-icon' src="./../src/shop-mypage.png">
+                                내가 작성한 거래게시글
+                            </span>
+                            <span class='divider-xsmall'></span>
+                            <span id="saved-post-count">3개</span>
+                            <span class="dropdown post-sort-dropdown">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="post-sort-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    전체
+                                </button>
+                                <ul class="dropdown-menu sortby-menu" aria-labelledby="sortByMenuButton">
+                                  <li class="dropdown-item sortby-item" href="#">전체</li>
+                                  <li class="dropdown-item sortby-item" href="#">판매중</li>
+                                  <li class="dropdown-item sortby-item" href="#">예약중</li>
+                                  <li class="dropdown-item sortby-item" href="#">판매완료</li>                                  
+                                </ul>
+                            </span>
+                            <span class="btn btn-primary select-option-btn" id="post-delete-btn" style="display: none;">
+                                목록에서 삭제
+                            </span>
+                            <span class="btn btn-secondary select-option-btn" id="select-all-btn" style="display: none;">
+                                전체선택
+                            </span>
+                            <span class="select-btn" id="sales-post-select-btn"><img class='select-icon' src="./../src/check-mypage.png">선택</span>
+                        </div>
                         <div class="divider-horizontal"></div>
                         <div class="post-card">
                             <span class="post-title">[BTS]방탄은 모조리 군대를 갔다.</span>
+                            <div class="form-check post-checkbox" style="display: none;">
+                                <input class="form-check-input" type="checkbox" value="">
+                            </div>
+                            <button type="button" class="more-menu-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img class='more-menu-icon' src="./../src/more_menu.png">
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item">게시글 수정</a></li>
+                                <li><a class="dropdown-item">상태 수정</a></li>
+                                <li><a class="dropdown-item">삭제</a></li>
+                            </ul>
                             <div class="post-detail">
+                                <span class="sales-status-badge reserved">예약중</span>
                                 <span class="post-price">가격: ₩50,000</span>
-                                <span class="post-heart-count">50</span>
-                                <span class="post-reply-count">23</span>
-                                <span class="post-view-count">30.2만</span>
+                                <span class="post-heart-count"><img class="post-detail-icon" src="./../src/Heart.svg">50</span>
+                                <span class="post-reply-count"><img class="post-detail-icon" src="./../src/Comment.png">23</span>
+                                <span class="post-view-count"><img class="post-detail-icon" src="./../src/view.png">30.2만</span>
                                 <span class="post-regdate">2023.12.24</span>
                             </div>
                         </div>
                         <div class="divider-horizontal-end"></div>
-                    </div>
-                </form>
-               
+                    </form>
+                </div>
             </div>
         </div>
-    
-
     </main>
 
     <footer>
