@@ -3,7 +3,7 @@
 
 
 <head>
-    <title>I*TALK 걸그룹 게시판</title>
+    <title>ITOPIA / 마이페이지</title>
     <meta charset="UTF-8">
     <!-- 반응형 웹을 위한 코드 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,10 +34,10 @@
         <div class="main-flex">
 
         <!-- 로고 이미지 -->
-        <a href="#"><img src="./../src/IdolFan.png" id="MainLogo"></a>
+        <a href="./index.html"><img src="./../src/IdolFan.png" id="MainLogo"></a>
         <!-- 검색창 -->
         <div class='search-menu'>
-            <input class="form-control" type="text" placeholder="게시글 검색" maxlength="300">
+            <input class="form-control searchbox" type="text" placeholder="게시글 검색" maxlength="300">
             <button type="submit">
                 <img src="./../src/Search.svg" id="SearchBtn" tabindex="2">
             </button>
@@ -63,46 +63,147 @@
                 <h5 class="SubTitle">마이페이지</h5>
                 <!-- 마이페이지 매뉴 -->
                 <ul class="nav menu">
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">회원정보 수정</a>
+                    <li class="nav-item selected">
+                        <div class="nav-item-icon"><img src="./../src/user-mypage.png"></div>
+                        <a class="nav-link" aria-current="page" href="#">회원정보</a>
                     </li>
+                    <div class="divider"></div>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">작성글 관리</a>
+                        <div class="nav-item-icon"><img src="./../src/post-mypage.png"></div>
+                        <a class="nav-link" href="#">게시글 관리</a>
                     </li>
+                    <div class="divider"></div>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">댓글 관리</a>
+                        <div class="nav-item-icon"><img src="./../src/comment-mypage.png"></div>
+                        <a class="nav-link" href="#">댓글 관리</a>
                     </li>
+                    <div class="divider"></div>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">DM</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">차단 관리</a>
-                    </li>
-                    <li class="nav-item">
+                        <div class="nav-item-icon"><img src="./../src/notification-mypage.png"></div>
                         <a class="nav-link" href="#">알림</a>
                     </li>
-                      
+                    <div class="divider"></div>
+                    <li class="nav-item">
+                        <div class="nav-item-icon"><img src="./../src/banned-mypage.png"></div>
+                        <a class="nav-link" href="#">차단 관리</a>
+                    </li>
+                    <div class="divider"></div>
+                    <li class="nav-item">
+                        <div class="nav-item-icon"><img src="./../src/point-mypage.png"></div>
+                        <a class="nav-link" href="#">포인트</a>
+                    </li>
+                    <div class="divider"></div>
+                    <li class="nav-item">
+                        <div class="nav-item-icon"><img src="./../src/settings-mypage.png"></div>
+                        <a class="nav-link" href="#">개인 설정</a>
+                    </li>
                 </ul>
-                <div class="profile-photo">
-                    
-                </div>
-                <div class="container text-center member-info">
-                    <div class="row row-cols-2 info-grid">
-                        <div class="col">아이디</div>
-                        <div class="co2">sample</div>
-                        <div class="col">닉네임</div>
-                        <div class="co2">sample</div>
-                        <div class="col">회원가입일</div>
-                        <div class="co2">sample</div>
-                        <div class="col">이메일정보</div>
-                        <div class="co2">sample</div>
-                        <div class="col">포인트</div>
-                        <div class="co2">sample(+)</div>
-                        <div class="col">알림</div>
-                        <div class="co2">on/off</div>
-                        <div class="co3">회원탈퇴</div>
+
+                <form method="POST" id="user-info">
+                    <div class="profile-icon">
+                        <img src="./../src/like.png">
+                        <span id="profile-explanation"><small>프로필 아이콘을 변경하려면 아이콘을 누르세요.</small></span>
                     </div>
-                </div>
+                    <div class="user-info-item">
+                        <span class="item-header">아이디</span>
+                        <span class="item-contents">e165903</span>
+                    </div>
+                    <div class="user-info-item">
+                        <span class="item-header">닉네임</span>
+                        <input type="text" class="form-control form-input" id="user-nickname" placeholder="변경하고 싶은 닉네임을 입력하세요.">
+                    </div>
+                    <div class="user-info-item">
+                        <span class="item-header">이메일 정보</span>
+                        <span class="item-contents">e165903@naver.com</span>
+
+                    </div>
+                    <div class="user-info-item">
+                        <span class="item-header">회원가입일</span>
+                        <span class="item-contents">2023.12.24</span>
+                    </div>
+                    <div class="user-info-item">
+                        <span class="item-header">작성한 게시글 수</span>
+                        <span class="item-contents">2000 개</span>
+                    </div>
+                    <div class="user-info-item">
+                        <span class="item-header">실시간 핫글 선정</span>
+                        <span class="item-contents">4 번</span>
+                    </div>
+                    <div class="user-info-item">
+                        <span class="item-header">작성한 댓글 수</span>
+                        <span class="item-contents">150 개</span>
+                    </div>
+                    <div class="user-info-item">
+                        <span class="item-contents btn btn-secondary" id="email-verify-btn">이메일 인증</span>
+                        <span class="item-contents btn btn-secondary" id="email-verify-btn">비밀번호 재설정</span>
+                        <span class="item-contents btn btn-secondary" id="delete-account-btn">회원 탈퇴</span>
+                    </div>
+                    <div class="modify-btn btn btn-primary">
+                        저장
+                    </div>
+                </form>
+
+                <form method="POST" id="post-info">
+                    <small>내가 저장하거나 작성한 글들을 확인할 수 있어요.</small>
+                    <div id="category-select">
+                        <span class='btn btn-outline-secondary category-item active'>저장한 게시글</span>
+                        <span class='divider-small'></span>
+                        <span class='btn btn-outline-secondary category-item'>I*TALK</span>
+                        <span class='divider-small'></span>
+                        <span class='btn btn-outline-secondary category-item'>거래게시글</span>
+                    </div>
+                    <div id="saved-post-info">
+                        <div class="talk-table-title">저장한 게시글</div>
+                        <div class="divider-horizontal"></div>
+                        <div class="post-card">
+                            <span class="post-title">
+                                [BTS]방탄은 모조리 군대를 갔다.
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                    </label>
+                                </div>
+                            </span>
+                            <div class="post-detail">
+                                <span class="post-writer">BTS빠순이</span>
+                                <span class="post-heart-count"><img class="post-detail-icon" src="./../src/Heart.svg">50</span>
+                                <span class="post-reply-count"><img class="post-detail-icon" src="./../src/Comment.png">23</span>
+                                <span class="post-view-count"><img class="post-detail-icon" src="./../src/view.png">30.2만</span>
+                                <span class="post-regdate">10분 전</span>
+                            </div>
+                        </div>
+                        <div class="divider-horizontal-end"></div>
+                    </div>
+                    <div id="talk-post-info">
+                        <div class="talk-table-title">내가 작성한 I*TALK 게시글</div>
+                        <div class="divider-horizontal"></div>
+                        <div class="post-card">
+                            <span class="post-title">[BTS]방탄은 모조리 군대를 갔다.</span>
+                            <div class="post-detail">
+                                <span class="post-heart-count start"><img class="post-detail-icon" src="./../src/Heart.svg">50</span>
+                                <span class="post-reply-count">23</span>
+                                <span class="post-view-count">30.2만</span>
+                                <span class="post-regdate">2023.12.24</span>
+                            </div>
+                        </div>
+                        <div class="divider-horizontal-end"></div>
+                    </div>
+                    <div id="sales-post-info">
+                        <div class="talk-table-title">내가 작성한 거래게시글</div>
+                        <div class="divider-horizontal"></div>
+                        <div class="post-card">
+                            <span class="post-title">[BTS]방탄은 모조리 군대를 갔다.</span>
+                            <div class="post-detail">
+                                <span class="post-price">가격: ₩50,000</span>
+                                <span class="post-heart-count">50</span>
+                                <span class="post-reply-count">23</span>
+                                <span class="post-view-count">30.2만</span>
+                                <span class="post-regdate">2023.12.24</span>
+                            </div>
+                        </div>
+                        <div class="divider-horizontal-end"></div>
+                    </div>
+                </form>
                
             </div>
         </div>
@@ -148,13 +249,14 @@
                 <li class="list-group-item">TEL : 000-0000-0000</li>
             </ul>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">E-mail : xe165903@gmail.com</li>
+                <li class="list-group-item">Icons by <a href='https://icons8.com/'>Icons8</a></li>
             </ul>
         </div>
     </footer>
 
 </body>
 <!-- HTML 로드 후 실행될 JS -->
-<script src="./../js/I-talk.js"></script>
+
+<script src="./../js/mypage.js"></script>
 
 </html>

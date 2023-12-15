@@ -8,7 +8,6 @@ header {
     align-items: center; /* 하위 요소들 수직 가운데 정렬 */
     position: relative;
 }
-
 body {
     margin: 0;
     font-family: 'Nanum Gothic', sans-serif;
@@ -105,12 +104,7 @@ a:hover {
     font-weight: bold;
     list-style-type: none;
 }
-/* Navbar에 마우스 가져다대면 열리게 하는 스크립트 */
-@media all {
-    .navbar .nav-item .dropdown-menu { display: none; }
-	.navbar .nav-item:hover .dropdown-menu{ display: block; }
-	.navbar .nav-item .dropdown-menu{ margin-top:0; }
-}
+
 
 /* 모바일용 반응형 디자인 CSS */
 /* 스마트폰 가로 최대 길이 767px 이하일 경우  */

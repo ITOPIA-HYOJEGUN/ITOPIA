@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.slidecontainer {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.slidecontent {
+  width: 200%;
+  transition: transform 0.7s ease-in-out;
+}
+
+.slidecontent .slide {
+  width: 50%;
+  float: left;
+}
+
+#slidebutton {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="slidecontainer">
+  <div id="slidecontent" class="slidecontent">
+    <div class="slide">
+      <h2>회원정보 수정</h2>
+      <!-- 회원정보 수정 내용 -->
+    </div>
+    <div class="slide">
+      <h2>작성글 관리</h2>
+      <!-- 작성글 관리 내용 -->
+    </div>
+  </div>
+  <button id="slidebutton">다음</button>
+</div>
+
+<script>
+var slideIndex = 0;
+document.getElementById('slidebutton').addEventListener('click', function() {
+  slideIndex = (slideIndex + 1) % 2;
+  document.getElementById('slidecontent').style.transform = 'translateX(' + (-slideIndex * 50) + '%)';
+});
+</script>
+
+</body>
+</html>
