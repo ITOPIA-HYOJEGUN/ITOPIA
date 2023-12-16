@@ -239,11 +239,13 @@ main h5 {
     margin-right: 3px;
 }
 #talk-post-info {
+    height: 750px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
-#sale-post-info {
+#sales-post-info {
+    height: 750px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;

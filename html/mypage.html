@@ -316,6 +316,44 @@
                             </div>
                         </div>
                         <div class="divider-horizontal-end"></div>
+                        <!-- 검색창 -->
+                        <div class='post-search'>
+                            <span class="dropdown post-sort-dropdown">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle search-dropdown-btn" type="button" id="saved-post-search-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    제목+내용
+                                </button>
+                                <ul class="dropdown-menu search-dropdown-menu" aria-labelledby="sortByMenuButton">
+                                    <li class="dropdown-item sortby-item" href="#">제목</li>
+                                    <li class="dropdown-item sortby-item" href="#">내용</li>
+                                    <li class="dropdown-item sortby-item" href="#">제목+내용</li>
+                                    <li class="dropdown-item sortby-item" href="#">닉네임</li>
+                                    <li class="dropdown-item sortby-item" href="#">댓글</li>
+                                </ul>
+                            </span>
+                            <span class="btn btn-secondary calendar-btn">
+                                <img src="./../src/calendar-mypage.png">
+                            </span>
+                            <input class="form-control" type="text" placeholder="게시글 검색" maxlength="300">
+                            <button type="submit" class="post-search-btn">
+                                <img src="./../src/Search.svg" tabindex="2">
+                            </button>
+                        </div>
+                        <!-- 하단 페이지 이동 -->
+                        <nav class="saved-post-pagination" aria-label="...">
+                            <ul class="pagination">
+                            <li class="page-item disabled">
+                                <a class="page-link">이전</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item active" aria-current="page">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">다음</a>
+                            </li>
+                            </ul>
+                        </nav>
                     </form>
                     <form method="POST" id="sales-post-info">
                         <div class="post-header">
@@ -368,6 +406,45 @@
                             </div>
                         </div>
                         <div class="divider-horizontal-end"></div>
+
+                        <!-- 검색창 -->
+                        <div class='post-search'>
+                            <span class="dropdown post-sort-dropdown">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle search-dropdown-btn" type="button" id="saved-post-search-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    제목+내용
+                                </button>
+                                <ul class="dropdown-menu search-dropdown-menu" aria-labelledby="sortByMenuButton">
+                                    <li class="dropdown-item sortby-item" href="#">제목</li>
+                                    <li class="dropdown-item sortby-item" href="#">내용</li>
+                                    <li class="dropdown-item sortby-item" href="#">제목+내용</li>
+                                    <li class="dropdown-item sortby-item" href="#">닉네임</li>
+                                    <li class="dropdown-item sortby-item" href="#">댓글</li>
+                                </ul>
+                            </span>
+                            <span class="btn btn-secondary calendar-btn">
+                                <img src="./../src/calendar-mypage.png">
+                            </span>
+                            <input class="form-control" type="text" placeholder="게시글 검색" maxlength="300">
+                            <button type="submit" class="post-search-btn">
+                                <img src="./../src/Search.svg" tabindex="2">
+                            </button>
+                        </div>
+                        <!-- 하단 페이지 이동 -->
+                        <nav class="saved-post-pagination" aria-label="...">
+                            <ul class="pagination">
+                            <li class="page-item disabled">
+                                <a class="page-link">이전</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item active" aria-current="page">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">다음</a>
+                            </li>
+                            </ul>
+                        </nav>
                     </form>
                 </div>
             </div>
