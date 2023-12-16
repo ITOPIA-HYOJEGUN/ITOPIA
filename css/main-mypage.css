@@ -249,6 +249,7 @@ main h5 {
     align-items: flex-start;
 }
 #saved-post-info {
+    height: 750px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -328,6 +329,59 @@ main h5 {
 }
 .post-heart-count {
     margin-left: 7px;
+}
+/* 검색창 부분 */
+.search-dropdown-btn {
+    margin-right: 4px;
+    position: relative;
+    bottom: 2px;
+}
+.post-search {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+}
+.calendar-btn {
+    width: 31px;
+    height: 31px;
+    position: relative;
+    bottom: 2px;
+    padding: 4px;
+    margin-right: 10px;
+    background-color: #313131;
+}
+.calendar-btn img {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    bottom: 3px;
+}
+.post-search .form-control {
+    border-color: #999999;
+    width: 250px;
+    height: 36px;
+}
+.post-search-btn {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    border-style: none;
+    background-color: transparent;
+}
+.post-search-btn img {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    bottom: 8px;
+}
+.saved-post-pagination {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 /* 내가 작성안 I*Talk 게시글은 좋아요 부터 시작하므로 여백 없애줌. */
 .start {
