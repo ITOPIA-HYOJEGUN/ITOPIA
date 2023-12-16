@@ -1,0 +1,65 @@
+main {
+    width: 1240px;
+    margin: auto;
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.main-container {
+    width: 1240px;
+    height: 1000px;
+}
+.title {
+    font-family: 'GmarketSansMedium';
+    font-size: 22px;
+    font-weight: 600;
+}
+.explanation {
+    font-family: 'GmarketSansMedium';
+}
+.game-grade-title {
+    font-family: 'GmarketSansMedium';
+    font-size: 16px;
+    font-weight: 600;
+}
+.current-point {
+    font-size: 13px;
+}
+.slot-machine {
+    font-family: 'Big Shoulders Display';
+    display: grid;
+    grid-template-columns: repeat(12, auto);
+    grid-template-rows: repeat(1, 100px);
+    gap: 1px;
+    background: #e2d28a;
+    width: 1000px;
+    border-style: solid;
+    border-color: #707070;
+    border-radius: 10px;
+}
+.number {
+    box-sizing: content-box;
+    width: 80px;
+    height: 100px;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 600;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-color: #707070;
+}
+.number-end {
+    box-sizing: border-box;
+    width: 80.91px;
+    height: 100px;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 600;
+}
+.selected {
+    font-size: 70px;
+    color:#4b4a39;
+}
