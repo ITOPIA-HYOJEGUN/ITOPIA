@@ -32,7 +32,7 @@ function hideAllPost() {
         post_category[i].classList.remove('active');
     }
 }
-
+// 마이페이지 하위메뉴 선택 시, 요소들 보이고 숨기기
 nav_menu.forEach(function(menu, index) {
     menu.addEventListener('click', function(e) {
         hideAll(); // 먼저 모든 요소를 숨깁니다.
@@ -63,7 +63,7 @@ post_category.forEach(function(menu, index) {
         }
     });
 });
-// 저장한 게시글 선택 버튼 이벤트
+// ---------------------- 저장한 게시글 선택 버튼 이벤트
 let saved_posts = document.querySelectorAll('#saved-post-info .post-card');
 saved_post_select_btn.addEventListener('click', function(e) {
     let checkboxes = document.querySelectorAll('#saved-post-info .post-checkbox');
@@ -131,8 +131,10 @@ saved_post_select_all_btn.addEventListener("click", function(e) {
         single_box.checked = !allChecked;
     })
 })
-
-// I*TALK 게시글 선택 버튼 이벤트
+// 정렬 버튼 아이템 클릭 시 변경
+let saved_post_sort_by_btn = document.querySelector('#saved-post-info #post-sort-dropdown-btn');
+let saved_post_sort_by_items = document.querySelectorAll('#saved-post-info .sort-by-item')
+// ---------------------- I*TALK 게시글 선택 버튼 이벤트
 let talk_posts = document.querySelectorAll('#talk-post-info .post-card');
 talk_post_select_btn.addEventListener('click', function(e) {
     let checkboxes = document.querySelectorAll('#talk-post-info .post-checkbox');
@@ -200,7 +202,7 @@ talk_post_select_all_btn.addEventListener("click", function(e) {
     })
 })
 
-// 거래게시글 선택 버튼 이벤트
+// ----------------- 거래게시글 선택 버튼 이벤트
 let sales_posts = document.querySelectorAll('#sales-post-info .post-card');
 sales_post_select_btn.addEventListener('click', function(e) {
     let checkboxes = document.querySelectorAll('#sales-post-info .post-checkbox');

@@ -16,50 +16,123 @@ main {
     font-family: 'GmarketSansMedium';
     font-size: 22px;
     font-weight: 600;
+    margin-top: 40px;
 }
 .explanation {
     font-family: 'GmarketSansMedium';
+    margin-bottom: 15px;
 }
 .game-grade-title {
     font-family: 'GmarketSansMedium';
     font-size: 16px;
-    font-weight: 600;
+    margin-top: 40px;
+    color:#d1d1d1;
 }
 .current-point {
-    font-size: 13px;
+    font-family: 'GmarketSansMedium';
+    font-size: 14px;
+    margin-right: auto;
+    margin-left: 45px;
+    margin-top: 20px;
+    padding: 5px;
+    font-weight: 600;
+    color:#ffffff;
+    text-shadow: 0 0 2px #ff9100, 0 0 5px #ff9100, 0 0 10px #ff9100;
+    border-radius: 5px;
 }
-.slot-machine {
+.main-window {
+    width: 1000px;
+    height: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#142417;
+    background-size: contain;
+    box-shadow: 0px 6px 15px -5px #555555;
+}
+.slot-machine-bronze {
     font-family: 'Big Shoulders Display';
     display: grid;
     grid-template-columns: repeat(12, auto);
     grid-template-rows: repeat(1, 100px);
-    gap: 1px;
-    background: #e2d28a;
-    width: 1000px;
+    background-image: url('./../src/game-background-bronze.png');
+    background-size: cover;
+    width: 900px;
     border-style: solid;
-    border-color: #707070;
+    border-color: #2c2c2c;
     border-radius: 10px;
+    border-width: 4px;
+    box-shadow: 0px 10px 15px -5px #000000;
+}
+.slot-machine-silver {
+    font-family: 'Big Shoulders Display';
+    display: grid;
+    grid-template-columns: repeat(12, auto);
+    grid-template-rows: repeat(1, 100px);
+    background-image: url('./../src/game-background-silver.png');
+    background-size: cover;
+    width: 900px;
+    border-style: solid;
+    border-color: #2c2c2c;
+    border-radius: 10px;
+    border-width: 4px;
+    box-shadow: 0px 10px 15px -5px #000000;
+}
+.slot-machine-gold {
+    font-family: 'Big Shoulders Display';
+    display: grid;
+    grid-template-columns: repeat(12, auto);
+    grid-template-rows: repeat(1, 100px);
+    background-image: url('./../src/game-background-gold.png');
+    background-size: cover;
+    width: 900px;
+    border-style: solid;
+    border-color: #2c2c2c;
+    border-radius: 10px;
+    border-width: 4px;
+    box-shadow: 0px 10px 15px -5px #000000;
 }
 .number {
-    box-sizing: content-box;
-    width: 80px;
+    width: 74px;
     height: 100px;
     text-align: center;
     font-size: 60px;
     font-weight: 600;
     border-right-style: solid;
     border-right-width: 1px;
-    border-color: #707070;
+    border-color: #2c2c2c;
+    border-width: 2px;
+    color: #271a1a;
 }
 .number-end {
-    box-sizing: border-box;
-    width: 80.91px;
+    width: 75px;
     height: 100px;
     text-align: center;
     font-size: 60px;
     font-weight: 600;
+    color: #271a1a;
 }
 .selected {
-    font-size: 70px;
-    color:#4b4a39;
+    font-size: 60px;
+    color: #ffffff;
+    text-shadow: 0 0 7px #888888, 0 0 10px #fff, 0 0 21px #fff, 0 0 28px #ff9100,
+      0 0 30px #ff9100, 0 0 45px #ff9100, 0 0 60px #ff9100, 0 0 80px #ff9100;
+}
+.betting-btn {
+    font-family: 'GmarketSansMedium';
+    background-color: #241616;
+    background-size: 700%;
+    margin-top: 8px;
+    border-radius: 5px;
+    padding: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    color: white;
+}
+.attribution {
+    font-size: 10px;
+margin-left: 140px;
 }
