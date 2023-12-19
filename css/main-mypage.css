@@ -355,6 +355,7 @@ main h5 {
     padding: 4px;
     margin-right: 10px;
     background-color: #313131;
+
 }
 .calendar-btn img {
     width: 20px;
@@ -362,6 +363,19 @@ main h5 {
     position: relative;
     bottom: 3px;
 }
+/* 모달 창 날짜 */
+.period-window {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+}
+.period {
+    width: 140px !important;
+    margin-right: 8px;
+    margin-left: 15px;
+}
+
 .post-search .form-control {
     border-color: #999999;
     width: 250px;

@@ -151,6 +151,7 @@
                         <span class='divider-small'></span>
                         <span class='btn btn-outline-secondary category-item'>거래게시글</span>
                     </div>
+                    <!-- ############ 저장한 게시글 ################## -->
                     <form method="POST" id="saved-post-info">
                         <div class="post-header">
                             <span class="talk-table-title">
@@ -160,10 +161,10 @@
                             <span class='divider-xsmall'></span>
                             <span id="saved-post-count">3개</span>
                             <span class="dropdown post-sort-dropdown">
-                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="post-sort-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="saved-sortby-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     최신추가순
                                 </button>
-                                <ul class="dropdown-menu sortby-menu" aria-labelledby="sortByMenuButton">
+                                <ul class="dropdown-menu" id="saved-sortby-dropdown-menu" aria-labelledby="sortByMenuButton">
                                   <li class="dropdown-item sortby-item" href="#">추천순</li>
                                   <li class="dropdown-item sortby-item" href="#">최신추가순</li>
                                 </ul>
@@ -234,7 +235,7 @@
                                 <button class="btn btn-secondary btn-sm dropdown-toggle search-dropdown-btn" type="button" id="saved-post-search-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     제목+내용
                                 </button>
-                                <ul class="dropdown-menu search-dropdown-menu" aria-labelledby="sortByMenuButton">
+                                <ul class="dropdown-menu" id="saved-search-dropdown-menu" aria-labelledby="sortByMenuButton">
                                   <li class="dropdown-item sortby-item" href="#">제목</li>
                                   <li class="dropdown-item sortby-item" href="#">내용</li>
                                   <li class="dropdown-item sortby-item" href="#">제목+내용</li>
@@ -242,9 +243,35 @@
                                   <li class="dropdown-item sortby-item" href="#">댓글</li>
                                 </ul>
                             </span>
-                            <span class="btn btn-secondary calendar-btn">
+                            <span class="btn btn-secondary calendar-btn" data-bs-toggle="modal" data-bs-target="#saved-post-datetime">
                                 <img src="./../src/calendar-mypage.png">
                             </span>
+                            <!-- 검색 날짜 범위 설정창 -->
+                            <div class="modal fade" id="saved-post-datetime" tabindex="-1" aria-labelledby="saved-post-datetime-label" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="saved-post-datetime-label">검색 날짜 기간</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id='saved-post-period-checkbox' checked>
+                                                전체 기간
+                                            </div>
+                                            <div class="period-window">
+                                                <input type="month" class="form-control period period-from" disabled>
+                                                <span>부터</span>
+                                                <input type="month" class="form-control period period-to" disabled>
+                                                <span>까지</span>                                            
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <input class="form-control" type="text" placeholder="게시글 검색" maxlength="300">
                             <button type="submit" class="post-search-btn">
                                 <img src="./../src/Search.svg" tabindex="2">
@@ -268,6 +295,7 @@
                             </ul>
                         </nav>
                     </form>
+                    <!-- ############ I*TALK 게시글 ############# -->
                     <form method="POST" id="talk-post-info">
                         <div class="post-header">
                             <span class="talk-table-title">
@@ -277,16 +305,16 @@
                             <span class='divider-xsmall'></span>
                             <span id="saved-post-count">3개</span>
                             <span class="dropdown post-sort-dropdown">
-                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="post-sort-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="talk-sortby-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     최신순
                                 </button>
-                                <ul class="dropdown-menu sortby-menu" aria-labelledby="sortByMenuButton">
+                                <ul class="dropdown-menu" id='talk-sortby-dropdown-menu' aria-labelledby="sortByMenuButton">
                                   <li class="dropdown-item sortby-item" href="#">추천순</li>
                                   <li class="dropdown-item sortby-item" href="#">최신순</li>
                                 </ul>
                             </span>
                             <span class="btn btn-primary select-option-btn" id="post-delete-btn" style="display: none;">
-                                목록에서 삭제
+                                게시글 삭제
                             </span>
                             <span class="btn btn-secondary select-option-btn" id="select-all-btn" style="display: none;">
                                 전체선택
@@ -310,8 +338,8 @@
                             </ul>
                             <div class="post-detail">
                                 <span class="post-heart-count start"><img class="post-detail-icon" src="./../src/Heart.svg">50</span>
-                                <span class="post-reply-count">23</span>
-                                <span class="post-view-count">30.2만</span>
+                                <span class="post-reply-count"><img class="post-detail-icon" src="./../src/Comment.png">23</span>
+                                <span class="post-view-count"><img class="post-detail-icon" src="./../src/view.png">30.2만</span>
                                 <span class="post-regdate">2023.12.24</span>
                             </div>
                         </div>
@@ -319,20 +347,45 @@
                         <!-- 검색창 -->
                         <div class='post-search'>
                             <span class="dropdown post-sort-dropdown">
-                                <button class="btn btn-secondary btn-sm dropdown-toggle search-dropdown-btn" type="button" id="saved-post-search-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle search-dropdown-btn" type="button" id="talk-sortby-menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     제목+내용
                                 </button>
-                                <ul class="dropdown-menu search-dropdown-menu" aria-labelledby="sortByMenuButton">
+                                <ul class="dropdown-menu" id="talk-search-dropdown-menu" aria-labelledby="sortByMenuButton">
                                     <li class="dropdown-item sortby-item" href="#">제목</li>
                                     <li class="dropdown-item sortby-item" href="#">내용</li>
                                     <li class="dropdown-item sortby-item" href="#">제목+내용</li>
-                                    <li class="dropdown-item sortby-item" href="#">닉네임</li>
                                     <li class="dropdown-item sortby-item" href="#">댓글</li>
                                 </ul>
                             </span>
-                            <span class="btn btn-secondary calendar-btn">
+                            <span class="btn btn-secondary calendar-btn" data-bs-toggle="modal" data-bs-target="#talk-post-datetime">
                                 <img src="./../src/calendar-mypage.png">
                             </span>
+                            <!-- 검색 날짜 범위 설정창 -->
+                            <div class="modal fade" id="talk-post-datetime" tabindex="-1" aria-labelledby="talk-post-datetime-label" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="talk-post-datetime-label">검색 날짜 기간</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id='talk-post-period-checkbox' checked>
+                                                전체 기간
+                                            </div>
+                                            <div class="period-window">
+                                                <input type="month" class="form-control period period-from" disabled>
+                                                <span>부터</span>
+                                                <input type="month" class="form-control period period-to" disabled>
+                                                <span>까지</span>                                            
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <input class="form-control" type="text" placeholder="게시글 검색" maxlength="300">
                             <button type="submit" class="post-search-btn">
                                 <img src="./../src/Search.svg" tabindex="2">
@@ -355,6 +408,7 @@
                             </ul>
                         </nav>
                     </form>
+                    <!-- ############ 거래 게시글 ############# -->
                     <form method="POST" id="sales-post-info">
                         <div class="post-header">
                             <span class="talk-table-title">
@@ -364,10 +418,10 @@
                             <span class='divider-xsmall'></span>
                             <span id="saved-post-count">3개</span>
                             <span class="dropdown post-sort-dropdown">
-                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="post-sort-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="sales-sortby-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     전체
                                 </button>
-                                <ul class="dropdown-menu sortby-menu" aria-labelledby="sortByMenuButton">
+                                <ul class="dropdown-menu" id='sales-sortby-dropdown-menu' aria-labelledby="sortByMenuButton">
                                   <li class="dropdown-item sortby-item" href="#">전체</li>
                                   <li class="dropdown-item sortby-item" href="#">판매중</li>
                                   <li class="dropdown-item sortby-item" href="#">예약중</li>
@@ -375,7 +429,7 @@
                                 </ul>
                             </span>
                             <span class="btn btn-primary select-option-btn" id="post-delete-btn" style="display: none;">
-                                목록에서 삭제
+                                게시글 삭제
                             </span>
                             <span class="btn btn-secondary select-option-btn" id="select-all-btn" style="display: none;">
                                 전체선택
@@ -410,20 +464,45 @@
                         <!-- 검색창 -->
                         <div class='post-search'>
                             <span class="dropdown post-sort-dropdown">
-                                <button class="btn btn-secondary btn-sm dropdown-toggle search-dropdown-btn" type="button" id="saved-post-search-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle search-dropdown-btn" type="button" id="sales-post-search-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     제목+내용
                                 </button>
-                                <ul class="dropdown-menu search-dropdown-menu" aria-labelledby="sortByMenuButton">
+                                <ul class="dropdown-menu" id="sales-search-dropdown-menu" aria-labelledby="sortByMenuButton">
                                     <li class="dropdown-item sortby-item" href="#">제목</li>
                                     <li class="dropdown-item sortby-item" href="#">내용</li>
                                     <li class="dropdown-item sortby-item" href="#">제목+내용</li>
-                                    <li class="dropdown-item sortby-item" href="#">닉네임</li>
                                     <li class="dropdown-item sortby-item" href="#">댓글</li>
                                 </ul>
                             </span>
-                            <span class="btn btn-secondary calendar-btn">
+                            <span class="btn btn-secondary calendar-btn" data-bs-toggle="modal" data-bs-target="#sales-post-datetime">
                                 <img src="./../src/calendar-mypage.png">
                             </span>
+                            <!-- 검색 날짜 범위 설정창 -->
+                            <div class="modal fade" id="sales-post-datetime" tabindex="-1" aria-labelledby="sales-post-datetime-label" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="sales-post-datetime-label">검색 날짜 기간</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id='sales-post-period-checkbox' checked>
+                                                전체 기간
+                                            </div>
+                                            <div class="period-window">
+                                                <input type="month" class="form-control period period-from" disabled>
+                                                <span>부터</span>
+                                                <input type="month" class="form-control period period-to" disabled>
+                                                <span>까지</span>                                            
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <input class="form-control" type="text" placeholder="게시글 검색" maxlength="300">
                             <button type="submit" class="post-search-btn">
                                 <img src="./../src/Search.svg" tabindex="2">

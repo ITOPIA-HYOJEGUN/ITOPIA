@@ -68,7 +68,7 @@ let saved_posts = document.querySelectorAll('#saved-post-info .post-card');
 saved_post_select_btn.addEventListener('click', function(e) {
     let checkboxes = document.querySelectorAll('#saved-post-info .post-checkbox');
     let more_menu_btns = document.querySelectorAll('#saved-post-info .more-menu-btn');
-    let sort_btn = document.querySelector('#saved-post-info #post-sort-dropdown-btn');
+    let sort_btn = document.querySelector('#saved-sortby-dropdown-btn');
     let select_option_btns = document.querySelectorAll('#saved-post-info .select-option-btn');
 
     // 선택 버튼이 눌린 상태에서 다시 누르면,
@@ -139,7 +139,7 @@ let talk_posts = document.querySelectorAll('#talk-post-info .post-card');
 talk_post_select_btn.addEventListener('click', function(e) {
     let checkboxes = document.querySelectorAll('#talk-post-info .post-checkbox');
     let more_menu_btns = document.querySelectorAll('#talk-post-info .more-menu-btn');
-    let sort_btn = document.querySelector('#talk-post-info #post-sort-dropdown-btn');
+    let sort_btn = document.querySelector('#talk-sortby-dropdown-btn');
     let select_option_btns = document.querySelectorAll('#talk-post-info .select-option-btn');
 
     // 선택 버튼이 눌린 상태에서 다시 누르면,
@@ -207,7 +207,7 @@ let sales_posts = document.querySelectorAll('#sales-post-info .post-card');
 sales_post_select_btn.addEventListener('click', function(e) {
     let checkboxes = document.querySelectorAll('#sales-post-info .post-checkbox');
     let more_menu_btns = document.querySelectorAll('#sales-post-info .more-menu-btn');
-    let sort_btn = document.querySelector('#sales-post-info #post-sort-dropdown-btn');
+    let sort_btn = document.querySelector('#sales-sortby-dropdown-btn');
     let select_option_btns = document.querySelectorAll('#sales-post-info .select-option-btn');
 
     // 선택 버튼이 눌린 상태에서 다시 누르면,
@@ -269,3 +269,162 @@ sales_post_select_all_btn.addEventListener("click", function(e) {
         single_box.checked = !allChecked;
     })
 })
+// 검색창 및 상단 카테고리 선택 기능
+let saved_post_search_btn = document.getElementById('saved-post-search-dropdown-btn');
+let talk_post_search_btn = document.getElementById('talk-post-search-dropdown-btn');
+let sales_post_search_btn = document.getElementById('sales-post-search-dropdown-btn');
+let saved_post_search_dropdown = document.querySelectorAll('#saved-search-dropdown-menu .sortby-item');
+let talk_post_search_dropdown = document.querySelectorAll('#talk-search-dropdown-menu .sortby-item');
+let sales_post_search_dropdown = document.querySelectorAll('#sales-search-dropdown-menu .sortby-item');
+
+let saved_sortby_btn = document.getElementById('saved-sortby-dropdown-btn');
+let talk_sortby_btn = document.getElementById('talk-sortby-dropdown-btn');
+let sales_sortby_btn = document.getElementById('sales-sortby-dropdown-btn');
+let saved_sortby_dropdown = document.querySelectorAll('#saved-sortby-dropdown-menu .sortby-item');
+let talk_sortby_dropdown = document.querySelectorAll('#talk-sortby-dropdown-menu .sortby-item');
+let sales_sortby_dropdown = document.querySelectorAll('#sales-sortby-dropdown-menu .sortby-item');
+
+saved_post_search_dropdown.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+        saved_post_search_btn.innerText = e.target.innerText;
+    })
+});
+talk_post_search_dropdown.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+        talk_post_search_btn.innerText = e.target.innerText;
+    })
+});
+sales_post_search_dropdown.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+        sales_post_search_btn.innerText = e.target.innerText;
+    })
+});
+
+saved_sortby_dropdown.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+        saved_sortby_btn.innerText = e.target.innerText;
+    })
+});
+talk_sortby_dropdown.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+        talk_sortby_btn.innerText = e.target.innerText;
+    })
+});
+sales_sortby_dropdown.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+        sales_sortby_btn.innerText = e.target.innerText;
+    })
+});
+
+// 달력 버튼 모달 내부 코드
+let period_from = document.querySelectorAll('.period-from');
+let period_to = document.querySelectorAll('.period-to');
+let saved_post_period_check = document.querySelector('#saved-post-period-checkbox');
+let talk_post_period_check = document.querySelector('#talk-post-period-checkbox');
+let sales_post_period_check = document.querySelector('#sales-post-period-checkbox');
+let saved_post_period_from = document.querySelector('#saved-post-info .period-from');
+let saved_post_period_to = document.querySelector('#saved-post-info .period-to');
+let talk_post_period_from = document.querySelector('#talk-post-info .period-from');
+let talk_post_period_to = document.querySelector('#talk-post-info .period-to');
+let sales_post_period_from = document.querySelector('#sales-post-info .period-from');
+let sales_post_period_to = document.querySelector('#sales-post-info .period-to');
+
+saved_post_period_check.addEventListener('click', function() {
+    let saved_date_btn = document.querySelector('#saved-post-info .calendar-btn');
+    if (saved_post_period_check.checked == false) {
+        saved_post_period_from.disabled = false;
+        saved_post_period_to.disabled = false;
+        now = new Date();
+        year = now.getFullYear();
+        month = now.getMonth() + 1; // 자바스크립트 월 0부터 시작함.
+        saved_post_period_from.value = year + '-' + month;
+        saved_post_period_to.value = year + '-' + month;
+        saved_date_btn.setAttribute('style', 'background-color: #245c9c');
+    }
+    else {
+        saved_post_period_from.value = '';
+        saved_post_period_to.value = '';
+        saved_post_period_from.disabled = true;
+        saved_post_period_to.disabled = true;
+        saved_date_btn.setAttribute('style', 'background-color: #313131');
+    }
+});
+saved_post_period_from.addEventListener('change', function() {
+    if (saved_post_period_from.value > saved_post_period_to.value) {
+        alert('시작 날짜는 끝 날짜보다 클 수 없습니다.');
+        saved_post_period_from.value = saved_post_period_to.value;
+    }
+});
+saved_post_period_to.addEventListener('change', function() {
+    if (saved_post_period_from.value > saved_post_period_to.value) {
+        alert('끝 날짜는 시작 날짜보다 작을 수 없습니다.');
+        saved_post_period_to.value = saved_post_period_from.value;
+    }
+});
+
+talk_post_period_check.addEventListener('click', function() {
+    let talk_date_btn = document.querySelector('#talk-post-info .calendar-btn');
+    if (talk_post_period_check.checked == false) {
+        talk_post_period_from.disabled = false;
+        talk_post_period_to.disabled = false;
+        now = new Date();
+        year = now.getFullYear();
+        month = now.getMonth() + 1; // 자바스크립트 월 0부터 시작함.
+        talk_post_period_from.value = year + '-' + month;
+        talk_post_period_to.value = year + '-' + month;
+        talk_date_btn.setAttribute('style', 'background-color: #245c9c');
+    }
+    else {
+        talk_post_period_from.value = '';
+        talk_post_period_to.value = '';
+        talk_post_period_from.disabled = true;
+        talk_post_period_to.disabled = true;
+        talk_date_btn.setAttribute('style', 'background-color: #313131');
+    }
+});
+talk_post_period_from.addEventListener('change', function() {
+    if (talk_post_period_from.value > talk_post_period_to.value) {
+        alert('시작 날짜는 끝 날짜보다 클 수 없습니다.');
+        talk_post_period_from.value = talk_post_period_to.value;
+    }
+});
+talk_post_period_to.addEventListener('change', function() {
+    if (talk_post_period_from.value > talk_post_period_to.value) {
+        alert('끝 날짜는 시작 날짜보다 작을 수 없습니다.');
+        talk_post_period_to.value = talk_post_period_from.value;
+    }
+});
+
+sales_post_period_check.addEventListener('click', function() {
+    let sales_date_btn = document.querySelector('#sales-post-info .calendar-btn');
+    if (sales_post_period_check.checked == false) {
+        sales_post_period_from.disabled = false;
+        sales_post_period_to.disabled = false;
+        now = new Date();
+        year = now.getFullYear();
+        month = now.getMonth() + 1; // 자바스크립트 월 0부터 시작함.
+        sales_post_period_from.value = year + '-' + month;
+        sales_post_period_to.value = year + '-' + month;
+        sales_date_btn.setAttribute('style', 'background-color: #245c9c');
+    }
+    else {
+        sales_post_period_from.value = '';
+        sales_post_period_to.value = '';
+        sales_post_period_from.disabled = true;
+        sales_post_period_to.disabled = true;
+        sales_date_btn.setAttribute('style', 'background-color: #313131');
+    }
+});
+sales_post_period_from.addEventListener('change', function() {
+    if (sales_post_period_from.value > sales_post_period_to.value) {
+        alert('시작 날짜는 끝 날짜보다 클 수 없습니다.');
+        sales_post_period_from.value = sales_post_period_to.value;
+    }
+});
+sales_post_period_to.addEventListener('change', function() {
+    if (sales_post_period_from.value > sales_post_period_to.value) {
+        alert('끝 날짜는 시작 날짜보다 작을 수 없습니다.');
+        sales_post_period_to.value = sales_post_period_from.value;
+    }
+});
+
