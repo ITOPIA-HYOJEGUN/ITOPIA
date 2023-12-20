@@ -1,6 +1,8 @@
 const nav_menu = document.querySelectorAll('.nav-item');
 const user_info = document.getElementById('user-info');
 const post_info = document.getElementById('post-info');
+const comment_info = document.getElementById('comment-info');
+const noti_info = document.getElementById('noti-info');
 const post_category= document.querySelectorAll('.category-item');
 const saved_post_window = document.getElementById('saved-post-info');
 const talk_post_window = document.getElementById('talk-post-info');
@@ -8,16 +10,20 @@ const sales_post_window = document.getElementById('sales-post-info');
 const saved_post_select_btn = document.getElementById('saved-post-select-btn');
 const talk_post_select_btn = document.getElementById('talk-post-select-btn');
 const sales_post_select_btn = document.getElementById('sales-post-select-btn');
+const comment_select_btn = document.getElementById('comment-select-btn');
+
 // 첫 로딩 시 숨길 요소들 입력
 post_info.style.display = 'none';
 talk_post_window.style.display = 'none';
 sales_post_window.style.display = 'none';
+comment_info.style.display = 'none';
+noti_info.style.display = 'none';
 // 모든 마이페이지 하위 요소를 숨기는 함수
 function hideAll() {
     user_info.style.display = 'none';
     post_info.style.display = 'none';
-    
-    // 나머지 요소들도 이런 식으로 추가해주세요.
+    comment_info.style.display = 'none';
+    noti_info.style.display = 'none';
     for (i = 0; i < nav_menu.length; i++) {
         nav_menu[i].classList.remove('selected');
     }
@@ -42,8 +48,13 @@ nav_menu.forEach(function(menu, index) {
         } else if (index === 1) {
             post_info.style.display = ''; // 1번 메뉴 클릭 시 post_info 요소만 보입니다.
             menu.classList.add('selected');
+        } else if (index === 2) {
+            comment_info.style.display = ''; // 2번 메뉴 클릭 시 comment_info 요소만 보입니다.
+            menu.classList.add('selected');
+        } else if (index === 3) {
+            noti_info.style.display = ''; // 3번 메뉴 클릭 시 noti_info 요소만 보입니다.
+            menu.classList.add('selected');
         }
-        // 나머지 요소들도 이런 식으로 추가해주세요.
     });
 });
 // 게시글 관리 세부 카테고리 선택
@@ -113,13 +124,13 @@ saved_posts.forEach(function(post) {
             single_checkbox.checked = !single_checkbox.checked;
 
         }
-    })
+    });
 
     let single_checkbox = post.querySelector('.post-checkbox .form-check-input');
     single_checkbox.addEventListener('click', function(e) {
         e.stopPropagation();
-    })
-})
+    });
+});
 // 전체 선택 버튼 누르면 게시글 모두 선택되게 함
 let saved_post_select_all_btn = document.querySelector('#saved-post-info #select-all-btn');
 saved_post_select_all_btn.addEventListener("click", function(e) {
@@ -129,11 +140,9 @@ saved_post_select_all_btn.addEventListener("click", function(e) {
     checkbox_all.forEach(function(single_box) {
         // 모든 체크박스가 체크되어 있다면 체크를 해제하고, 그렇지 않다면 체크합니다.
         single_box.checked = !allChecked;
-    })
-})
-// 정렬 버튼 아이템 클릭 시 변경
-let saved_post_sort_by_btn = document.querySelector('#saved-post-info #post-sort-dropdown-btn');
-let saved_post_sort_by_items = document.querySelectorAll('#saved-post-info .sort-by-item')
+    });
+});
+
 // ---------------------- I*TALK 게시글 선택 버튼 이벤트
 let talk_posts = document.querySelectorAll('#talk-post-info .post-card');
 talk_post_select_btn.addEventListener('click', function(e) {
@@ -270,19 +279,19 @@ sales_post_select_all_btn.addEventListener("click", function(e) {
     })
 })
 // 검색창 및 상단 카테고리 선택 기능
-let saved_post_search_btn = document.getElementById('saved-post-search-dropdown-btn');
-let talk_post_search_btn = document.getElementById('talk-post-search-dropdown-btn');
-let sales_post_search_btn = document.getElementById('sales-post-search-dropdown-btn');
-let saved_post_search_dropdown = document.querySelectorAll('#saved-search-dropdown-menu .sortby-item');
-let talk_post_search_dropdown = document.querySelectorAll('#talk-search-dropdown-menu .sortby-item');
-let sales_post_search_dropdown = document.querySelectorAll('#sales-search-dropdown-menu .sortby-item');
+const saved_post_search_btn = document.getElementById('saved-post-search-dropdown-btn');
+const talk_post_search_btn = document.getElementById('talk-post-search-dropdown-btn');
+const sales_post_search_btn = document.getElementById('sales-post-search-dropdown-btn');
+const saved_post_search_dropdown = document.querySelectorAll('#saved-search-dropdown-menu .sortby-item');
+const talk_post_search_dropdown = document.querySelectorAll('#talk-search-dropdown-menu .sortby-item');
+const sales_post_search_dropdown = document.querySelectorAll('#sales-search-dropdown-menu .sortby-item');
 
-let saved_sortby_btn = document.getElementById('saved-sortby-dropdown-btn');
-let talk_sortby_btn = document.getElementById('talk-sortby-dropdown-btn');
-let sales_sortby_btn = document.getElementById('sales-sortby-dropdown-btn');
-let saved_sortby_dropdown = document.querySelectorAll('#saved-sortby-dropdown-menu .sortby-item');
-let talk_sortby_dropdown = document.querySelectorAll('#talk-sortby-dropdown-menu .sortby-item');
-let sales_sortby_dropdown = document.querySelectorAll('#sales-sortby-dropdown-menu .sortby-item');
+const saved_sortby_btn = document.getElementById('saved-sortby-dropdown-btn');
+const talk_sortby_btn = document.getElementById('talk-sortby-dropdown-btn');
+const sales_sortby_btn = document.getElementById('sales-sortby-dropdown-btn');
+const saved_sortby_dropdown = document.querySelectorAll('#saved-sortby-dropdown-menu .sortby-item');
+const talk_sortby_dropdown = document.querySelectorAll('#talk-sortby-dropdown-menu .sortby-item');
+const sales_sortby_dropdown = document.querySelectorAll('#sales-sortby-dropdown-menu .sortby-item');
 
 saved_post_search_dropdown.forEach(function(item) {
     item.addEventListener('click', function(e) {
@@ -317,21 +326,43 @@ sales_sortby_dropdown.forEach(function(item) {
 });
 
 // 달력 버튼 모달 내부 코드
-let period_from = document.querySelectorAll('.period-from');
-let period_to = document.querySelectorAll('.period-to');
-let saved_post_period_check = document.querySelector('#saved-post-period-checkbox');
-let talk_post_period_check = document.querySelector('#talk-post-period-checkbox');
-let sales_post_period_check = document.querySelector('#sales-post-period-checkbox');
-let saved_post_period_from = document.querySelector('#saved-post-info .period-from');
-let saved_post_period_to = document.querySelector('#saved-post-info .period-to');
-let talk_post_period_from = document.querySelector('#talk-post-info .period-from');
-let talk_post_period_to = document.querySelector('#talk-post-info .period-to');
-let sales_post_period_from = document.querySelector('#sales-post-info .period-from');
-let sales_post_period_to = document.querySelector('#sales-post-info .period-to');
+const saved_post_period_check = document.querySelector('#saved-post-period-checkbox');
+const talk_post_period_check = document.querySelector('#talk-post-period-checkbox');
+const sales_post_period_check = document.querySelector('#sales-post-period-checkbox');
+const saved_post_period_from = document.querySelector('#saved-post-info .period-from');
+const saved_post_period_to = document.querySelector('#saved-post-info .period-to');
+const talk_post_period_from = document.querySelector('#talk-post-info .period-from');
+const talk_post_period_to = document.querySelector('#talk-post-info .period-to');
+const sales_post_period_from = document.querySelector('#sales-post-info .period-from');
+const sales_post_period_to = document.querySelector('#sales-post-info .period-to');
+const saved_post_period_check_label = document.querySelector('#saved-post-info .modal-body .form-check');
+const talk_post_period_check_label = document.querySelector('#talk-post-info .modal-body .form-check');
+const sales_post_period_check_label = document.querySelector('#sales-post-info .modal-body .form-check');
 
-saved_post_period_check.addEventListener('click', function() {
+saved_post_period_check_label.addEventListener('click', function(e) {
     let saved_date_btn = document.querySelector('#saved-post-info .calendar-btn');
-    if (saved_post_period_check.checked == false) {
+    if (e.target !== saved_post_period_check_label) {
+            if (saved_post_period_check.checked == false) {
+            saved_post_period_from.disabled = false;
+            saved_post_period_to.disabled = false;
+            now = new Date();
+            year = now.getFullYear();
+            month = now.getMonth() + 1; // 자바스크립트 월 0부터 시작함.
+            saved_post_period_from.value = year + '-' + month;
+            saved_post_period_to.value = year + '-' + month;
+            saved_date_btn.setAttribute('style', 'background-color: #245c9c');
+        }
+        else {
+            saved_post_period_from.value = '';
+            saved_post_period_to.value = '';
+            saved_post_period_from.disabled = true;
+            saved_post_period_to.disabled = true;
+            saved_date_btn.setAttribute('style', 'background-color: #313131');
+        }
+        return;
+    }
+    if (saved_post_period_check.checked == true) {
+        saved_post_period_check.checked = false;
         saved_post_period_from.disabled = false;
         saved_post_period_to.disabled = false;
         now = new Date();
@@ -342,6 +373,7 @@ saved_post_period_check.addEventListener('click', function() {
         saved_date_btn.setAttribute('style', 'background-color: #245c9c');
     }
     else {
+        saved_post_period_check.checked = true;
         saved_post_period_from.value = '';
         saved_post_period_to.value = '';
         saved_post_period_from.disabled = true;
@@ -362,9 +394,30 @@ saved_post_period_to.addEventListener('change', function() {
     }
 });
 
-talk_post_period_check.addEventListener('click', function() {
+talk_post_period_check_label.addEventListener('click', function(e) {
     let talk_date_btn = document.querySelector('#talk-post-info .calendar-btn');
-    if (talk_post_period_check.checked == false) {
+    if (e.target !== talk_post_period_check_label) {
+            if (talk_post_period_check.checked == false) {
+            talk_post_period_from.disabled = false;
+            talk_post_period_to.disabled = false;
+            now = new Date();
+            year = now.getFullYear();
+            month = now.getMonth() + 1; // 자바스크립트 월 0부터 시작함.
+            talk_post_period_from.value = year + '-' + month;
+            talk_post_period_to.value = year + '-' + month;
+            talk_date_btn.setAttribute('style', 'background-color: #245c9c');
+        }
+        else {
+            talk_post_period_from.value = '';
+            talk_post_period_to.value = '';
+            talk_post_period_from.disabled = true;
+            talk_post_period_to.disabled = true;
+            talk_date_btn.setAttribute('style', 'background-color: #313131');
+        }
+        return;
+    }
+    if (talk_post_period_check.checked == true) {
+        talk_post_period_check.checked = false;
         talk_post_period_from.disabled = false;
         talk_post_period_to.disabled = false;
         now = new Date();
@@ -375,6 +428,7 @@ talk_post_period_check.addEventListener('click', function() {
         talk_date_btn.setAttribute('style', 'background-color: #245c9c');
     }
     else {
+        talk_post_period_check.checked = true;
         talk_post_period_from.value = '';
         talk_post_period_to.value = '';
         talk_post_period_from.disabled = true;
@@ -395,9 +449,30 @@ talk_post_period_to.addEventListener('change', function() {
     }
 });
 
-sales_post_period_check.addEventListener('click', function() {
+sales_post_period_check_label.addEventListener('click', function(e) {
     let sales_date_btn = document.querySelector('#sales-post-info .calendar-btn');
-    if (sales_post_period_check.checked == false) {
+    if (e.target !== sales_post_period_check_label) {
+            if (sales_post_period_check.checked == false) {
+            sales_post_period_from.disabled = false;
+            sales_post_period_to.disabled = false;
+            now = new Date();
+            year = now.getFullYear();
+            month = now.getMonth() + 1; // 자바스크립트 월 0부터 시작함.
+            sales_post_period_from.value = year + '-' + month;
+            sales_post_period_to.value = year + '-' + month;
+            sales_date_btn.setAttribute('style', 'background-color: #245c9c');
+        }
+        else {
+            sales_post_period_from.value = '';
+            sales_post_period_to.value = '';
+            sales_post_period_from.disabled = true;
+            sales_post_period_to.disabled = true;
+            sales_date_btn.setAttribute('style', 'background-color: #313131');
+        }
+        return;
+    }
+    if (sales_post_period_check.checked == true) {
+        sales_post_period_check.checked = false;
         sales_post_period_from.disabled = false;
         sales_post_period_to.disabled = false;
         now = new Date();
@@ -408,6 +483,7 @@ sales_post_period_check.addEventListener('click', function() {
         sales_date_btn.setAttribute('style', 'background-color: #245c9c');
     }
     else {
+        sales_post_period_check.checked = true;
         sales_post_period_from.value = '';
         sales_post_period_to.value = '';
         sales_post_period_from.disabled = true;
@@ -428,3 +504,171 @@ sales_post_period_to.addEventListener('change', function() {
     }
 });
 
+// -------------------- 댓글 관리 --------------------------
+// 검색창 및 상단 카테고리 선택 기능
+const comment_search_btn = document.getElementById('comment-search-dropdown-btn');
+const comment_search_dropdown = document.querySelectorAll('#comment-search-dropdown-menu .sortby-item');
+
+const comment_sortby_btn = document.getElementById('comment-sortby-dropdown-btn');
+const comment_sortby_dropdown = document.querySelectorAll('#comment-sortby-dropdown-menu .sortby-item');
+
+comment_search_dropdown.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+        comment_search_btn.innerText = e.target.innerText;
+    })
+});
+comment_sortby_dropdown.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+        comment_sortby_btn.innerText = e.target.innerText;
+    })
+});
+
+// 달력 버튼 모달 내부 코드
+const comment_period_check = document.querySelector('#comment-period-checkbox');
+const comment_period_from = document.querySelector('#comment-info .period-from');
+const comment_period_to = document.querySelector('#comment-info .period-to');
+const comment_period_check_label = document.querySelector('#comment-info .modal-body .form-check');
+comment_period_check_label.addEventListener('click', function(e) {
+    let sales_date_btn = document.querySelector('#sales-post-info .calendar-btn');
+    if (e.target !== comment_period_check_label) {
+            if (comment_period_check.checked == false) {
+            comment_period_from.disabled = false;
+            comment_period_to.disabled = false;
+            now = new Date();
+            year = now.getFullYear();
+            month = now.getMonth() + 1; // 자바스크립트 월 0부터 시작함.
+            comment_period_from.value = year + '-' + month;
+            comment_period_to.value = year + '-' + month;
+            sales_date_btn.setAttribute('style', 'background-color: #245c9c');
+        }
+        else {
+            comment_period_from.value = '';
+            comment_period_to.value = '';
+            comment_period_from.disabled = true;
+            comment_period_to.disabled = true;
+            sales_date_btn.setAttribute('style', 'background-color: #313131');
+        }
+        return;
+    }
+    if (comment_period_check.checked == true) {
+        comment_period_check.checked = false;
+        comment_period_from.disabled = false;
+        comment_period_to.disabled = false;
+        now = new Date();
+        year = now.getFullYear();
+        month = now.getMonth() + 1; // 자바스크립트 월 0부터 시작함.
+        comment_period_from.value = year + '-' + month;
+        comment_period_to.value = year + '-' + month;
+        sales_date_btn.setAttribute('style', 'background-color: #245c9c');
+    }
+    else {
+        comment_period_check.checked = true;
+        comment_period_from.value = '';
+        comment_period_to.value = '';
+        comment_period_from.disabled = true;
+        comment_period_to.disabled = true;
+        sales_date_btn.setAttribute('style', 'background-color: #313131');
+    }
+});
+comment_period_from.addEventListener('change', function() {
+    if (comment_period_from.value > comment_period_to.value) {
+        alert('시작 날짜는 끝 날짜보다 클 수 없습니다.');
+        comment_period_from.value = comment_period_to.value;
+    }
+});
+comment_period_to.addEventListener('change', function() {
+    if (comment_period_from.value > comment_period_to.value) {
+        alert('끝 날짜는 시작 날짜보다 작을 수 없습니다.');
+        comment_period_to.value = comment_period_from.value;
+    }
+});
+
+// 댓글 선택 버튼 이벤트
+let comments = document.querySelectorAll('#comment-info .comment-card');
+comment_select_btn.addEventListener('click', function(e) {
+    let checkboxes = document.querySelectorAll('#comment-info .comment-checkbox');
+    let more_menu_btns = document.querySelectorAll('#comment-info .more-menu-btn');
+    let sort_btn = document.querySelector('#comment-sortby-dropdown-btn');
+    let select_option_btns = document.querySelectorAll('#comment-info .select-option-btn');
+
+    // 선택 버튼이 눌린 상태에서 다시 누르면,
+    if (comment_select_btn.classList.contains("pushed")) {
+        comment_select_btn.classList.remove("pushed");
+        checkboxes.forEach(function(checkbox) {
+            checkbox.style.display = 'none';
+        })
+        more_menu_btns.forEach(function(btn) {
+            btn.style.display = '';
+        })
+        comments.forEach(function(comment) {
+            comment.style.cursor = 'default'
+        })
+        select_option_btns.forEach(function(option_btn) {
+            option_btn.style.display = 'none';
+        })
+        sort_btn.style.display = '';
+    }
+    else {
+        comment_select_btn.classList.add('pushed');
+        checkboxes.forEach(function(checkbox) {
+            checkbox.style.display = '';
+        })
+        more_menu_btns.forEach(function(btn) {
+            btn.style.display = 'none';
+        })
+        comments.forEach(function(comment) {
+            comment.style.cursor = 'pointer'
+        })
+        select_option_btns.forEach(function(option_btn) {
+            option_btn.style.display = '';
+        })
+        sort_btn.style.display = 'none';
+    }
+})
+// 댓글 선택 모드일 경우, 어딜 클릭해도 선택되게 변경
+comments.forEach(function(comment) {
+    comment.addEventListener('click', function(e) {
+        if (comment_select_btn.classList.contains("pushed")) {
+            let single_checkbox = comment.querySelector('.comment-checkbox .form-check-input');
+            single_checkbox.checked = !single_checkbox.checked;
+        }
+    });
+
+    let single_checkbox = comment.querySelector('.comment-checkbox .form-check-input');
+    single_checkbox.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+});
+// 전체 선택 버튼 누르면 게시글 모두 선택되게 함
+let comment_select_all_btn = document.querySelector('#comment-info #select-all-btn');
+comment_select_all_btn.addEventListener("click", function(e) {
+    let checkbox_all = document.querySelectorAll('#comment-info .form-check-input');
+    // 모든 체크박스가 체크되어 있는지 확인합니다.
+    let allChecked = Array.from(checkbox_all).every(checkbox => checkbox.checked);
+    checkbox_all.forEach(function(single_box) {
+        // 모든 체크박스가 체크되어 있다면 체크를 해제하고, 그렇지 않다면 체크합니다.
+        single_box.checked = !allChecked;
+    });
+});
+
+// -------------------- 알림 관리 --------------------------
+// 알림 종류 선택 표시
+const notification_sortby_btn = document.getElementById('notification-sortby-dropdown-btn');
+const notification_sortby_dropdown = document.querySelectorAll('#notification-sortby-dropdown-menu .sortby-item');
+notification_sortby_dropdown.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+        notification_sortby_btn.innerText = e.target.innerText;
+    })
+});
+// 라벨 클릭해도 체크 표시 되도록 변경
+const noti_switch = document.getElementById('noti-switch');
+const DM_switch = document.getElementById('DM-switch');
+const noti_switch_label = document.getElementById('noti-switch-label');
+const DM_switch_label = document.getElementById('DM-switch-label');
+
+noti_switch_label.addEventListener('click', function() {
+    noti_switch.checked = !noti_switch.checked
+});
+DM_switch_label.addEventListener('click', function() {
+    DM_switch.checked = !DM_switch.checked
+})

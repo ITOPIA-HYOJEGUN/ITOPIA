@@ -131,8 +131,9 @@ main h5 {
     width: 400px;
     margin-bottom: 25px;
 }
-.form-input {
+#user-nickname {
     width: 200px;
+    text-align: right;
 }
 /* Placeholder 크기 강제조정 */
 ::-webkit-input-placeholder {
@@ -291,11 +292,23 @@ main h5 {
     text-overflow: ellipsis;
     font-weight: 600;
 }
+.best-post {
+    margin-left: 8px;
+    position: relative;
+    bottom: 3px;
+    width: 14px;
+    height: 14px;
+}
 .post-checkbox {
     position: relative;
     bottom: 20px;
     margin-left: auto;
     padding: 0px;
+}
+/* 전체 기간 글씨 박스 크기 조정.  */
+.modal-body .form-check {
+    width: 200px;
+    cursor: default;
 }
 .form-check-input {
     border-color: #4291db;
@@ -375,7 +388,6 @@ main h5 {
     margin-right: 8px;
     margin-left: 15px;
 }
-
 .post-search .form-control {
     border-color: #999999;
     width: 250px;
@@ -394,7 +406,7 @@ main h5 {
     position: relative;
     bottom: 8px;
 }
-.saved-post-pagination {
+.post-pagination {
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -430,4 +442,222 @@ main h5 {
 .sold-out {
     background-color: #dfdfdf;
     color: #727272;
+}
+/* ----------- 댓글 관리 CSS -------------- */
+#comment-info-window {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+    margin-top: 40px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #d6d6d6;
+    border-width: 1px;
+    padding: 20px;
+    height: 770px;
+}
+.comment-header {
+    display: flex;
+    flex-direction: row;
+    width: 640px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.comment-header-icon {
+    width: 20px;
+    height: 20px;
+}
+.comment-table-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+.comment-card {
+    display: flex;
+    flex-direction: column;
+    width: 640px;
+    font-size: 14px;
+    color:#707070;
+    padding: 5px;
+}
+.comment-contents {
+    /* 텍스트 길어지면 잘리는거 위한 코드 */
+    width: 550px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: black;
+}
+.comment-checkbox {
+    position: relative;
+    bottom: 20px;
+    margin-left: auto;
+    padding: 0px;
+}
+.comment-detail {
+    display: flex;
+    flex-direction: row;
+    width: 630px;
+    font-size: 13px;
+    margin-top: 2px;
+}
+.comment-detail-icon {
+    width: 10px;
+    height: 10px;
+    margin-right: 4px;
+    position: relative;
+    bottom: 1px;
+}
+.comment-unheart-count {
+    margin-left: 8px;
+}
+.post-title-icon {
+    width: 15px;
+    height: 15px;
+    margin-left: 8px;
+    margin-right: 4px;
+    position: relative;
+    bottom: 1px;
+}
+.comment-regdate {
+    margin-left: auto;
+}
+.comment-search {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+}
+.comment-search .form-control {
+    border-color: #999999;
+    width: 250px;
+    height: 36px;
+}
+.comment-search-btn {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    border-style: none;
+    background-color: transparent;
+}
+.comment-search-btn img {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    bottom: 8px;
+}
+/* -------------- 알림 관리 CSS ---------- */
+#noti-info-window {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 620px;
+    margin-top: 40px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #d6d6d6;
+    border-width: 1px;
+    padding: 20px;
+    height: 770px;
+}
+.noti-switches {
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    margin-top: 30px;
+    justify-content: space-around;
+}
+.notification-header {
+    display: flex;
+    flex-direction: row;
+    width: 470px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.notification-header-icon {
+    width: 20px;
+    height: 20px;
+}
+#notification-count {
+    font-size: 14px;
+}
+.notification-table-title {
+    font-size: 17px;
+    font-weight: 600;
+}
+.notification-area {
+    width: 465px;
+    height: 580px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: unset;
+}
+.notification-divider-horizontal {
+    width: 450px;
+    border-width: 0px;
+    border-top-width: 1px;
+    border-style: solid;
+    border-top-color: #dfdfdf;
+}
+.notification-divider-horizontal-end {
+    width: 450px;
+    border-width: 0px;
+    border-top-width: 1px;
+    border-style: solid;
+    border-top-color: #dfdfdf;
+}
+.notification-card {
+    display: flex;
+    flex-direction: column;
+    height: 93px;
+    width: 450px;
+    padding: 6px;
+    padding-top: 3px;
+    padding-left: 10px;
+}
+.notification-card:hover {
+    background-color: #f8f8f8;
+}
+/* 안 읽은 알림 배경색 지정 */
+.unread-noti {
+    background: #f6f4ff
+}
+.unread-noti:hover {
+    transition-duration: 0.2s;
+    background: #f4ebff;
+}
+.notification-title {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    font-size: 13px;
+    font-weight: 600;
+}
+.notification-title-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+}
+.notification-contents {
+    width: 410px;
+    font-size: 13px;
+    display:-webkit-box; /* 줄 길어지면 ... 생기게 하기 위한 코드 */
+    -webkit-line-clamp: 2;     /* 텍스트 줄 수 자르는 단위 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.notification-detail {
+    display: flex;
+    flex-direction: row;
+}
+.notification-regdate {
+    margin-left: auto;
+    font-size: 12px;
 }

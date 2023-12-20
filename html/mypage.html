@@ -97,7 +97,7 @@
                         <a class="nav-link" href="#">개인 설정</a>
                     </li>
                 </ul>
-                <!-- 회원정보 부분 -->
+                <!--+++++++++++++++ 회원정보 부분 ++++++++++++++++ -->
                 <form method="POST" id="user-info">
                     <div class="profile-icon">
                         <img src="./../src/like.png">
@@ -141,7 +141,7 @@
                         저장
                     </div>
                 </form>
-                <!-- 게시글 관리 부분 -->
+                <!-- ++++++++++++++++ 게시글 관리 부분 ++++++++++++++ -->
                 <div id="post-info">
                     <small>내가 저장하거나 작성한 글들을 확인할 수 있어요.</small>
                     <div id="category-select">
@@ -177,7 +177,7 @@
                             </span>
                             <span class="select-btn" id="saved-post-select-btn"><img class='select-icon' src="./../src/check-mypage.png">선택</span>
                         </div>
-                        <!-- 게시글 시작 -->
+                        <!-- 게시글 시작(1페이지 6개까지)-->
                         <div class="divider-horizontal"></div>
                         <div class="post-card">
                             <span class="post-title">
@@ -198,6 +198,7 @@
                                 <span class="post-heart-count"><img class="post-detail-icon" src="./../src/Heart.svg">50</span>
                                 <span class="post-reply-count"><img class="post-detail-icon" src="./../src/Comment.png">23</span>
                                 <span class="post-view-count"><img class="post-detail-icon" src="./../src/view.png">30.2만</span>
+                                <span><img class='best-post' src="./../src/best.png"></span>
                                 <span class="post-regdate">10분 전</span>
                             </div>
                         </div>
@@ -279,7 +280,7 @@
                         </div>
 
                         <!-- 하단 페이지 이동 -->
-                        <nav class="saved-post-pagination" aria-label="...">
+                        <nav class="post-pagination" aria-label="...">
                             <ul class="pagination">
                             <li class="page-item disabled">
                                 <a class="page-link">이전</a>
@@ -303,7 +304,7 @@
                                 내가 작성한 I*TALK 게시글
                             </span>
                             <span class='divider-xsmall'></span>
-                            <span id="saved-post-count">3개</span>
+                            <span id="talk-post-count">3개</span>
                             <span class="dropdown post-sort-dropdown">
                                 <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="talk-sortby-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     최신순
@@ -392,7 +393,7 @@
                             </button>
                         </div>
                         <!-- 하단 페이지 이동 -->
-                        <nav class="saved-post-pagination" aria-label="...">
+                        <nav class="post-pagination" aria-label="...">
                             <ul class="pagination">
                             <li class="page-item disabled">
                                 <a class="page-link">이전</a>
@@ -416,7 +417,7 @@
                                 내가 작성한 거래게시글
                             </span>
                             <span class='divider-xsmall'></span>
-                            <span id="saved-post-count">3개</span>
+                            <span id="sales-post-count">3개</span>
                             <span class="dropdown post-sort-dropdown">
                                 <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="sales-sortby-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     전체
@@ -509,7 +510,7 @@
                             </button>
                         </div>
                         <!-- 하단 페이지 이동 -->
-                        <nav class="saved-post-pagination" aria-label="...">
+                        <nav class="post-pagination" aria-label="...">
                             <ul class="pagination">
                             <li class="page-item disabled">
                                 <a class="page-link">이전</a>
@@ -525,6 +526,182 @@
                             </ul>
                         </nav>
                     </form>
+                </div>
+                <!-- +++++++++++++++ 댓글 관리 부분 +++++++++++++++++ -->
+                <div id="comment-info">
+                    <form method="POST" id="comment-info-window">
+                        <small>내가 작성한 댓글들을 확인할 수 있어요.</small>
+                        <div class="comment-header">
+                            <span class="comment-table-title">
+                                <img class='comment-header-icon' src="./../src/comment-mypage.png">
+                                내 댓글
+                            </span>
+                            <span class='divider-xsmall'></span>
+                            <span id="comment-count">3개</span>
+                            <span class="dropdown post-sort-dropdown">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="comment-sortby-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    최신순
+                                </button>
+                                <ul class="dropdown-menu" id="comment-sortby-dropdown-menu" aria-labelledby="sortByMenuButton">
+                                  <li class="dropdown-item sortby-item" href="#">추천순</li>
+                                  <li class="dropdown-item sortby-item" href="#">최신순</li>
+                                </ul>
+                            </span>
+                            <span class="btn btn-primary select-option-btn" id="comment-delete-btn" style="display: none;">
+                                댓글 삭제
+                            </span>
+                            <span class="btn btn-secondary select-option-btn" id="select-all-btn" style="display: none;">
+                                전체선택
+                            </span>
+                            <span class="select-btn" id="comment-select-btn"><img class='select-icon' src="./../src/check-mypage.png">선택</span>
+                        </div>
+                        <!-- 댓글 시작 -->
+                        <div class="divider-horizontal"></div>
+                        <div class="comment-card">
+                            <span class="comment-contents">
+                                내 방탄 돌려내 ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ
+                            </span>
+                            <div class="form-check comment-checkbox" style="display: none;">
+                                <input class="form-check-input" type="checkbox" value="">
+                            </div>
+                            <button type="button" class="more-menu-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img class='more-menu-icon' src="./../src/more_menu.png">
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item">게시글 보기</a></li>
+                                <li><a class="dropdown-item">삭제</a></li>
+                            </ul>
+                            <div class="comment-detail">
+                                <span class="comment-heart-count"><img class="comment-detail-icon" src="./../src/like.png">50</span>
+                                <span class="comment-unheart-count"><img class="comment-detail-icon" src="./../src/broken-heart.png">50</span>
+                                <span class="comment-post-title"><img class="post-title-icon" src="./../src/post-mypage.png">[BTS]방탄은 모조리 군대를 갔다.</span>
+                                <span class="comment-regdate">10분 전</span>
+                            </div>
+                        </div>
+                        <!-- 댓글 끝 -->
+
+                        <div class="divider-horizontal-end"></div>
+                        <!-- 검색창 -->
+                        <div class='comment-search'>
+                            <span class="dropdown comment-sort-dropdown">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle search-dropdown-btn" type="button" id="comment-search-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    댓글 내용
+                                </button>
+                                <ul class="dropdown-menu" id="comment-search-dropdown-menu" aria-labelledby="sortByMenuButton">
+                                  <li class="dropdown-item sortby-item" href="#">댓글 내용</li>
+                                  <li class="dropdown-item sortby-item" href="#">게시글 제목</li>
+                                  <li class="dropdown-item sortby-item" href="#">게시글 작성자</li>
+                                </ul>
+                            </span>
+                            <span class="btn btn-secondary calendar-btn" data-bs-toggle="modal" data-bs-target="#comment-datetime">
+                                <img src="./../src/calendar-mypage.png">
+                            </span>
+                            <!-- 검색 날짜 범위 설정창 -->
+                            <div class="modal fade" id="comment-datetime" tabindex="-1" aria-labelledby="comment-datetime-label" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="comment-datetime-label">검색 날짜 기간</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id='comment-period-checkbox' checked>
+                                                전체 기간
+                                            </div>
+                                            <div class="period-window">
+                                                <input type="month" class="form-control period period-from" disabled>
+                                                <span>부터</span>
+                                                <input type="month" class="form-control period period-to" disabled>
+                                                <span>까지</span>                                            
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input class="form-control" type="text" placeholder="댓글 검색" maxlength="300">
+                            <button type="submit" class="comment-search-btn">
+                                <img src="./../src/Search.svg" tabindex="2">
+                            </button>
+                        </div>
+
+                        <!-- 하단 페이지 이동 -->
+                        <nav class="post-pagination" aria-label="...">
+                            <ul class="pagination">
+                            <li class="page-item disabled">
+                                <a class="page-link">이전</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item active" aria-current="page">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">다음</a>
+                            </li>
+                            </ul>
+                        </nav>
+                    </form>
+                </div>
+                <!-- ++++++++++++++ 알림 부분 ++++++++++++++++++ -->
+                <div id="noti-info">
+                    <form method="POST" id="noti-info-window">
+                        <small>최대 1개월 전까지의 알림들을 확인할 수 있어요.</small>
+                        <div class="noti-switches">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="noti-switch" checked>
+                                <label class="form-check-label" for="flexSwitchCheckDefault" id="noti-switch-label">DM 외, 전체 알림 켜기 </label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="DM-switch" checked>
+                                <label class="form-check-label" for="flexSwitchCheckDefault" id="DM-switch-label">DM 알림 켜기 </label>
+                            </div>
+                        </div>
+                        <div class="notification-header">
+                            <span class="notification-table-title">
+                                <img class='notification-header-icon' src="./../src/notification-mypage.png">
+                                알림
+                            </span>
+                            <span class='divider-xsmall'></span>
+                            <span id="notification-count">새 알림: 99,999,999개</span>
+                            <span class="dropdown post-sort-dropdown">
+                                <button class="btn btn-secondary btn-sm" type="button" id="mark-as-read-all-btn">
+                                    모두 읽음으로 표시
+                                </button>
+                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="notification-sortby-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    전체
+                                </button>
+                                <ul class="dropdown-menu" id="notification-sortby-dropdown-menu" aria-labelledby="sortByMenuButton">
+                                    <li class="dropdown-item sortby-item" href="#">전체</li>
+                                    <li class="dropdown-item sortby-item" href="#">댓글 알림</li>
+                                    <li class="dropdown-item sortby-item" href="#">인기글 알림</li>
+                                    <li class="dropdown-item sortby-item" href="#">거래 알림</li>
+                                    <li class="dropdown-item sortby-item" href="#">포인트 알림</li>
+                                </ul>
+                            </span>
+                        </div>
+                        <!-- 알림 시작(1페이지 6개까지) -->
+                        <div class="notification-area">
+                            <div class="notification-divider-horizontal"></div>
+                            <div class="notification-card unread-noti">
+                                <span class="notification-title"><img class='notification-title-icon' src="./../src/Comment_colored.png">댓글 알림</span>
+                                <span class="notification-contents">
+                                    내방돌려내ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅁㄴㅇㅁㄴㄻㄴㄻㅇㄻㄻㄴㄻㄴㄻㄴㄹㅇㅁㄴㄻㄹㄻㄴㅇㄴㅁㄻㄻㅇㄻㄹㅇㅇㅁㅁㄴㄹㄴㅁㅇㄹㄴㅇㄻㄹㅇㅁㄴㅇㄻㄻㄹ
+                                </span>
+                                <div class="form-check notification-checkbox" style="display: none;">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                </div>
+                                <div class="notification-detail">
+                                    <span class="notification-regdate">10분 전</span>
+                                </div>
+                            </div>
+                            <!-- 알림 끝 -->
+                            <div class="notification-divider-horizontal-end"></div>
+                        </div>
+                    </form>                    
                 </div>
             </div>
         </div>
