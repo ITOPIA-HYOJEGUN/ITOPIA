@@ -58,7 +58,7 @@
     <main>
         <div class="container-sm" id="MainContainer">
             <!-- Card로 Sub Container 빌드 -->
-            <div id="SubContainer1">
+            <div id="SubContainer1"> 
                 <h5 class="SubTitle">마이페이지</h5>
                 <!-- 마이페이지 매뉴 -->
                 <ul class="nav menu">
@@ -702,6 +702,25 @@
                             <div class="notification-divider-horizontal-end"></div>
                         </div>
                     </form>                    
+                </div>
+                <!-- +++++++++++++++ 차단 관리 ++++++++++++++++ -->
+                <div id="blocked-info">
+                    <div id="blocked-info-window">
+                        <small>내가 차단한 유저들을 확인할 수 있어요.</small>
+                        <div class="blocked-user-list">
+                            <!-- 차단한 유저 정보 시작 -->
+                            <div class="blocked-user-info">
+                                <span class="blocked-profile-icon"><img src="./../src/IdolFan.png"></span>
+                                <span class="blocked-nickname">테스터1</span>
+                            </div>
+                            <!-- 차단한 유저 정보 끝 -->
+                        </div>
+                    </div>
+                    <div class="tips-area">
+                        <small class="tips">최대 20명까지 차단이 가능해요.</small>
+                        <small class="tips">댓글과 게시글은 차단된 유저의 것이라고 표시되지만, 클릭하면 내용을 확인할 수 있어요.</small>
+                        <small class="tips">상품 문의 알림을 제외하고, 차단된 유저와 관련된 모든 DM/알림은 받지 않아요.</small>
+                    </div>
                 </div>
             </div>
         </div>
