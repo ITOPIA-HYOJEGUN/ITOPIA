@@ -114,7 +114,7 @@ main h5 {
     height: 100px;
     border-radius: 50%;
     margin-bottom: 20px;
-    object-fit: contain;
+    object-fit: fill;
     border-style: solid;
     border-width: 2px;
     border-color:#dfdfdf;
@@ -469,6 +469,9 @@ main h5 {
     width: 20px;
     height: 20px;
 }
+.comment-sort-dropdown {
+    margin-left: auto;
+}
 .comment-table-title {
     font-size: 18px;
     font-weight: 600;
@@ -584,6 +587,9 @@ main h5 {
     width: 20px;
     height: 20px;
 }
+.noti-sort-dropdown {
+    margin-left: auto;
+}
 #notification-count {
     font-size: 14px;
 }
@@ -616,7 +622,7 @@ main h5 {
 .notification-card {
     display: flex;
     flex-direction: column;
-    height: 93px;
+    height: auto;
     width: 450px;
     padding: 6px;
     padding-top: 3px;
@@ -647,11 +653,6 @@ main h5 {
 .notification-contents {
     width: 410px;
     font-size: 13px;
-    display:-webkit-box; /* 줄 길어지면 ... 생기게 하기 위한 코드 */
-    -webkit-line-clamp: 2;     /* 텍스트 줄 수 자르는 단위 */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 .notification-detail {
     display: flex;
@@ -675,20 +676,241 @@ main h5 {
     padding: 20px;
     height: 770px;
 }
+#blocked-info-window {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.blocked-info-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 420px;
+    margin-top: 30px;
+    margin-bottom: 8px;
+}
+.blocked-count {
+    margin-right: auto;
+    font-weight: 600;
+}
+.blocked-count img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    position: relative;
+    bottom: 1px;
+}
+.blocked-divider-horizontal {
+    width: 450px;
+    border-width: 0px;
+    border-top-width: 1px;
+    border-style: solid;
+    border-top-color: #dfdfdf;
+    margin-bottom: 15px;
+}
+.blocked-user-list {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 450px;
+    margin-bottom: 40px;
+    overflow-y: scroll;
+}
+.blocked-user-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 380px;
+    height: 70px;
+    border-radius: 6px;
+}
+.blocked-user-info:hover {
+    background-color: #f5f5f5;
+}
+.blocked-nickname {
+    margin-left: 15px;
+    cursor: default;
+    font-weight: 600;
+}
+.blocked-checkbox {
+    margin-left: auto;
+}
 /* 프로필 사진 */
 .blocked-profile-icon {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 8px;
 }
 .blocked-profile-icon img {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    margin-bottom: 20px;
-    object-fit: cover;
+    object-fit: fill;
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
     border-color:#dfdfdf;
+    cursor: default;
+}
+.tips-area {
+    display: flex;
+    flex-direction: column;
+}
+.tips {
+    margin-bottom: 8px;
+}
+/* --------- 포인트 관리 CSS --------- */
+#point-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 620px;
+    margin-top: 40px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #d6d6d6;
+    border-width: 1px;
+    padding: 20px;
+    height: 770px;
+}
+.point-value {
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.point-value img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    position: relative;
+    bottom: 1px;
+}
+.point-info-header {
+    width: 430px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.point-history-list {
+    width: 450px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    margin-top: 25px;
+}
+.point-card {
+    display: flex;
+    flex-direction: column;
+    width: 430px;
+    border-radius: 8px;
+    padding: 8px;
+}
+.point-card:hover {
+    background-color: #f5f5f5;
+}
+.point-plus .point-history-title {
+    color: #4291db;
+}
+.point-minus .point-history-title {
+    color: #be5d5d;
+}
+.point-history-title {
+    font-weight: 600;
+}
+.point-history-contents {
+    font-size: 14px;
+    color:#707070;
+}
+.point-history-regdate {
+    font-size: 13px;
+    margin-left: auto;
+    color:#707070;
+}
+/* ----------- 즐겨찾기 관리 CSS ------------- */
+#favorite-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 620px;
+    margin-top: 40px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #d6d6d6;
+    border-width: 1px;
+    padding: 20px;
+    height: 770px;
+}
+.favorite-info-explanation {
+    margin-left: auto;
+    margin-right: auto;
+}
+.favorite-title {
+    font-weight: 600;
+    margin-top: 35px;
+}
+.favorite-title img {
+    width: 22px;
+    height: 22px;
+    margin-right: 7px;
+    position: relative;
+    bottom: 2px;
+}
+.favorite-idol-list {
+    padding: 10px;
+    width: 550px;
+    height: 200px;
+    overflow-y: auto;
+    word-break: keep-all;
+    line-height: 2.5;
+}
+.favorite-keywords-list {
+    padding: 10px;
+    width: 550px;
+    height: 200px;
+    overflow-y: auto;
+    word-break: keep-all;
+    line-height: 2.5;
+}
+.idolname {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px;
+    border-radius: 8px;
+    background-color: #e9e9e9;
+    height: 32px;
+}
+.keyword {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px;
+    border-radius: 8px;
+    background-color: #e9e9e9;
+    height: 32px;
+}
+.remove-icon {
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
     cursor: pointer;
+}
+.keyword-register-form {
+    display: flex;
+    flex-direction: column;
+}
+.keyword-input {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#keyword-register {
+    width: 200px;
+}
+#keyword-submit-btn {
+    margin-left: 20px;
+    height: 40px;
 }

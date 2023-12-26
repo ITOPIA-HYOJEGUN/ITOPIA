@@ -3,6 +3,9 @@ const user_info = document.getElementById('user-info');
 const post_info = document.getElementById('post-info');
 const comment_info = document.getElementById('comment-info');
 const noti_info = document.getElementById('noti-info');
+const blocked_info = document.getElementById('blocked-info');
+const point_info = document.getElementById('point-info');
+const favorite_info = document.getElementById('favorite-info');
 const post_category= document.querySelectorAll('.category-item');
 const saved_post_window = document.getElementById('saved-post-info');
 const talk_post_window = document.getElementById('talk-post-info');
@@ -18,12 +21,18 @@ talk_post_window.style.display = 'none';
 sales_post_window.style.display = 'none';
 comment_info.style.display = 'none';
 noti_info.style.display = 'none';
+blocked_info.style.display = 'none';
+point_info.style.display = 'none';
+favorite_info.style.display = 'none';
 // 모든 마이페이지 하위 요소를 숨기는 함수
 function hideAll() {
     user_info.style.display = 'none';
     post_info.style.display = 'none';
     comment_info.style.display = 'none';
     noti_info.style.display = 'none';
+    blocked_info.style.display = 'none';
+    point_info.style.display = 'none';
+    favorite_info.style.display = 'none';
     for (i = 0; i < nav_menu.length; i++) {
         nav_menu[i].classList.remove('selected');
     }
@@ -53,6 +62,15 @@ nav_menu.forEach(function(menu, index) {
             menu.classList.add('selected');
         } else if (index === 3) {
             noti_info.style.display = ''; // 3번 메뉴 클릭 시 noti_info 요소만 보입니다.
+            menu.classList.add('selected');
+        } else if (index === 4) {
+            blocked_info.style.display = ''; // 4번 메뉴 클릭 시 blocked_info 요소만 보입니다.
+            menu.classList.add('selected');
+        } else if (index === 5) {
+            point_info.style.display = ''; // 5번 메뉴 클릭 시 point_info 요소만 보입니다.
+            menu.classList.add('selected');
+        } else if (index === 6) {
+            favorite_info.style.display = ''; // 6번 메뉴 클릭 시 point_info 요소만 보입니다.
             menu.classList.add('selected');
         }
     });
@@ -667,8 +685,38 @@ const noti_switch_label = document.getElementById('noti-switch-label');
 const DM_switch_label = document.getElementById('DM-switch-label');
 
 noti_switch_label.addEventListener('click', function() {
-    noti_switch.checked = !noti_switch.checked
+    noti_switch.checked = !noti_switch.checked;
 });
 DM_switch_label.addEventListener('click', function() {
     DM_switch.checked = !DM_switch.checked
 })
+
+// ------------------ 차단 관리 -------------------------
+// 전체 선택 버튼 누르면 차단 유저 모두 선택되게 함
+const blocked_select_all_btn = document.querySelector('#blocked-info #select-all-btn');
+blocked_select_all_btn.addEventListener("click", function(e) {
+    let checkbox_all = document.querySelectorAll('#blocked-info .form-check-input');
+    // 모든 체크박스가 체크되어 있는지 확인합니다.
+    let allChecked = Array.from(checkbox_all).every(checkbox => checkbox.checked);
+    checkbox_all.forEach(function(single_box) {
+        // 모든 체크박스가 체크되어 있다면 체크를 해제하고, 그렇지 않다면 체크합니다.
+        single_box.checked = !allChecked;
+    });
+});
+// 차단 유저 어느곳이든 클릭하면 체크되게 설정
+const blocked_user_info = document.querySelectorAll('.blocked-user-info');
+blocked_user_info.forEach(function(item) {
+    item.addEventListener('click', function() {
+        let single_checkbox = item.querySelector('.blocked-checkbox .form-check-input');
+        single_checkbox.checked = !single_checkbox.checked;
+    })
+});
+// --------------------- 포인트 관리 -----------------------
+// 포인트 내역 종류 선택 표시
+const point_sortby_btn = document.getElementById('point-sortby-dropdown-btn');
+const point_sortby_dropdown = document.querySelectorAll('#point-sortby-dropdown-menu .sortby-item');
+point_sortby_dropdown.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+        point_sortby_btn.innerText = e.target.innerText;
+    })
+});

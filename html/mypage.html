@@ -93,8 +93,8 @@
                     </li>
                     <div class="divider"></div>
                     <li class="nav-item">
-                        <div class="nav-item-icon"><img src="./../src/settings-mypage.png"></div>
-                        <a class="nav-link" href="#">개인 설정</a>
+                        <div class="nav-item-icon"><img src="./../src/star-mypage.png"></div>
+                        <a class="nav-link" href="#">즐겨찾기</a>
                     </li>
                 </ul>
                 <!--+++++++++++++++ 회원정보 부분 ++++++++++++++++ -->
@@ -538,7 +538,7 @@
                             </span>
                             <span class='divider-xsmall'></span>
                             <span id="comment-count">3개</span>
-                            <span class="dropdown post-sort-dropdown">
+                            <span class="dropdown comment-sort-dropdown">
                                 <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="comment-sortby-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     최신순
                                 </button>
@@ -667,7 +667,7 @@
                             </span>
                             <span class='divider-xsmall'></span>
                             <span id="notification-count">새 알림: 99,999,999개</span>
-                            <span class="dropdown post-sort-dropdown">
+                            <span class="dropdown noti-sort-dropdown">
                                 <button class="btn btn-secondary btn-sm" type="button" id="mark-as-read-all-btn">
                                     모두 읽음으로 표시
                                 </button>
@@ -705,21 +705,131 @@
                 </div>
                 <!-- +++++++++++++++ 차단 관리 ++++++++++++++++ -->
                 <div id="blocked-info">
+                    <small>내가 차단한 유저들을 볼 수 있어요.</small>
                     <div id="blocked-info-window">
-                        <small>내가 차단한 유저들을 확인할 수 있어요.</small>
+                        <div class="blocked-info-header">
+                            <span class="blocked-count"><img src="./../src/banned-mypage.png">차단한 유저수: 20명</span>
+                            <span class="btn btn-primary select-option-btn" id="unblock-btn">
+                                차단 해제
+                            </span>
+                            <span class="btn btn-secondary select-option-btn" id="select-all-btn">
+                                전체선택
+                            </span>
+                        </div>
+                        <div class="blocked-divider-horizontal"></div>
                         <div class="blocked-user-list">
                             <!-- 차단한 유저 정보 시작 -->
                             <div class="blocked-user-info">
                                 <span class="blocked-profile-icon"><img src="./../src/IdolFan.png"></span>
                                 <span class="blocked-nickname">테스터1</span>
+                                <div class="form-check blocked-checkbox">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                </div>
+                            </div>
+                            <!-- 차단한 유저 정보 끝 -->
+                            <!-- 차단한 유저 정보 시작 -->
+                            <div class="blocked-user-info">
+                                <span class="blocked-profile-icon"><img src="./../src/IdolFan.png"></span>
+                                <span class="blocked-nickname">테스터1</span>
+                                <div class="form-check blocked-checkbox">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                </div>
                             </div>
                             <!-- 차단한 유저 정보 끝 -->
                         </div>
                     </div>
                     <div class="tips-area">
-                        <small class="tips">최대 20명까지 차단이 가능해요.</small>
-                        <small class="tips">댓글과 게시글은 차단된 유저의 것이라고 표시되지만, 클릭하면 내용을 확인할 수 있어요.</small>
-                        <small class="tips">상품 문의 알림을 제외하고, 차단된 유저와 관련된 모든 DM/알림은 받지 않아요.</small>
+                        <small class="tips">• 최대 20명까지 차단이 가능해요.</small>
+                        <small class="tips">• 댓글과 게시글은 차단된 유저의 것이라고 표시되지만, 클릭하면 내용을 확인할 수 있어요.</small>
+                        <small class="tips">• 상품 문의 알림을 제외하고, 차단된 유저의 모든 DM/알림은 받지 않아요.</small>
+                        <small class="tips">• 상대방은 내가 상대를 차단한지 알 수 없어요.</small>
+                    </div>
+                </div>
+                <!-- +++++++++++++++ 포인트 관리 ++++++++++++++ -->
+                <div id="point-info">
+                    <small>보유한 포인트와 최근 3개월 전까지의 포인트 적립/사용 내역을 확인할 수 있어요.</small>
+                    <div class="point-value"><img src="./../src/point-mypage.png">보유한 포인트:1,300,000 포인트</div>
+                    <div class="point-info-header">                    
+                        <span class="dropdown point-sort-dropdown">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="point-sortby-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                전체
+                            </button>
+                            <ul class="dropdown-menu" id="point-sortby-dropdown-menu" aria-labelledby="sortByMenuButton">
+                                <li class="dropdown-item sortby-item" href="#">전체</li>
+                                <li class="dropdown-item sortby-item" href="#">적립</li>
+                                <li class="dropdown-item sortby-item" href="#">사용</li>
+                            </ul>
+                        </span>
+                    </div>
+                    <div class="point-history-list">
+                        <!-- 포인트 적립/사용내역 시작 -->
+                        <div class="point-card point-plus">
+                            <div class="point-history-title">+500 포인트</div>
+                            <div class="point-history-contents">실시간 핫글 선정</div>
+                            <div class="point-history-regdate">12.17</div>
+                        </div>
+                        <!-- 포인트 적립/사용내역 끝 -->
+                        <!-- 포인트 적립/사용내역 시작 -->
+                        <div class="point-card point-minus">
+                            <div class="point-history-title">-100 포인트</div>
+                            <div class="point-history-contents">업다운 게임</div>
+                            <div class="point-history-regdate">12.17</div>
+                        </div>
+                        <!-- 포인트 적립/사용내역 끝 -->
+                    </div>
+                </div>
+                <!-- +++++++++++++++ 즐겨찾기 관리 +++++++++++++ -->
+                <div id="favorite-info">
+                    <small class="favorite-info-explanation">내가 즐겨찾는 아이돌 게시판과 관심 거래게시판 키워드를 설정할 수 있어요.</small>
+                    <div class="favorite-title">
+                        <img src="./../src/star-mypage.png">
+                        즐겨찾는 아이돌 게시판 | <span class="favorite-idol-count">10개</span>
+                    </div>
+                    <div class="favorite-idol-list">   
+                        <span class="idolname">BTS<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="idolname">EXO<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="idolname">스트레이키즈<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="idolname">BTS<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="idolname">BTS<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="idolname">BTS<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="idolname">BTS<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="idolname">BTS<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="idolname">BTS<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="idolname">BTS<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="idolname">BTS<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="idolname">BTS<img class='remove-icon' src="./../src/close.png"></span>
+                    </div>
+                    <div class="favorite-title">
+                        <img src="./../src/star-mypage.png">
+                        관심 거래 키워드 | <span class="favorite-keywords-count">10개</span>
+                    </div>
+                    <div class="favorite-keywords-list">
+                        <span class="keyword">키보드<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="keyword">EXO포카<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="keyword">정규앨범<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="keyword">키보드<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="keyword">키보드<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="keyword">키보드<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="keyword">키보드<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="keyword">키보드<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="keyword">키보드<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="keyword">키보드<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="keyword">키보드<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="keyword">키보드<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="keyword">키보드<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="keyword">키보드<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="keyword">키보드<img class='remove-icon' src="./../src/close.png"></span>
+                        <span class="keyword">키보드<img class='remove-icon' src="./../src/close.png"></span>
+                    </div>
+                    <div class="favorite-keyword-register">
+                        <form method="POST" class="keyword-register-form">
+                            <div class="favorite-title">관심 키워드 등록(최대 20개)</div>
+                            <small class="keyword-register-explanation">관심 키워드를 등록하면 거래게시판에 관련 글이 올라오면 알림을 받아요.</small>
+                            <div class="keyword-input">
+                                <input class='form-control' id='keyword-register' type="text" maxlength="10" placeholder="띄어쓰기 없이, 최대 10글자">
+                                <button class="btn btn-primary" id="keyword-submit-btn">등록</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
