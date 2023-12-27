@@ -1,4 +1,4 @@
-const nav_menu = document.querySelectorAll('.nav-item');
+const nav_menu = document.querySelectorAll('.menu .nav-item');
 const user_info = document.getElementById('user-info');
 const post_info = document.getElementById('post-info');
 const comment_info = document.getElementById('comment-info');
@@ -75,6 +75,7 @@ nav_menu.forEach(function(menu, index) {
         }
     });
 });
+
 // 게시글 관리 세부 카테고리 선택
 post_category.forEach(function(menu, index) {
     menu.addEventListener('click', function(e) {

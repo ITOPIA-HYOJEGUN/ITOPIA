@@ -99,7 +99,7 @@
                 </ul>
                 <!--+++++++++++++++ 회원정보 부분 ++++++++++++++++ -->
                 <form method="POST" id="user-info">
-                    <div class="profile-icon">
+                    <div class="profile-icon" data-bs-toggle="modal" data-bs-target="#icons-list-window">
                         <img src="./../src/like.png">
                         <span id="profile-explanation"><small>프로필 아이콘을 변경하려면 아이콘을 누르세요.</small></span>
                     </div>
@@ -139,6 +139,49 @@
                     </div>
                     <div class="modify-btn btn btn-primary">
                         저장
+                    </div>
+                    <div class="modal fade" id="icons-list-window" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5">아이콘 변경</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <span>내가 보유한 아이콘</span>
+                                    <span>보유한 아이콘 개수: <span>20개</span></span>
+                                    <span>수집률: 
+                                        <span>2.1%</span>
+                                        <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress-bar" style="width: 25%"></div>
+                                        </div>
+                                    </span>
+                                    <span>아이콘 희귀도</span>
+                                    <span class="dropdown post-sort-dropdown">
+                                        <button class="btn btn-secondary btn-sm dropdown-toggle search-dropdown-btn" type="button" id="saved-post-search-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            전체
+                                        </button>
+                                        <ul class="dropdown-menu" id="saved-search-dropdown-menu" aria-labelledby="sortByMenuButton">
+                                            <li class="dropdown-item sortby-item" href="#">전체</li>
+                                            <li class="dropdown-item sortby-item" href="#">매우 희귀</li>
+                                            <li class="dropdown-item sortby-item" href="#">희귀</li>
+                                            <li class="dropdown-item sortby-item" href="#">보통</li>
+                                            <li class="dropdown-item sortby-item" href="#">흔함</li>
+                                            <li class="dropdown-item sortby-item" href="#">매우 흔함</li>
+                                        </ul>
+                                    </span>
+                                    <div class="icons">
+                                        <div class="icon">
+                                            <img class="icon-img" src="./../src/like.png">
+                                            <span class="icon-name">BTS 기본</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </form>
                 <!-- ++++++++++++++++ 게시글 관리 부분 ++++++++++++++ -->
@@ -823,8 +866,8 @@
                     </div>
                     <div class="favorite-keyword-register">
                         <form method="POST" class="keyword-register-form">
-                            <div class="favorite-title">관심 키워드 등록(최대 20개)</div>
-                            <small class="keyword-register-explanation">관심 키워드를 등록하면 거래게시판에 관련 글이 올라오면 알림을 받아요.</small>
+                            <div class="favorite-title">관심 거래 키워드 등록(최대 20개)</div>
+                            <small class="keyword-register-explanation">키워드를 등록하면 거래게시판에 관련 글이 올라오면 알림을 받아요.</small>
                             <div class="keyword-input">
                                 <input class='form-control' id='keyword-register' type="text" maxlength="10" placeholder="띄어쓰기 없이, 최대 10글자">
                                 <button class="btn btn-primary" id="keyword-submit-btn">등록</button>
@@ -877,6 +920,7 @@
                 <li class="list-group-item">Icons by <a href='https://icons8.com/'>Icons8</a></li>
             </ul>
         </div>
+        
     </footer>
 
 </body>

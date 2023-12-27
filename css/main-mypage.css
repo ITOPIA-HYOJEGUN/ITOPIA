@@ -41,18 +41,18 @@ main h5 {
     flex-direction: row;
     justify-content: center;
 }
-.nav-link {
+.menu .nav-link {
     color: #707070;
     font-weight: 600;
 }
-.nav-link:hover {
+.menu .nav-link:hover {
     text-decoration: none;
     color: transparent;
     background: linear-gradient(71deg, rgb(47, 114, 214) 34%, rgba(102,102,255,1) 49%, rgb(99, 70, 216) 64%);
     -webkit-background-clip: text;
     background-clip: text;
 }
-.nav-item {
+.menu .nav-item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,21 +61,21 @@ main h5 {
     margin-left: 5px;
     padding: 3px;
 }
-.nav-item:hover .nav-link {
+.menu .nav-item:hover .nav-link {
     color: transparent;
     background: linear-gradient(71deg, rgb(47, 114, 214) 34%, rgba(102,102,255,1) 49%, rgb(99, 70, 216) 64%);
     -webkit-background-clip: text;
     background-clip: text;
 }
-.nav-item-icon img {
+.menu .nav-item-icon img {
     width: 20px;
     height: 20px;
 }
-.selected {
+.menu .selected {
     background: linear-gradient(71deg, rgba(229,240,255,1) 0%, rgba(245,235,255,1) 84%, rgba(255,233,233,1) 100%);
     border-radius: 10px;
 }
-.selected .nav-link {
+.menu .selected .nav-link {
     color: transparent;
     background: linear-gradient(71deg, rgb(47, 114, 214) 34%, rgba(102,102,255,1) 49%, rgb(99, 70, 216) 64%);
     -webkit-background-clip: text;
@@ -160,6 +160,11 @@ main h5 {
     font-weight: 600;
     width: 70px;
 }
+/* 아이콘 변경 모달 창 */
+#icons-list-window {
+    --bs-modal-width: 800px;
+}
+
 /* --------------- 게시글 관리 CSS -------------- */
 #post-info {
     display: flex;
