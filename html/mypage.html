@@ -144,37 +144,116 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5">아이콘 변경</h1>
+                                    <h1 class="modal-title fs-5">아이콘 도감</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <span>내가 보유한 아이콘</span>
-                                    <span>보유한 아이콘 개수: <span>20개</span></span>
-                                    <span>수집률: 
-                                        <span>2.1%</span>
-                                        <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                                            <div class="progress-bar" style="width: 25%"></div>
+                                    <span class="icon-subtitle">보유한 아이콘 개수: <span id="owned-icon-count">20개</span></span>
+                                    <div class="icon-subtitle">수집률: 
+                                        <span id="collection-rate">20.1%</span>
+                                        <div class="progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress-bar" id="collection-rate-progress-bar" style="width: 25.33%"></div>
                                         </div>
-                                    </span>
-                                    <span>아이콘 희귀도</span>
-                                    <span class="dropdown post-sort-dropdown">
-                                        <button class="btn btn-secondary btn-sm dropdown-toggle search-dropdown-btn" type="button" id="saved-post-search-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            전체
-                                        </button>
-                                        <ul class="dropdown-menu" id="saved-search-dropdown-menu" aria-labelledby="sortByMenuButton">
-                                            <li class="dropdown-item sortby-item" href="#">전체</li>
-                                            <li class="dropdown-item sortby-item" href="#">매우 희귀</li>
-                                            <li class="dropdown-item sortby-item" href="#">희귀</li>
-                                            <li class="dropdown-item sortby-item" href="#">보통</li>
-                                            <li class="dropdown-item sortby-item" href="#">흔함</li>
-                                            <li class="dropdown-item sortby-item" href="#">매우 흔함</li>
-                                        </ul>
-                                    </span>
+                                    </div>
+                                    
+                                    <div class="icons-dropdown">
+                                        <span class="dropdown icons-sort-dropdown">
+                                            <button class="btn btn-secondary btn-sm dropdown-toggle search-dropdown-btn" type="button" id="icons-search-dropdown-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                전체
+                                            </button>
+                                            <ul class="dropdown-menu" id="icons-dropdown-menu" aria-labelledby="sortByMenuButton">
+                                                <li class="dropdown-item sortby-item" href="#">전체</li>
+                                                <li class="dropdown-item sortby-item" href="#">내가 소유한 아이콘</li>
+                                                <li class="dropdown-item sortby-item" href="#">매우 희귀</li>
+                                                <li class="dropdown-item sortby-item" href="#">희귀</li>
+                                                <li class="dropdown-item sortby-item" href="#">보통</li>
+                                                <li class="dropdown-item sortby-item" href="#">흔함</li>
+                                                <li class="dropdown-item sortby-item" href="#">매우 흔함</li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <small>소유한 아이콘은 클릭하여 장착할 수 있어요.</small>
                                     <div class="icons">
-                                        <div class="icon">
-                                            <img class="icon-img" src="./../src/like.png">
-                                            <span class="icon-name">BTS 기본</span>
+                                        <div class="icon-class-divider">매우 희귀</div>
+                                        <div class="icons-unique">
+                                            <div class="icon icon-unique">
+                                                <img class="icon-img" src="./../src/like.png">
+                                                <div class="icon-name">BTS2023한정판ㅇㅇㅇㅇㅇㅇㅇ</div>
+                                            </div>
+                                            <div class="icon icon-unique not-owned">
+                                                <img class="icon-img" src="./../src/like.png">
+                                                <div class="icon-name">BTS 기본</div>
+                                            </div>
+                                            <div class="icon icon-unique">
+                                                <img class="icon-img" src="./../src/like.png">
+                                                <div class="icon-name">BTS 기본</div>
+                                            </div>
+                                            <div class="icon icon-unique not-owned">
+                                                <img class="icon-img" src="./../src/like.png">
+                                                <div class="icon-name">BTS 기본</div>
+                                            </div>
+                                            <div class="icon icon-unique">
+                                                <img class="icon-img" src="./../src/like.png">
+                                                <div class="icon-name">BTS 기본</div>
+                                            </div>
+                                            <div class="icon icon-unique not-owned">
+                                                <img class="icon-img" src="./../src/like.png">
+                                                <div class="icon-name">BTS 기본</div>
+                                            </div>
+                                            <div class="icon icon-unique">
+                                                <img class="icon-img" src="./../src/like.png">
+                                                <div class="icon-name">BTS 기본</div>
+                                            </div>
+                                            <div class="icon icon-unique not-owned">
+                                                <img class="icon-img" src="./../src/like.png">
+                                                <div class="icon-name">BTS 기본</div>
+                                            </div>
                                         </div>
+                                        <div class="icon-class-divider">희귀</div>
+                                        <div class="icons-super-rare">
+                                            <div class="icon icon-super-rare">
+                                                <img class="icon-img" src="./../src/like.png">
+                                                <div class="icon-name">BTS 기본</div>
+                                            </div>
+                                            <div class="icon icon-super-rare">
+                                                <img class="icon-img" src="./../src/like.png">
+                                                <div class="icon-name">BTS 기본</div>
+                                            </div>
+                                        </div>
+                                        <div class="icon-class-divider">보통</div>
+                                        <div class="icons-rare">
+                                            <div class="icon icon-rare">
+                                                <img class="icon-img" src="./../src/like.png">
+                                                <div class="icon-name">BTS 기본</div>
+                                            </div>
+                                            <div class="icon icon-rare">
+                                                <img class="icon-img" src="./../src/like.png">
+                                                <div class="icon-name">BTS 기본</div>
+                                            </div>
+                                        </div>
+                                        <div class="icon-class-divider">흔함</div>
+                                        <div class="icons-uncommon">
+                                            <div class="icon icon-uncommon">
+                                                <img class="icon-img" src="./../src/like.png">
+                                                <div class="icon-name">BTS 기본</div>
+                                            </div>
+                                            <div class="icon icon-uncommon">
+                                                <img class="icon-img" src="./../src/like.png">
+                                                <div class="icon-name">BTS 기본</div>
+                                            </div>
+                                        </div>
+                                        <div class="icon-class-divider">매우 흔함</div>
+                                        <div class="icons-common">
+                                            <div class="icon icon-common">
+                                                <img class="icon-img" src="./../src/like.png">
+                                                <div class="icon-name">BTS 기본</div>
+                                            </div>
+                                            <div class="icon icon-common">
+                                                <img class="icon-img" src="./../src/like.png">
+                                                <div class="icon-name">BTS 기본</div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                                 <div class="modal-footer">

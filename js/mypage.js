@@ -24,6 +24,36 @@ noti_info.style.display = 'none';
 blocked_info.style.display = 'none';
 point_info.style.display = 'none';
 favorite_info.style.display = 'none';
+// ---------------- 회원정보 -----------------
+const icons_sortby_btn = document.getElementById('icons-search-dropdown-btn');
+const icons_sortby_dropdown = document.querySelectorAll('#icons-dropdown-menu .sortby-item');
+const icons_unique = document.querySelector('.icons-unique');
+const icons_super_rare = document.querySelector('.icons-super-rare');
+const icons_rare = document.querySelector('.icons-rare');
+const icons_uncommon = document.querySelector('.icons-uncommon');
+const icons_common = document.querySelector('.icons-common');
+
+icons_sortby_dropdown.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+        icons_sortby_btn.innerText = e.target.innerText;
+
+        if (icons_sortby_btn.innerText == '전체') {
+            icons_unique.style.display = '';
+            icons_super_rare.style.display = '';
+            icons_rare.style.display = '';
+            icons_uncommon.style.display = '';
+            icons_common.style.display = '';
+        }
+        else if (icons_sortby_btn.innerText == '매우 희귀') {
+            icons_unique.style.display = '';
+            icons_super_rare.style.display = 'none';
+            icons_rare.style.display = 'none';
+            icons_uncommon.style.display = 'none';
+            icons_common.style.display = 'none';
+        }
+    })
+});
+
 // 모든 마이페이지 하위 요소를 숨기는 함수
 function hideAll() {
     user_info.style.display = 'none';

@@ -164,6 +164,129 @@ main h5 {
 #icons-list-window {
     --bs-modal-width: 800px;
 }
+.icon-subtitle {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.icons-dropdown {
+    width: 713px;
+    display: flex;
+    margin-top: 20px;
+}
+.icon-class-divider {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    margin-bottom: 20px;
+    border-color:#d4d4d4;
+}
+.icons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    height: 500px;
+    overflow-y: auto;
+}
+.icons-unique {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.icons-super-rare {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.icons-rare {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.icons-uncommon {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.icons-common {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 130px;
+    height: 150px;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.icon-unique {
+    background: linear-gradient(0deg, rgba(236, 179, 249, 0.5) 0%, rgba(239,214,254,0.5) 46%, rgba(254, 165, 175, 0.5) 100%);
+    background-size: 100% 300%;
+    background-position-y: 0%;
+    animation: gradient 8s ease infinite;
+    box-shadow: 0px 2px 8px -5px #555555;
+}
+.icon-super-rare {
+    background: #fba8b3;
+    box-shadow: 0px 2px 8px -5px #555555;
+}
+.icon-rare {
+    background: #dbbdc1;
+    box-shadow: 0px 2px 8px -5px #555555;
+}
+.icon-uncommon {
+    background: #d1e3ba;
+    box-shadow: 0px 2px 8px -5px #555555;
+}
+.icon-common {
+    background: #b4c0af;
+    box-shadow: 0px 2px 8px -5px #555555;
+}
+.not-owned {
+    cursor: default;
+    background: #d6d6d6;
+    animation: none;
+    color: #707070;
+}
+.not-owned .icon-img {
+    opacity: 70%;
+}
+@keyframes gradient {
+    0% {
+      background-position-y: 0%;
+    }
+    50% {
+      background-position-y: 100%;
+    }
+    100% {
+      background-position-y: 0%;
+    }
+ }
+ .icon-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1px;
+    border-color:#bfbfbf;
+    background-color: white;
+    margin-bottom: 10px;
+ }
+ .icon-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    height: 40px;
+    text-align: center;
+
+    font-size: 0.9rem;
+ }
 
 /* --------------- 게시글 관리 CSS -------------- */
 #post-info {
