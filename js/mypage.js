@@ -24,7 +24,7 @@ noti_info.style.display = 'none';
 blocked_info.style.display = 'none';
 point_info.style.display = 'none';
 favorite_info.style.display = 'none';
-// ---------------- 회원정보 -----------------
+// ---------------- 회원정보 아이콘 변경 모달 창-----------------
 const icons_sortby_btn = document.getElementById('icons-search-dropdown-btn');
 const icons_sortby_dropdown = document.querySelectorAll('#icons-dropdown-menu .sortby-item');
 const icons_unique = document.querySelector('.icons-unique');
@@ -32,17 +32,54 @@ const icons_super_rare = document.querySelector('.icons-super-rare');
 const icons_rare = document.querySelector('.icons-rare');
 const icons_uncommon = document.querySelector('.icons-uncommon');
 const icons_common = document.querySelector('.icons-common');
+const icons_class_unique = document.querySelector('.icon-class-unique');
+const icons_class_super_rare = document.querySelector('.icon-class-super-rare');
+const icons_class_rare = document.querySelector('.icon-class-rare');
+const icons_class_uncommon = document.querySelector('.icon-class-uncommon');
+const icons_class_common = document.querySelector('.icon-class-common');
+const icons_not_owned = document.querySelectorAll('.icons .not-owned');
+const icons_owned_only_switch = document.getElementById('icons-owned-only-switch');
+const icons_owned_only_label = document.getElementById('icons-owned-only-switch-label');
 
+icons_owned_only_switch.addEventListener('click', function() {
+    if (icons_owned_only_switch.checked == true) {
+        icons_not_owned.forEach(function(item) {
+            item.style.display = 'none';
+        });
+    }
+    else {
+        icons_not_owned.forEach(function(item) {
+            item.style.display = '';
+        });
+    }
+});
+icons_owned_only_label.addEventListener('click', function() {
+    icons_owned_only_switch.checked = !icons_owned_only_switch.checked
+    if (icons_owned_only_switch.checked == true) {
+        icons_not_owned.forEach(function(item) {
+            item.style.display = 'none';
+        });
+    }
+    else {
+        icons_not_owned.forEach(function(item) {
+            item.style.display = '';
+        });
+    }
+});
 icons_sortby_dropdown.forEach(function(item) {
     item.addEventListener('click', function(e) {
         icons_sortby_btn.innerText = e.target.innerText;
-
         if (icons_sortby_btn.innerText == '전체') {
             icons_unique.style.display = '';
             icons_super_rare.style.display = '';
             icons_rare.style.display = '';
             icons_uncommon.style.display = '';
             icons_common.style.display = '';
+            icons_class_unique.style.display = '';
+            icons_class_super_rare.style.display = '';
+            icons_class_rare.style.display = '';
+            icons_class_uncommon.style.display = '';
+            icons_class_common.style.display = '';
         }
         else if (icons_sortby_btn.innerText == '매우 희귀') {
             icons_unique.style.display = '';
@@ -50,8 +87,61 @@ icons_sortby_dropdown.forEach(function(item) {
             icons_rare.style.display = 'none';
             icons_uncommon.style.display = 'none';
             icons_common.style.display = 'none';
+            icons_class_unique.style.display = '';
+            icons_class_super_rare.style.display = 'none';
+            icons_class_rare.style.display = 'none';
+            icons_class_uncommon.style.display = 'none';
+            icons_class_common.style.display = 'none';
         }
-    })
+        else if (icons_sortby_btn.innerText == '희귀') {
+            icons_unique.style.display = 'none';
+            icons_super_rare.style.display = '';
+            icons_rare.style.display = 'none';
+            icons_uncommon.style.display = 'none';
+            icons_common.style.display = 'none';
+            icons_class_unique.style.display = 'none';
+            icons_class_super_rare.style.display = '';
+            icons_class_rare.style.display = 'none';
+            icons_class_uncommon.style.display = 'none';
+            icons_class_common.style.display = 'none';
+        }
+        else if (icons_sortby_btn.innerText == '보통') {
+            icons_unique.style.display = 'none';
+            icons_super_rare.style.display = 'none';
+            icons_rare.style.display = '';
+            icons_uncommon.style.display = 'none';
+            icons_common.style.display = 'none';
+            icons_class_unique.style.display = 'none';
+            icons_class_super_rare.style.display = 'none';
+            icons_class_rare.style.display = '';
+            icons_class_uncommon.style.display = 'none';
+            icons_class_common.style.display = 'none';
+        }
+        else if (icons_sortby_btn.innerText == '흔함') {
+            icons_unique.style.display = 'none';
+            icons_super_rare.style.display = 'none';
+            icons_rare.style.display = 'none';
+            icons_uncommon.style.display = '';
+            icons_common.style.display = 'none';
+            icons_class_unique.style.display = 'none';
+            icons_class_super_rare.style.display = 'none';
+            icons_class_rare.style.display = 'none';
+            icons_class_uncommon.style.display = '';
+            icons_class_common.style.display = 'none';
+        }
+        else if (icons_sortby_btn.innerText == '매우 흔함') {
+            icons_unique.style.display = 'none';
+            icons_super_rare.style.display = 'none';
+            icons_rare.style.display = 'none';
+            icons_uncommon.style.display = 'none';
+            icons_common.style.display = '';
+            icons_class_unique.style.display = 'none';
+            icons_class_super_rare.style.display = 'none';
+            icons_class_rare.style.display = 'none';
+            icons_class_uncommon.style.display = 'none';
+            icons_class_common.style.display = '';
+        }
+    });
 });
 
 // 모든 마이페이지 하위 요소를 숨기는 함수

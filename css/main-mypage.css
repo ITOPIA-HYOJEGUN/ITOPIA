@@ -172,6 +172,11 @@ main h5 {
     width: 713px;
     display: flex;
     margin-top: 20px;
+    margin-bottom: 6px;
+}
+.icons-dropdown .form-switch {
+    width: auto !important;
+    margin-left: 10px;
 }
 .icon-class-divider {
     border-bottom-style: solid;
@@ -563,6 +568,7 @@ main h5 {
     bottom: 2px;
     font-weight: 600;
 }
+/* 예약중/판매 완료 라벨 CSS */
 .reserved {
     background-color: #77c4bd;
     color: black;
@@ -570,6 +576,13 @@ main h5 {
 .sold-out {
     background-color: #dfdfdf;
     color: #727272;
+}
+/* 판매글 상태 수정 CSS */
+#sales-status-change .modal-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
 }
 /* ----------- 댓글 관리 CSS -------------- */
 #comment-info-window {

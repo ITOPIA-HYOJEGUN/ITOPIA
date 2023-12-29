@@ -163,7 +163,6 @@
                                             </button>
                                             <ul class="dropdown-menu" id="icons-dropdown-menu" aria-labelledby="sortByMenuButton">
                                                 <li class="dropdown-item sortby-item" href="#">전체</li>
-                                                <li class="dropdown-item sortby-item" href="#">내가 소유한 아이콘</li>
                                                 <li class="dropdown-item sortby-item" href="#">매우 희귀</li>
                                                 <li class="dropdown-item sortby-item" href="#">희귀</li>
                                                 <li class="dropdown-item sortby-item" href="#">보통</li>
@@ -171,10 +170,15 @@
                                                 <li class="dropdown-item sortby-item" href="#">매우 흔함</li>
                                             </ul>
                                         </span>
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" role="switch" id="icons-owned-only-switch">
+                                            <label class="form-check-label" for="flexSwitchCheckDefault" id="icons-owned-only-switch-label">내가 소유한 아이콘만 표시</label>
+                                        </div>
                                     </div>
+
                                     <small>소유한 아이콘은 클릭하여 장착할 수 있어요.</small>
                                     <div class="icons">
-                                        <div class="icon-class-divider">매우 희귀</div>
+                                        <div class="icon-class-divider icon-class-unique">매우 희귀</div>
                                         <div class="icons-unique">
                                             <div class="icon icon-unique">
                                                 <img class="icon-img" src="./../src/like.png">
@@ -209,7 +213,7 @@
                                                 <div class="icon-name">BTS 기본</div>
                                             </div>
                                         </div>
-                                        <div class="icon-class-divider">희귀</div>
+                                        <div class="icon-class-divider icon-class-super-rare">희귀</div>
                                         <div class="icons-super-rare">
                                             <div class="icon icon-super-rare">
                                                 <img class="icon-img" src="./../src/like.png">
@@ -220,7 +224,7 @@
                                                 <div class="icon-name">BTS 기본</div>
                                             </div>
                                         </div>
-                                        <div class="icon-class-divider">보통</div>
+                                        <div class="icon-class-divider icon-class-rare">보통</div>
                                         <div class="icons-rare">
                                             <div class="icon icon-rare">
                                                 <img class="icon-img" src="./../src/like.png">
@@ -231,7 +235,7 @@
                                                 <div class="icon-name">BTS 기본</div>
                                             </div>
                                         </div>
-                                        <div class="icon-class-divider">흔함</div>
+                                        <div class="icon-class-divider icon-class-uncommon">흔함</div>
                                         <div class="icons-uncommon">
                                             <div class="icon icon-uncommon">
                                                 <img class="icon-img" src="./../src/like.png">
@@ -242,7 +246,7 @@
                                                 <div class="icon-name">BTS 기본</div>
                                             </div>
                                         </div>
-                                        <div class="icon-class-divider">매우 흔함</div>
+                                        <div class="icon-class-divider icon-class-common">매우 흔함</div>
                                         <div class="icons-common">
                                             <div class="icon icon-common">
                                                 <img class="icon-img" src="./../src/like.png">
@@ -570,7 +574,7 @@
                             </button>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item">게시글 수정</a></li>
-                                <li><a class="dropdown-item">상태 수정</a></li>
+                                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#sales-status-change">상태 수정</a></li>
                                 <li><a class="dropdown-item">삭제</a></li>
                             </ul>
                             <div class="post-detail">
@@ -630,6 +634,25 @@
                             <button type="submit" class="post-search-btn">
                                 <img src="./../src/Search.svg" tabindex="2">
                             </button>
+                            <!-- 판매글 상태 설정창 -->
+                            <div class="modal fade" id="sales-status-change" tabindex="-1" aria-labelledby="sales-status-change-label" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="saved-post-datetime-label">판매글 상태 수정</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <span class="btn btn-secondary">판매중</span>
+                                            <span class="btn btn-primary">예약중</span>
+                                            <span class="btn btn-secondary">판매 완료</span>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <!-- 하단 페이지 이동 -->
                         <nav class="post-pagination" aria-label="...">
